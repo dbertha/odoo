@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 13:16+0000\n"
-"PO-Revision-Date: 2016-11-19 07:26+0000\n"
+"PO-Revision-Date: 2016-12-10 00:22+0000\n"
 "Last-Translator: Yoshi Tashiro <tashiro@roomsfor.hk>\n"
 "Language-Team: Japanese (http://www.transifex.com/odoo/odoo-9/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -150,7 +150,7 @@ msgstr "&amp;bull;"
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid ", if accounting or purchase is installed"
-msgstr ""
+msgstr "、会計または購買がインストールされている場合"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.view_account_form
@@ -221,7 +221,7 @@ msgid ""
 "                                        <strong>Import a file</strong><br/>\n"
 "                                        <span class=\"small\">Recommended if &gt;100 products</span>\n"
 "                                    </span>"
-msgstr ""
+msgstr "<span class=\"panel-title\">\n<span class=\"fa\" data-icon=\"&#57408;\"/>\n<strong>ファイルをインポート</strong><br/>\n<span class=\"small\">もし &gt;100 製品あるならおすすめします</span>\n</span>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -231,7 +231,7 @@ msgid ""
 "                                        <strong>Import</strong><br/>\n"
 "                                        <span class=\"small\">&gt; 200 contacts</span>\n"
 "                                    </span>"
-msgstr ""
+msgstr "<span class=\"panel-title\">\n                                        <span class=\"fa\" data-icon=\"&#57408;\"/>\n                                        <strong>インポート</strong><br/>\n                                        <span class=\"small\">&gt; 200 コンタクト先なら</span>\n                                    </span>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -241,7 +241,7 @@ msgid ""
 "                                        <strong> Create manually</strong><br/>\n"
 "                                        <span class=\"small\">&lt; 200 contacts</span>\n"
 "                                    </span>"
-msgstr ""
+msgstr "<span class=\"panel-title\">\n                                        <span class=\"fa\" data-icon=\"&#57440;\"/>\n                                        <strong> 手入力</strong><br/>\n                                        <span class=\"small\">&lt; 200 コンタクト先</span>\n                                    </span>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -251,7 +251,7 @@ msgid ""
 "                                        <strong> Create manually</strong><br/>\n"
 "                                        <span class=\"small\">Recommended if &lt;100 products</span>\n"
 "                                    </span>"
-msgstr ""
+msgstr "<span class=\"panel-title\">\n<span class=\"fa\" data-icon=\"&#57440;\"/>\n<strong>手入力</strong><br/>\n<span class=\"small\">もし &lt;100 製品あるならおすすめします</span>\n</span>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -536,7 +536,7 @@ msgstr ""
 #. module: account
 #: model:ir.ui.view,arch_db:account.report_invoice_document
 msgid "<strong>Fiscal Position Remark:</strong>"
-msgstr ""
+msgstr "<strong>財務状態備考:</strong>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.report_invoice_document
@@ -1710,7 +1710,7 @@ msgstr "自動フォーマット"
 #: code:addons/account/static/src/xml/account_reconciliation.xml:15
 #, python-format
 msgid "Automatic reconciliation"
-msgstr ""
+msgstr "自動消込"
 
 #. module: account
 #: code:addons/account/models/account_bank_statement.py:469
@@ -2220,7 +2220,7 @@ msgstr "現金箱行"
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_cashbox_line_cashbox_id
 msgid "Cashbox"
-msgstr ""
+msgstr "現金箱"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_bank_statement_cashbox_cashbox_lines_ids
@@ -2696,7 +2696,7 @@ msgstr "よくできました！"
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid "Congratulations, you're done!"
-msgstr ""
+msgstr "よくできました！"
 
 #. module: account
 #: model:ir.model,name:account.model_account_abstract_payment
@@ -3435,7 +3435,7 @@ msgstr ""
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid "Don't hesitate to"
-msgstr ""
+msgstr "お気軽に"
 
 #. module: account
 #. openerp-web
@@ -3448,7 +3448,7 @@ msgstr "完了"
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid "Download the"
-msgstr ""
+msgstr "ダウンロード"
 
 #. module: account
 #: selection:account.invoice,state:0 selection:account.invoice.report,state:0
@@ -3569,7 +3569,7 @@ msgstr ""
 #. module: account
 #: model:ir.model,name:account.model_mail_compose_message
 msgid "Email composition wizard"
-msgstr ""
+msgstr "Eメール構成ウィザード"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_accounting_report_enable_filter
@@ -3584,7 +3584,7 @@ msgstr "滞納インボイスフォロー"
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid "End"
-msgstr ""
+msgstr "終了"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_aged_trial_balance_date_to
@@ -3948,7 +3948,7 @@ msgstr ""
 msgid ""
 "For the Odoo Team,<br/>\n"
 "                            Fabien Pinckaers, Founder"
-msgstr ""
+msgstr "Odoo チーム,<br/>\n                            Fabien Pinckaers, Founder"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_account_currency_id
@@ -4100,7 +4100,7 @@ msgstr "銀行取引明細書へ"
 #: code:addons/account/models/account_move.py:282
 #, python-format
 msgid "Go to the configuration panel"
-msgstr ""
+msgstr "コンフィグレーションパネルに移動"
 
 #. module: account
 #. openerp-web
@@ -4154,7 +4154,7 @@ msgstr ""
 #. module: account
 #: model:ir.model.fields,field_description:account.field_res_partner_has_unreconciled_entries
 msgid "Has unreconciled entries"
-msgstr ""
+msgstr "未消し込みのエントリーあり"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_abstract_payment_hide_payment_method
@@ -4248,13 +4248,13 @@ msgstr ""
 #: model:ir.model.fields,help:account.field_account_bank_statement_message_unread
 #: model:ir.model.fields,help:account.field_account_invoice_message_unread
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "チェックされている場合は、新しいメッセージに注意が必要です。"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_bank_statement_message_needaction
 #: model:ir.model.fields,help:account.field_account_invoice_message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "チェックされている場合は、新しいメッセージに注意が必要です。"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_account_template_nocreate
@@ -4394,7 +4394,7 @@ msgstr ""
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid "If you want to do it yourself:"
-msgstr ""
+msgstr "ご自身でなさりたいのであれば:"
 
 #. module: account
 #: model:account.payment.term,name:account.account_payment_term_immediate
@@ -4608,7 +4608,7 @@ msgstr "請求書"
 #: model:mail.message.subtype,description:account.mt_invoice_created
 #: model:mail.message.subtype,name:account.mt_invoice_created
 msgid "Invoice Created"
-msgstr ""
+msgstr "請求書作成済"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_invoice_date_invoice
@@ -5802,7 +5802,7 @@ msgstr "勘定コード桁数"
 #: model:ir.model.fields,help:account.field_account_bank_statement_message_needaction_counter
 #: model:ir.model.fields,help:account.field_account_invoice_message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "アクションを必要とするメッセージの数"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_bank_statement_message_unread_counter
@@ -6499,7 +6499,7 @@ msgstr "Plaid コネクタ"
 #. module: account
 #: model:ir.model,name:account.model_web_planner
 msgid "Planner"
-msgstr ""
+msgstr "プランナー"
 
 #. module: account
 #: code:addons/account/wizard/pos_box.py:27
@@ -7572,7 +7572,7 @@ msgstr "小計"
 #. module: account
 #: model:ir.ui.view,arch_db:account.report_invoice_document
 msgid "TIN:"
-msgstr ""
+msgstr "納税証明番号:"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.view_account_form
@@ -7836,7 +7836,7 @@ msgstr ""
 msgid ""
 "Technical field used to hide the payment method if the selected journal has "
 "only one available which is 'manual'"
-msgstr ""
+msgstr "Technical field used to hide the payment method if the selected journal has only one available which is 'manual'"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_move_rate_diff_partial_rec_id
@@ -7875,7 +7875,7 @@ msgstr ""
 #. module: account
 #: model:ir.model,name:account.model_account_chart_template
 msgid "Templates for Account Chart"
-msgstr ""
+msgstr "勘定科目表のテンプレート"
 
 #. module: account
 #: model:ir.model,name:account.model_account_account_template
@@ -8121,7 +8121,7 @@ msgstr ""
 msgid ""
 "The partner has at least one unreconciled debit and credit since last time "
 "the invoices & payments matching was performed."
-msgstr ""
+msgstr "前回の請求書と支払いの照合が実行されて以来、取引先には少なくとも1つの未調整の借方と貸方があります。　"
 
 #. module: account
 #: code:addons/account/models/account_move.py:782
@@ -8243,14 +8243,14 @@ msgstr ""
 msgid ""
 "This account will be used for invoices instead of the default one to value "
 "expenses for the current product."
-msgstr ""
+msgstr "このアカウントは、現在の製品の経費を評価するためのデフォルトの請求の代わりに請求書に使用されます。"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_product_template_property_account_income_id
 msgid ""
 "This account will be used for invoices instead of the default one to value "
 "sales for the current product."
-msgstr ""
+msgstr "このアカウントは、現在の製品の売上を評価するためのデフォルトの請求の代わりに請求書に使用されます。"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_product_category_property_account_expense_categ_id
@@ -8438,7 +8438,7 @@ msgstr ""
 msgid ""
 "This payment term will be used instead of the default one for purchase "
 "orders and vendor bills"
-msgstr ""
+msgstr "この支払期間は、購買発注および仕入先請求書のデフォルト期間の代わりに使用されます"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_res_partner_property_payment_term_id
@@ -8724,7 +8724,7 @@ msgstr ""
 msgid ""
 "Unless you are starting a new business, you probably have a list of "
 "customers and vendors you'd like to import."
-msgstr ""
+msgstr "新しいビジネスを開始しない限り、おそらくあなたはすでにインポートする顧客とベンダーのリストがあるはずです。"
 
 #. module: account
 #: model:ir.actions.act_window,name:account.act_account_journal_2_account_invoice_opened
@@ -8894,7 +8894,7 @@ msgstr ""
 #: model:ir.model.fields,help:account.field_account_partial_reconcile_company_currency_id
 #: model:ir.model.fields,help:account.field_res_partner_currency_id
 msgid "Utility field to express amount currency"
-msgstr ""
+msgstr "金額を表すユーティリティー項目"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_fiscal_position_vat_required
@@ -9036,7 +9036,7 @@ msgid ""
 "                                        for you: simply send your Odoo project\n"
 "                                        manager a CSV file containing all your\n"
 "                                        data."
-msgstr ""
+msgstr "インポートプロセス全体を処理します：\nすべてのデータを含むCSVファイルを\nOdooプロジェクトマネージャに送信\nするだけです。"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -9630,7 +9630,7 @@ msgstr "report.account.report_financial"
 #. module: account
 #: model:ir.model,name:account.model_report_account_report_generalledger
 msgid "report.account.report_generalledger"
-msgstr ""
+msgstr "report.account.report_generalledger"
 
 #. module: account
 #: model:ir.model,name:account.model_report_account_report_overdue
@@ -9640,7 +9640,7 @@ msgstr "report.account.report_overdue"
 #. module: account
 #: model:ir.model,name:account.model_report_account_report_trialbalance
 msgid "report.account.report_trialbalance"
-msgstr ""
+msgstr "report.account.report_trialbalance"
 
 #. module: account
 #: code:addons/account/models/account_move.py:202
@@ -9658,12 +9658,12 @@ msgstr ""
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid "send us an email"
-msgstr ""
+msgstr "私達に電子メールを送る"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid "set company logo"
-msgstr ""
+msgstr "会社ロゴを設定"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -9675,7 +9675,7 @@ msgstr "あなたの銀行口座を設定します"
 #: code:addons/account/static/src/xml/account_reconciliation.xml:295
 #, python-format
 msgid "suppliers"
-msgstr ""
+msgstr "仕入先"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -9695,7 +9695,7 @@ msgstr "製品リスト"
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid "to describe<br/> your experience or to suggest improvements !"
-msgstr ""
+msgstr "<br/>あなたの経験を記述したり、改善を提案したりする！"
 
 #. module: account
 #. openerp-web

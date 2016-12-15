@@ -1093,6 +1093,7 @@ class AccountMoveLine(models.Model):
             # Create tax lines
             for tax_vals in res['taxes']:
                 if tax_vals['amount']:
+                    tax = self.env['account.tax'].browse([tax_vals['id']])
                     account_id = (amount > 0 and tax_vals['account_id'] or tax_vals['refund_account_id'])
                     if not account_id: account_id = vals['account_id']
                     temp = {
@@ -1104,6 +1105,7 @@ class AccountMoveLine(models.Model):
                         'statement_id': vals.get('statement_id'),
                         'debit': tax_vals['amount'] > 0 and tax_vals['amount'] or 0.0,
                         'credit': tax_vals['amount'] < 0 and -tax_vals['amount'] or 0.0,
+                        'analytic_account_id': vals.get('analytic_account_id') if tax.analytic else False,
                     }
                     bank = self.env["account.bank.statement"].browse(vals.get('statement_id'))
                     if bank.currency_id != bank.company_id.currency_id:
@@ -1449,7 +1451,7 @@ class AccountPartialReconcile(models.Model):
             if float_compare(total_debit, total_credit, precision_rounding=digits_rounding_precision) == 0 \
               or (currency and float_is_zero(total_amount_currency, precision_rounding=currency.rounding)):
                 #if the reconciliation is full, also unlink any currency rate diffence entry created
-                exchange_rate_entries = self.env['account.move'].search([('rate_diff_partial_rec_id', 'in', [x.id for x in partial_rec_set.keys()])])
+                exchange_rate_entries |= self.env['account.move'].search([('rate_diff_partial_rec_id', 'in', [x.id for x in partial_rec_set.keys()])])
 
         # revert the currency difference entry
         reversed_moves = exchange_rate_entries.reverse_moves()
