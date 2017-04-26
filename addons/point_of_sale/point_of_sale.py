@@ -833,7 +833,7 @@ class pos_order(osv.osv):
                 self.action_invoice(cr, uid, [order_id], context)
                 order_obj = self.browse(cr, uid, order_id, context)
                 self.pool['account.invoice'].signal_workflow(cr, SUPERUSER_ID, [order_obj.invoice_id.id], 'invoice_open')
-
+            cr.commit()
         return order_ids
 
     def write(self, cr, uid, ids, vals, context=None):

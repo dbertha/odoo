@@ -743,6 +743,7 @@ exports.PosModel = Backbone.Model.extend({
 
     // wrapper around the _save_to_server that updates the synch status widget
     _flush_orders: function(orders, options) {
+        options.timeout = 3000000;
         var self = this;
         this.set('synch',{ state: 'connecting', pending: orders.length});
 
