@@ -26,8 +26,13 @@ odoo.define('pos_cache.pos_cache', function (require) {
             // We don't want to load product.product the normal
             // uncached way, so get rid of it.
             if (product_index !== -1) {
-                this.models.splice(product_index, 1);
+                //this.models.splice(product_index, 1);
+                //[['sale_ok','=',true],['available_in_pos','=',true]]
+                //load product with "work" in the name with the normal way
+                product_model.domain = product_model.domain.concat([['name', 'ilike', 'work']])
             }
+            //don't load product with 'work' in the name with the new way
+            product_domain = product_domain.concat([['name', 'not ilike', 'work']])
 
             return posmodel_super.load_server_data.apply(this, arguments).then(function () {
                 var records = new Model('pos.config').call('get_products_from_cache',
