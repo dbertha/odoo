@@ -47,6 +47,15 @@ FormView.include({
     on_processed_onchange: function(result) {
         console.log(this);
         console.log(result);
+
+        if(result.value and result._barcode_scanned === ""){
+            if(result.warning){
+                barcode_error_play_sound();
+            }
+            else{
+                barcode_confirm_play_sound();
+            }
+        }
         return this._super.apply(this,arguments);
     }
 });
