@@ -43,6 +43,15 @@ var should_scroll = false;
 var last_scanned_barcode;
 
 ListView.include({
+    reload_record: function (record) {
+        console.log(should_scroll);
+        console.log(this);
+        if (this.model === "stock.pack.operation" || this.model === "stock.inventory.line") {
+            $(window).scrollTop(record.$el.offset().top);
+            //barcode_confirm_play_sound();
+        }
+        return this._super.apply(this,arguments);
+    },
     do_search: function () {
         self = this;
         console.log(should_scroll);
