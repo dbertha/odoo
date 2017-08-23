@@ -45,6 +45,8 @@ var last_scanned_barcode;
 ListView.include({
     do_search: function () {
         self = this;
+        console.log(should_scroll);
+        console.log(this);
         return this._super.apply(this,arguments).then(function(){
             if (should_scroll && (self.model === "stock.pack.operation" || self.model === "stock.inventory.line")) {
                 var record_to_scroll = _.find(self.records.records, function (record) {
