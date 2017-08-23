@@ -43,12 +43,37 @@ var should_scroll = false;
 var last_scanned_barcode;
 
 ListView.include({
-    reload_record: function (record) {
-        if (this.model === "stock.pack.operation" || this.model === "stock.inventory.line") {
-            $(window).scrollTop(record.$el.offset().top);
-            barcode_confirm_play_sound();
-        }
-        return this._super.apply(this,arguments);
+    do_search: function () {
+        self = this;
+        return this._super.apply(this,arguments).then(function(){
+            if (should_scroll && (self.model === "stock.pack.operation" || self.model === "stock.inventory.line")) {
+                var record_to_scroll = _.find(self.records.records, function (record) {
+                    return record.get('product_barcode') === last_scanned_barcode;
+                });
+                if (! record_to_scroll){
+                    record_to_scroll = _.find(self.records.records, function (record) {
+                    // be sure that the product_barcode is not false before substring-ing it. this situation should
+                    // not happen but empty records (that somehow bypassed the required mechanism in the view) lead
+                    // to tracebacks here.
+
+                    var record_barcode = record.get('product_barcode');
+                    if (! record_barcode) {
+                        return false;
+                    }
+                    return record_barcode.substring(0,7) === last_scanned_barcode.substring(0,7);
+                });
+                }
+                if (record_to_scroll){
+                    barcode_confirm_play_sound();
+                    $(window).scrollTop(record_to_scroll.$el.offset().top)
+                }
+                else{
+                    //barcode_error_play_sound();
+                }
+                should_scroll = false;
+                last_scanned_barcode = undefined;
+            }
+        });
     }
 });
 
@@ -57,7 +82,7 @@ KanbanView.include({
     reload_record: function (record) {
         if (this.model === "stock.pack.operation" || this.model === "stock.inventory.line") {
             $(window).scrollTop(record.$el.offset().top);
-            barcode_confirm_play_sound();
+            //barcode_confirm_play_sound();
         }
         return this._super.apply(this,arguments);
     },
@@ -82,11 +107,11 @@ KanbanView.include({
                 });
                 }
                 if (record_to_scroll){
-                    //barcode_confirm_play_sound();
+                    barcode_confirm_play_sound();
                     $(window).scrollTop(record_to_scroll.$el.offset().top)
                 }
                 else{
-                    barcode_error_play_sound();
+                    //barcode_error_play_sound();
                 }
                 should_scroll = false;
                 last_scanned_barcode = undefined;
