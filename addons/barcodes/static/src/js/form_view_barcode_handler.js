@@ -45,10 +45,7 @@ var last_scanned_barcode;
 
 FormView.include({
     on_processed_onchange: function(result) {
-        console.log(this);
-        console.log(result);
-
-        if(result.value and result._barcode_scanned === ""){
+        if(result.value && result._barcode_scanned === ""){
             if(result.warning){
                 barcode_error_play_sound();
             }
@@ -65,7 +62,6 @@ KanbanView.include({
     reload_record: function (record) {
         if (this.model === "stock.pack.operation" || this.model === "stock.inventory.line") {
             $(window).scrollTop(record.$el.offset().top);
-            //barcode_confirm_play_sound();
         }
         return this._super.apply(this,arguments);
     },
@@ -90,7 +86,6 @@ KanbanView.include({
                 });
                 }
                 if (record_to_scroll){
-                    barcode_confirm_play_sound();
                     $(window).scrollTop(record_to_scroll.$el.offset().top)
                 }
                 else{
@@ -260,8 +255,6 @@ var FormViewBarcodeHandler = common.AbstractField.extend(BarcodeHandlerMixin, {
                             last_scanned_barcode = barcode;
 
                             self.set_value(barcode);       // set the barcode field with the received one
-                            console.log(should_scroll);
-                            console.log(self);
                             return form_onchanges_mutex(); // wait for its onchange to finish
                         }
                     });
