@@ -279,7 +279,8 @@ var FormViewBarcodeHandler = common.AbstractField.extend(BarcodeHandlerMixin, {
                             last_scanned_barcode = barcode;
 
                             self.set_value(barcode);       // set the barcode field with the received one
-
+                            console.log(should_scroll);
+                            console.log(this);
                             return form_onchanges_mutex(); // wait for its onchange to finish
                         }
                     });
