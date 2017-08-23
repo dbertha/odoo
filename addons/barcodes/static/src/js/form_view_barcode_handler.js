@@ -8,6 +8,7 @@ var BarcodeEvents = require('barcodes.BarcodeEvents');
 var BarcodeHandlerMixin = require('barcodes.BarcodeHandlerMixin');
 var KanbanRecord = require('web_kanban.Record');
 var KanbanView = require('web_kanban.KanbanView');
+var ListView = require('web.ListView');
 var Dialog = require('web.Dialog');
 
 var _t = core._t;
@@ -40,10 +41,23 @@ KanbanRecord.include({
 });
 var should_scroll = false;
 var last_scanned_barcode;
+
+ListView.include({
+    reload_record: function (record) {
+        if (this.model === "stock.pack.operation" || this.model === "stock.inventory.line") {
+            $(window).scrollTop(record.$el.offset().top);
+            barcode_confirm_play_sound();
+        }
+        return this._super.apply(this,arguments);
+    }
+};
+
+
 KanbanView.include({
     reload_record: function (record) {
-        if (this.model === "stock.pack.operation" || self.model === "stock.inventory.line") {
+        if (this.model === "stock.pack.operation" || this.model === "stock.inventory.line") {
             $(window).scrollTop(record.$el.offset().top);
+            barcode_confirm_play_sound();
         }
         return this._super.apply(this,arguments);
     },
@@ -238,7 +252,7 @@ var FormViewBarcodeHandler = common.AbstractField.extend(BarcodeHandlerMixin, {
                             last_scanned_barcode = barcode;
 
                             self.set_value(barcode);       // set the barcode field with the received one
-                            barcode_confirm_play_sound();
+
                             return form_onchanges_mutex(); // wait for its onchange to finish
                         }
                     });
