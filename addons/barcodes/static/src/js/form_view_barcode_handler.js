@@ -46,7 +46,7 @@ ListView.include({
     do_search: function () {
         self = this;
         console.log(should_scroll);
-        console.log(this);
+        console.log(self);
         return this._super.apply(this,arguments).then(function(){
             if (should_scroll && (self.model === "stock.pack.operation" || self.model === "stock.inventory.line")) {
                 var record_to_scroll = _.find(self.records.records, function (record) {
@@ -280,7 +280,7 @@ var FormViewBarcodeHandler = common.AbstractField.extend(BarcodeHandlerMixin, {
 
                             self.set_value(barcode);       // set the barcode field with the received one
                             console.log(should_scroll);
-                            console.log(this);
+                            console.log(self);
                             return form_onchanges_mutex(); // wait for its onchange to finish
                         }
                     });
