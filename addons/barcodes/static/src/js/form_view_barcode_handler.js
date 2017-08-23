@@ -50,7 +50,7 @@ ListView.include({
         }
         return this._super.apply(this,arguments);
     }
-};
+});
 
 
 KanbanView.include({
