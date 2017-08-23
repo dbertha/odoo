@@ -68,7 +68,7 @@ KanbanView.include({
                 });
                 }
                 if (record_to_scroll){
-                    barcode_confirm_play_sound();
+                    //barcode_confirm_play_sound();
                     $(window).scrollTop(record_to_scroll.$el.offset().top)
                 }
                 else{
@@ -238,6 +238,7 @@ var FormViewBarcodeHandler = common.AbstractField.extend(BarcodeHandlerMixin, {
                             last_scanned_barcode = barcode;
 
                             self.set_value(barcode);       // set the barcode field with the received one
+                            barcode_confirm_play_sound();
                             return form_onchanges_mutex(); // wait for its onchange to finish
                         }
                     });
