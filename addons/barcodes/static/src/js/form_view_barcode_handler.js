@@ -45,7 +45,8 @@ var last_scanned_barcode;
 
 FormView.include({
     on_processed_onchange: function(result) {
-        if(result.value && result._barcode_scanned === ""){
+        console.log(result);
+        if(result.value && result.value._barcode_scanned === ""){
             if(result.warning){
                 barcode_error_play_sound();
             }
