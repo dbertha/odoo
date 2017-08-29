@@ -107,6 +107,17 @@ var BarcodeParser = Class.extend({
         return ean.substr(0,12) + this.ean_checksum(ean);
     },
 
+
+    // returns a valid zero padded ean13 from an ean prefix. the ean prefix must be a string.
+    sanitize_ean_by_end: function(ean){
+        ean = ean.substr(0,13);
+
+        for(var n = 0, count = (13 - ean.length); n < count; n++){
+            ean = ean + '0';
+        }
+        return ean.substr(0,12) + this.ean_checksum(ean);
+    },
+
     // Returns a valid zero padded UPC-A from a UPC-A prefix. the UPC-A prefix must be a string.
     sanitize_upc: function(upc) {
         return this.sanitize_ean('0'+upc).substr(1,12);
