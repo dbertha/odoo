@@ -1289,7 +1289,7 @@ class AssetsBundle(object):
             self.cr.commit()
 
         #On a multi-instance config, this might delete attachments used by another instance
-        if not 'website.asset' in self.xmlid :
+        if not ('website.asset' in self.xmlid or 'web.asset' in self.xmlid) :
             self.clean_attachments(type)
 
         return ira.browse(self.cr, openerp.SUPERUSER_ID, attachment_id, context=self.context)
