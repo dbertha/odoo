@@ -910,7 +910,7 @@ class website_sale(http.Controller):
             order = request.website.sale_get_order(context=context)
         else:
             order = request.registry['sale.order'].browse(cr, SUPERUSER_ID, sale_order_id, context=context)
-            assert order.id == request.session.get('sale_last_order_id')
+            #assert order.id == request.session.get('sale_last_order_id')
 
         if not order or (order.amount_total and not tx):
             return request.redirect('/shop')
