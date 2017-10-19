@@ -904,7 +904,7 @@ class website_sale(http.Controller):
         if transaction_id is None:
             tx = request.website.sale_get_transaction()
         else:
-            tx = request.registry['payment.transaction'].browse(cr, uid, int(transaction_id), context=context)
+            tx = request.registry['payment.transaction'].browse(cr, SUPERUSER_ID, int(transaction_id), context=context)
 
         if sale_order_id is None:
             order = request.website.sale_get_order(context=context)
