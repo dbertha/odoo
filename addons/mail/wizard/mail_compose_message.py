@@ -7,6 +7,10 @@ from openerp import _, api, fields, models, SUPERUSER_ID
 from openerp import tools
 from openerp.tools.safe_eval import safe_eval as eval
 
+import logging
+
+_logger = logging.getLogger(__name__)
+
 
 # main mako-like expression pattern
 EXPRESSION_PATTERN = re.compile('(\$\{.+?\})')
@@ -374,6 +378,7 @@ class MailComposer(models.TransientModel):
         values = self._convert_to_write(self._convert_to_cache(values))
 
         #dirty fix : sometimes, for a unknown reason, this onchange returns a composition_mode = false
+        _logger.debug(values)
         if values.get("composition_mode", None) is False :
             values.pop("composition_mode")
         return {'value': values}
