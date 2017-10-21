@@ -6101,7 +6101,9 @@ class BaseModel(object):
             _logger.debug(name)
             _logger.debug(dirty)
 
-        if dirty.get('composition_mode', None) is False :
+        #Dirty fix
+        if 'composition_mode' in dirty and values.get('composition_mode', False) == 'comment'
+            and values.get('model', False) == 'sale.order' :
             dirty.pop('composition_mode')
         # At the moment, the client does not support updates on a *2many field
         # while this one is modified by the user.
