@@ -6098,18 +6098,22 @@ class BaseModel(object):
                     ):
                         todo.append(name)
                         dirty.add(name)
+            _logger.debug(name)
+            _logger.debug(dirty)
 
         # At the moment, the client does not support updates on a *2many field
         # while this one is modified by the user.
         if isinstance(field_name, basestring) and \
                 self._fields[field_name].type in ('one2many', 'many2many'):
             dirty.discard(field_name)
-
+        _logger.debug(dirty)
         # collect values from dirty fields
         result['value'] = {
             name: self._fields[name].convert_to_onchange(record[name], subfields.get(name))
             for name in dirty
         }
+
+        _logger.debug(result)
 
         return result
 
