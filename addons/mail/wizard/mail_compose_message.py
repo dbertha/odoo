@@ -373,6 +373,9 @@ class MailComposer(models.TransientModel):
         # command and is compatible with onchange api.v7
         values = self._convert_to_write(self._convert_to_cache(values))
 
+        #dirty fix : sometimes, for a unknown reason, this onchange returns a composition_mode = false
+        if values.get("composition_mode", None) is False :
+            values.pop("composition_mode")
         return {'value': values}
 
     @api.multi
