@@ -6102,9 +6102,9 @@ class BaseModel(object):
             _logger.debug(dirty)
 
         #Dirty fix
-        if 'composition_mode' in dirty and values.get('composition_mode', False) == 'comment'
-            and values.get('model', False) == 'sale.order' :
-            dirty.pop('composition_mode')
+        if 'composition_mode' in dirty and (values.get('composition_mode', False) == 'comment'
+            and values.get('model', False) == 'sale.order') :
+            dirty.remove('composition_mode')
         # At the moment, the client does not support updates on a *2many field
         # while this one is modified by the user.
         if isinstance(field_name, basestring) and \
@@ -6117,8 +6117,7 @@ class BaseModel(object):
             for name in dirty
         }
 
-        if result['value'].get('composition_mode', None) is False :
-            result['value'].pop('composition_mode')
+        
         _logger.debug(result)
 
         return result
