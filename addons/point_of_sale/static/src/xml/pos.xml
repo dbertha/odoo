@@ -677,6 +677,12 @@
                 <t t-if='receipt.shop.name'>
                     <div><t t-esc='receipt.shop.name' /></div>
                 </t>
+                <t t-if='receipt.header_xml'>
+                    <t t-raw='receipt.header_xml' />
+                </t>
+                <t t-if='!receipt.header_xml and receipt.header'>
+                    <div><t t-esc='receipt.header' /></div>
+                </t>
                 <t t-if='receipt.company.contact_address'>
                     <div><t t-esc='receipt.company.contact_address' /></div>
                 </t>
@@ -692,12 +698,7 @@
                 <t t-if='receipt.company.website'>
                     <div><t t-esc='receipt.company.website' /></div>
                 </t>
-                <t t-if='receipt.header_xml'>
-                    <t t-raw='receipt.header_xml' />
-                </t>
-                <t t-if='!receipt.header_xml and receipt.header'>
-                    <div><t t-esc='receipt.header' /></div>
-                </t>
+                
                 <t t-if='receipt.cashier'>
                     <div class='cashier'>
                         <div>--------------------------------</div>
