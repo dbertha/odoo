@@ -6105,6 +6105,12 @@ class BaseModel(object):
                 self._fields[field_name].type in ('one2many', 'many2many'):
             dirty.discard(field_name)
 
+        if dirty.issuperset({'template_id', 'res_id', 'model', 'composition_mode'}) :
+            _logger.debug("DIRTY FIX !! Those fields should not be updated")
+
+            _logger.debug(dirty)
+            dirty = dirty.difference({'template_id', 'res_id', 'model', 'composition_mode'})
+
         # collect values from dirty fields
         result['value'] = {
             name: self._fields[name].convert_to_onchange(record[name], subfields.get(name))
