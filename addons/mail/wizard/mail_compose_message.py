@@ -7,10 +7,6 @@ from openerp import _, api, fields, models, SUPERUSER_ID
 from openerp import tools
 from openerp.tools.safe_eval import safe_eval as eval
 
-import logging
-
-_logger = logging.getLogger(__name__)
-
 
 # main mako-like expression pattern
 EXPRESSION_PATTERN = re.compile('(\$\{.+?\})')
