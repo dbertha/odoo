@@ -35,7 +35,7 @@ class PaymentTransaction(orm.Model):
                 if amount_matches:
                     if tx.state == 'done' and tx.acquirer_id.auto_confirm == 'at_pay_confirm':
                         _logger.info('<%s> transaction completed, auto-confirming order %s (ID %s)', acquirer_name, tx.sale_order_id.name, tx.sale_order_id.id)
-                        self.pool['sale.order'].action_confirm(cr, SUPERUSER_ID, [tx.sale_order_id.id], context=dict(context, send_email=True))
+                        self.pool['sale.order'].action_confirm(cr, SUPERUSER_ID, [tx.sale_order_id.id], context=dict(context, send_email=True, mail_notify_force_send=False))
                     elif tx.state not in ['cancel', 'error'] and tx.sale_order_id.state == 'draft':
                         _logger.info('<%s> transaction pending/to confirm manually, sending quote email for order %s (ID %s)', acquirer_name, tx.sale_order_id.name, tx.sale_order_id.id)
                         self.pool['sale.order'].force_quotation_send(cr, SUPERUSER_ID, [tx.sale_order_id.id], context=context)
