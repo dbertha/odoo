@@ -921,8 +921,10 @@ class website_sale(http.Controller):
                 # (e.g. free events), so confirm immediately
                 order.with_context(dict(context, send_email=True)).action_confirm()
         elif tx and tx.state == 'cancel':
+            #forward to payment page for new attempt
+            return request.redirect("/shop/payment")
             # cancel the quotation
-            sale_order_obj.action_cancel(cr, SUPERUSER_ID, [order.id], context=request.context)
+            # sale_order_obj.action_cancel(cr, SUPERUSER_ID, [order.id], context=request.context)
 
         # clean context and session, then redirect to the confirmation page
         request.website.sale_reset(context=context)
