@@ -396,7 +396,7 @@ class website(orm.Model):
                 values = {'pricelist_id': pricelist_id}
                 sale_order.write(values)
                 for line in sale_order.order_line:
-                    if line.exists():
+                    if line.exists() and not line.is_delivery :
                         sale_order._cart_update(product_id=line.product_id.id, line_id=line.id, add_qty=0)
 
             # update browse record
