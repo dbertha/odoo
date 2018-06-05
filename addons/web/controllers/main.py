@@ -19,6 +19,7 @@ import time
 import zlib
 from xml.etree import ElementTree
 from cStringIO import StringIO
+import unicodedata
 
 import babel.messages.pofile
 import werkzeug.utils
@@ -35,7 +36,7 @@ from openerp.tools import ustr
 from openerp.tools.misc import str2bool, xlwt
 from openerp import http
 from openerp.http import request, serialize_exception as _serialize_exception, content_disposition
-from openerp.exceptions import AccessError
+from openerp.exceptions import AccessError, UserError
 
 _logger = logging.getLogger(__name__)
 
@@ -587,7 +588,7 @@ class WebClient(http.Controller):
     def version_info(self):
         return openerp.service.common.exp_version()
 
-    @http.route('/web/tests', type='http', auth="none")
+    @http.route('/web/tests', type='http', auth="user")
     def index(self, mod=None, **kwargs):
         return request.render('web.qunit_suite')
 
@@ -930,14 +931,18 @@ class DataSet(http.Controller):
 
 class View(http.Controller):
 
-    @http.route('/web/view/add_custom', type='json', auth="user")
-    def add_custom(self, view_id, arch):
-        CustomView = request.session.model('ir.ui.view.custom')
-        CustomView.create({
-            'user_id': request.session.uid,
-            'ref_id': view_id,
-            'arch': arch
-        }, request.context)
+    @http.route('/web/view/edit_custom', type='json', auth="user")
+    def edit_custom(self, custom_id, arch):
+        """
+        Edit a custom view
+
+        :param int custom_id: the id of the edited custom view
+        :param str arch: the edited arch of the custom view
+        :returns: dict with acknowledged operation (result set to True)
+        """
+
+        custom_view = request.env['ir.ui.view.custom'].browse(custom_id)
+        custom_view.write({ 'arch': arch })
         return {'result': True}
 
 class TreeView(View):
@@ -1065,16 +1070,23 @@ class Binary(http.Controller):
                     var win = window.top.window;
                     win.jQuery(win).trigger(%s, %s);
                 </script>"""
+
+        filename = ufile.filename
+        if request.httprequest.user_agent.browser == 'safari':
+            # Safari sends NFD UTF-8 (where é is composed by 'e' and [accent])
+            # we need to send it the same stuff, otherwise it'll fail
+            filename = unicodedata.normalize('NFD', ufile.filename).encode('UTF-8')
+
         try:
             attachment_id = Model.create({
-                'name': ufile.filename,
+                'name': filename,
                 'datas': base64.encodestring(ufile.read()),
-                'datas_fname': ufile.filename,
+                'datas_fname': filename,
                 'res_model': model,
                 'res_id': int(id)
             }, request.context)
             args = {
-                'filename': ufile.filename,
+                'filename': filename,
                 'mimetype': ufile.content_type,
                 'id':  attachment_id
             }
@@ -1419,6 +1431,9 @@ class ExcelExport(ExportFormat, http.Controller):
         return base + '.xls'
 
     def from_data(self, fields, rows):
+        if len(rows) > 65535:
+            raise UserError(_('There are too many rows (%s rows, limit: 65535) to export as Excel 97-2003 (.xls) format. Consider splitting the export.') % len(rows))
+
         workbook = xlwt.Workbook()
         worksheet = workbook.add_sheet('Sheet 1')
 

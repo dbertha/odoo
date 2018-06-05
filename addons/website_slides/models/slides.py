@@ -322,14 +322,14 @@ class Slide(models.Model):
         base_url = self.env['ir.config_parameter'].get_param('web.base.url')
         for record in self:
             if record.datas and (not record.document_id or record.slide_type in ['document', 'presentation']):
-                record.embed_code = '<iframe src="%s/slides/embed/%s?page=1" allowFullScreen="true" height="%s" width="%s" frameborder="0"></iframe>' % (base_url, record.id, 315, 420)
+                record.embed_code = '<iframe src="%s/slides/embed/%s?page=1" class="o_wslides_iframe_viewer" allowFullScreen="true" height="%s" width="%s" frameborder="0"></iframe>' % (base_url, record.id, 315, 420)
             elif record.slide_type == 'video' and record.document_id:
                 if not record.mime_type:
                     # embed youtube video
                     record.embed_code = '<iframe src="//www.youtube.com/embed/%s?theme=light" allowFullScreen="true" frameborder="0"></iframe>' % (record.document_id)
                 else:
                     # embed google doc video
-                    record.embed_code = '<embed src="https://video.google.com/get_player?ps=docs&partnerid=30&docid=%s" type="application/x-shockwave-flash"></embed>' % (record.document_id)
+                    record.embed_code = '<iframe src="//drive.google.com/file/d/%s/preview" allowFullScreen="true" frameborder="0"></iframe>' % (record.document_id)
             else:
                 record.embed_code = False
 
@@ -510,6 +510,7 @@ class Slide(models.Model):
                 'name': snippet['title'],
                 'image': self._fetch_data(snippet['thumbnails']['high']['url'], {}, 'image')['values'],
                 'description': snippet['description'],
+                'mime_type': False,
             })
         return {'values': values}
 

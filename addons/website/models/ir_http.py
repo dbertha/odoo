@@ -14,9 +14,11 @@ from openerp.addons.base import ir
 from openerp.addons.base.ir import ir_qweb
 from openerp.addons.website.models.website import slug, url_for, _UNSLUG_RE
 from openerp.http import request
-from openerp.tools import config
+from openerp.tools import config, ustr
 from openerp.osv import orm
 from openerp.tools.safe_eval import safe_eval as eval
+
+from ..geoipresolver import GeoIPResolver
 
 logger = logging.getLogger(__name__)
 
@@ -40,7 +42,7 @@ class ir_http(orm.AbstractModel):
     def _auth_method_public(self):
         if not request.session.uid:
             website = self.pool['website'].get_current_website(request.cr, openerp.SUPERUSER_ID, context=request.context)
-            if website:
+            if website and website.user_id:
                 request.uid = website.user_id.id
             else:
                 request.uid = self.pool['ir.model.data'].xmlid_to_res_id(request.cr, openerp.SUPERUSER_ID, 'base', 'public_user')
@@ -70,24 +72,17 @@ class ir_http(orm.AbstractModel):
 
     def _geoip_setup_resolver(self):
         if self._geoip_resolver is None:
+            geofile = config.get('geoip_database')
             try:
-                import GeoIP
-                # updated database can be downloaded on MaxMind website
-                # http://dev.maxmind.com/geoip/legacy/install/city/
-                geofile = config.get('geoip_database')
-                if os.path.exists(geofile):
-                    self._geoip_resolver = GeoIP.open(geofile, GeoIP.GEOIP_STANDARD)
-                else:
-                    self._geoip_resolver = False
-                    logger.warning('GeoIP database file %r does not exists, apt-get install geoip-database-contrib or download it from http://dev.maxmind.com/geoip/legacy/install/city/', geofile)
-            except ImportError:
-                self._geoip_resolver = False
+                self._geoip_resolver = GeoIPResolver.open(geofile) or False
+            except Exception as e:
+                logger.warning('Cannot load GeoIP: %s', ustr(e))
 
     def _geoip_resolve(self):
         if 'geoip' not in request.session:
             record = {}
             if self._geoip_resolver and request.httprequest.remote_addr:
-                record = self._geoip_resolver.record_by_addr(request.httprequest.remote_addr) or {}
+                record = self._geoip_resolver.resolve(request.httprequest.remote_addr) or {}
             request.session['geoip'] = record
 
     def get_page_key(self):

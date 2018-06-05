@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-15 10:41+0000\n"
-"PO-Revision-Date: 2017-06-14 08:24+0000\n"
-"Last-Translator: Šarūnas Ažna <sarunas.azna@gmail.com>\n"
+"POT-Creation-Date: 2016-09-22 13:16+0000\n"
+"PO-Revision-Date: 2018-04-11 09:47+0000\n"
+"Last-Translator: Eimantas <eimantas@focusate.eu>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/odoo/odoo-9/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,7 +96,7 @@ msgid ""
 "people. You will start contract with a full technical and functional "
 "training. If you are passionate, motivate and flexible apply for this job, "
 "you will certainly join the best company ever."
-msgstr ""
+msgstr "Darbas pilnu etatu, su patraukliu atlyginimu, mažoje, protingų žmonių komandoje. Darbą pradėsite nuo pilnų dunkcinių ir techninių mokymų. Jei esate atkaklus, motyvuotas ir lankstus, aplikuokite šiai pozicijai, Jūs tikrai pakliūtumėte į geriausią įmonę."
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
@@ -124,7 +124,7 @@ msgstr "Aktyvus"
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "Analyse needs, write specification documents and quotation"
-msgstr ""
+msgstr "Analizuoti poreikius, rašyti specifikacijas ir pirkimo pasiūlymus"
 
 #. module: hr
 #: model:ir.ui.view,arch_db:hr.view_employee_filter
@@ -143,7 +143,7 @@ msgid ""
 "our team of enthusiastic chief technical officer. So if working on an open "
 "source project in a friendly and cooperative atmosphere sounds like fun to "
 "you, read on..."
-msgstr ""
+msgstr "Dėl mūsų pastovaus augimo, šiuo metu ieškome naujo žmogaus, sustiprinti mūsų entuziastingų techninių vadovų komandai. Jei darbas su atviro kodo projektais ir kooperatyvi atmosfera traukia jus, skaitykite toliau..."
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
@@ -155,7 +155,7 @@ msgid ""
 "Because of our constant growth, we're now looking for people to reinforce "
 "our team of enthusiastic developers. So if working on an open source project"
 " in a friendly and cooperative atmosphere sounds like fun to you, read on..."
-msgstr ""
+msgstr "Dėl mūsų pastovaus augimo, šiuo metu ieškome naujo žmogaus, sustiprinti mūsų entuziastingų programuotojų komandai. Jei darbas su atviro kodo projektais bei draugiška ir kooperatyvi atmosfera traukia jus, skaitykite toliau..."
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_trainee
@@ -163,7 +163,7 @@ msgid ""
 "Because of our constant growth, we're now looking for people to reinforce "
 "our team of enthusiastic trainees. So if working on an open source project "
 "in a friendly and cooperative atmosphere sounds like fun to you, read on..."
-msgstr ""
+msgstr "Dėl mūsų pastovaus augimo, šiuo metu ieškome naujo žmogaus, sustiprinti mūsų entuziastingų praktikantų komandai. Jei darbas su atviro kodo projektais bei draugiška ir kooperatyvi atmosfera traukia jus, skaitykite toliau..."
 
 #. module: hr
 #: model:ir.ui.view,arch_db:hr.view_employee_form
@@ -339,7 +339,7 @@ msgstr "Nurodo resurso darbo grafiką"
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "Deliver generic Odoo functional training sessions"
-msgstr ""
+msgstr "Pristatyti Odoo bendrinių funkcinių mokymų sesijas"
 
 #. module: hr
 #: model:ir.model.fields,field_description:hr.field_hr_employee_department_id
@@ -439,14 +439,12 @@ msgid "Employees Tags"
 msgstr "Darbuotojų žymos"
 
 #. module: hr
-#: code:addons/hr/hr.py:299 constraint:hr.department:0
-#, python-format
+#: constraint:hr.department:0
 msgid "Error! You cannot create recursive departments."
 msgstr "Klaida! Jūs negalite sukurti pasikartojančių skyrių."
 
 #. module: hr
-#: code:addons/hr/hr.py:269 constraint:hr.employee:0
-#, python-format
+#: constraint:hr.employee:0
 msgid "Error! You cannot create recursive hierarchy of Employee(s)."
 msgstr "Klaida! Jūs negalite sukurti pasikartojančios darbuotojo(-ų) hierarchijos."
 
@@ -507,6 +505,11 @@ msgstr "Prenumeratoriai (partneriai)"
 #: model:ir.model.fields,field_description:hr.field_hr_employee_gender
 msgid "Gender"
 msgstr "Lytis"
+
+#. module: hr
+#: model:web.tip,description:hr.hr_tip_1
+msgid "Get all applications related to this job position."
+msgstr ""
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_developer
@@ -572,12 +575,12 @@ msgstr "Programos konfigūravimo pagalba"
 #. module: hr
 #: model:hr.job,website_description:hr.job_hrm
 msgid "Hire a team of great Human Resources people"
-msgstr ""
+msgstr "Pasamdyti komandą puikių žmogiškųjų išteklių žmonių"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
 msgid "Hire a team of great executive people"
-msgstr ""
+msgstr "Pasamdyti puikių vadovų komandą "
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_marketing
@@ -745,11 +748,6 @@ msgstr "Paskutinio pranešimo data"
 #: model:ir.model.fields,field_description:hr.field_hr_job___last_update
 msgid "Last Modified on"
 msgstr "Paskutinį kartą keista"
-
-#. module: hr
-#: model:ir.model.fields,field_description:hr.field_res_users_last_website_so_id
-msgid "Last Online Sale Order"
-msgstr ""
 
 #. module: hr
 #: model:ir.model.fields,field_description:hr.field_hr_department_write_uid
@@ -980,6 +978,11 @@ msgstr "Mūsų personalas darbe"
 #: model:ir.model.fields,field_description:hr.field_hr_department_parent_id
 msgid "Parent Department"
 msgstr "Aukštesnysis padalinys"
+
+#. module: hr
+#: model:ir.model,name:hr.model_res_partner
+msgid "Partner"
+msgstr "Partneris"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_developer
