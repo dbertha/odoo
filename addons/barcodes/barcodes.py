@@ -1,6 +1,8 @@
 import logging
 import re
 
+import unicodedata
+
 import openerp
 from openerp import tools, models, fields, api
 from openerp.osv import fields, osv
@@ -131,6 +133,7 @@ class barcode_nomenclature(osv.osv):
     #  - base_code : the barcode code with all the encoding parts set to zero; the one put on
     #                the product in the backend
     def parse_barcode(self, barcode):
+        barcode = u"".join(ch for ch in unicode(barcode) if unicodedata.category(ch)[0]!="C")
         parsed_result = {
             'encoding': '', 
             'type': 'error', 
