@@ -1569,6 +1569,17 @@ td {
     cursor: pointer;
 }
 
+.pos .scale-screen .get-weight{
+    text-align: center;
+    font-size: 32px;
+    background: rgb(110,100,155);
+    color: white;
+    border-radius: 3px;
+    padding: 16px;
+    margin: 16px;
+    cursor: pointer;
+}
+
 .pos .scale-screen .weight{
     text-align: right;
     margin: 16px;
