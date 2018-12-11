@@ -326,12 +326,22 @@ var ScaleScreenWidget = ScreenWidget.extend({
 
     _read_scale: function() {
         var self = this;
-        var queue = this.pos.proxy_queue;
-        queue.schedule(function(){
-            return self.pos.proxy.scale_read().then(function(weight){
-                self.set_weight(weight.weight);
-            });
-        },{duration:500, repeat: true});
+        // var queue = this.pos.proxy_queue;
+        // queue.schedule(function(){
+        //     return self.pos.proxy.scale_read().then(function(weight){
+        //         self.set_weight(weight.weight);
+        //     });
+        // },{duration:500, repeat: true});
+        this.$('.get-weight').click(function(){
+            // add product *after* switching screen to scroll properly
+            self.get_weight();
+        });
+
+        // queue.schedule(function(){
+        //     return self.pos.proxy.scale_read().then(function(weight){
+        //         self.set_weight(weight.weight);
+        //     });
+        // },{duration:150, repeat: true});
 
     },
     get_product: function(){
@@ -346,6 +356,11 @@ var ScaleScreenWidget = ScreenWidget.extend({
         }
 
         return current_pricelist;
+    get_weight: function(){
+        var self = this;
+        return self.pos.proxy.scale_read().then(function(weight){
+                self.set_weight(weight.weight);
+            });
     },
     order_product: function(){
         this.pos.get_order().add_product(this.get_product(),{ quantity: this.weight });
