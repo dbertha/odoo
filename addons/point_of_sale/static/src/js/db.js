@@ -409,6 +409,15 @@ var PosDB = core.Class.extend({
         if (!(category_ids instanceof Array)) {
             category_ids = [category_ids];
         }
+
+        var cat_ids = this.get_product_by_id(product_id).pos_categ_id;
+        console.log("dirty fix multi cat pour resto");
+        console.log(cat_ids);
+        console.log(category_ids);
+        if(_.any(cat_ids, function(cat_id){ return category_ids.includes(cat_id);})){
+            return true;
+        }
+
         var cat = this.get_product_by_id(product_id).pos_categ_id[0];
         while (cat) {
             for (var i = 0; i < category_ids.length; i++) {
