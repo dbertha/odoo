@@ -3,6 +3,7 @@
 # * point_of_sale
 # 
 # Translators:
+# Alina Lisnenko <alinasemeniuk1@gmail.com>, 2019
 # Bohdan Lisnenko, 2015-2016
 # Bohdan Lisnenko, 2016
 # Yaroslav Molochko <onorua@gmail.com>, 2016
@@ -11,8 +12,8 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-02-03 10:07+0000\n"
-"PO-Revision-Date: 2018-07-18 14:16+0000\n"
-"Last-Translator: Alina Semeniuk <alinasemeniuk1@gmail.com>\n"
+"PO-Revision-Date: 2019-01-22 09:51+0000\n"
+"Last-Translator: Alina Lisnenko <alinasemeniuk1@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/odoo/odoo-9/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -690,7 +691,7 @@ msgstr "Сканер штрихкодів"
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_config_barcode_nomenclature_id
 msgid "Barcodes"
-msgstr "Штрихкоди"
+msgstr "Штрих-коди"
 
 #. module: point_of_sale
 #: model:product.product,name:point_of_sale.belle_vue_kriek_25cl
@@ -2389,7 +2390,7 @@ msgstr "Рядки замовлення по ТП"
 #. module: point_of_sale
 #: model:ir.ui.view,arch_db:point_of_sale.view_pos_order_tree
 msgid "POS Orders"
-msgstr ""
+msgstr "Замовлення точки продажу"
 
 #. module: point_of_sale
 #: model:ir.ui.view,arch_db:point_of_sale.view_pos_order_tree_all_sales_lines
@@ -2579,7 +2580,7 @@ msgstr "Будь ласка, оберіть клієнта"
 #. module: point_of_sale
 #: model:stock.picking.type,name:point_of_sale.picking_type_posout
 msgid "PoS Orders"
-msgstr ""
+msgstr "Замовлення точки продажу"
 
 #. module: point_of_sale
 #: model:ir.actions.act_window,name:point_of_sale.action_pos_config_kanban
@@ -4009,7 +4010,7 @@ msgstr "Жовтий перець"
 msgid ""
 "You cannot change the partner of a POS order for which an invoice has "
 "already been issued."
-msgstr ""
+msgstr "Ви не можете змінити партнеру замовлення точки продажу, для якого вже випущено рахунок-фактуру."
 
 #. module: point_of_sale
 #: code:addons/point_of_sale/point_of_sale.py:618
@@ -4077,7 +4078,7 @@ msgstr ""
 #: code:addons/point_of_sale/point_of_sale.py:1426
 #, python-format
 msgid "You have to select a pricelist in the sale form !"
-msgstr ""
+msgstr "Ви повинні вибрати прайслист у формі продажу!"
 
 #. module: point_of_sale
 #: code:addons/point_of_sale/point_of_sale.py:1407
@@ -4105,7 +4106,7 @@ msgstr "Ви повинні обрати клієнта перед тим, як 
 #: code:addons/point_of_sale/point_of_sale.py:491
 #, python-format
 msgid "You should assign a Point of Sale to your session."
-msgstr ""
+msgstr "Ви повинні призначити точку продажу на свою сесію."
 
 #. module: point_of_sale
 #. openerp-web

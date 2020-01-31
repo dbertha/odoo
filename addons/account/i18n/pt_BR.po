@@ -14,14 +14,15 @@
 # Martin Trigaux, 2015
 # Mateus Lopes <mateus1@gmail.com>, 2015
 # Rodrigo de Almeida Sottomaior Macedo <rmsolucoeseminformatic4@gmail.com>, 2015
+# Thiago Alves Cavalcante <thiagoalcav@gmail.com>, 2018
 # Vanessa Dantas Nascimento <vanessa83dantas@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 13:16+0000\n"
-"PO-Revision-Date: 2018-07-25 11:29+0000\n"
-"Last-Translator: Martin Trigaux\n"
+"PO-Revision-Date: 2018-11-29 15:21+0000\n"
+"Last-Translator: Thiago Alves Cavalcante <thiagoalcav@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/odoo/odoo-9/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -164,7 +165,7 @@ msgstr "-> Reconciliar"
 #. module: account
 #: model:ir.ui.view,arch_db:account.view_move_line_form
 msgid "-> View reconciled entries"
-msgstr ""
+msgstr "Ver reconciliações"
 
 #. module: account
 #: code:addons/account/models/account_bank_statement.py:322
@@ -1509,7 +1510,7 @@ msgstr "Quantidade de moeda"
 #. module: account
 #: model:ir.ui.view,arch_db:account.invoice_tree
 msgid "Amount due"
-msgstr ""
+msgstr "Valor devido"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_partial_reconcile_amount_currency
@@ -5846,7 +5847,7 @@ msgstr "Outubro"
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid "Odoo Accounting has many extra-features:"
-msgstr ""
+msgstr "Contabilidade do Odoo possui muitos recursos extras:"
 
 #. module: account
 #: model:ir.actions.act_window,help:account.action_bank_statement_line
@@ -8105,7 +8106,7 @@ msgstr "O Tipo de cálculo da última linha deve ser \"Balanço\" para garantir 
 #: code:addons/account/models/company.py:81
 #, python-format
 msgid "The lock date for advisors is irreversible and can't be removed."
-msgstr ""
+msgstr "A data de fechamento para contadores é irreversível e não pode ser removida."
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_move_line_move_id
@@ -8130,7 +8131,7 @@ msgstr "O nome que será utilizado em linhas da conta de movimentação"
 #, python-format
 msgid ""
 "The new lock date for advisors must be set after the previous lock date."
-msgstr ""
+msgstr "A nova data de bloqueio para analistas contábeis deve ser definida após a data de bloqueio anterior."
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_bank_statement_line_currency_id
@@ -8232,14 +8233,14 @@ msgstr "Ainda há entradas não publicadas no período que deseja bloquear. Voc�
 #: code:addons/account/models/company.py:81
 #, python-format
 msgid "The lock date for advisors is irreversible and can't be removed."
-msgstr ""
+msgstr "A data de fechamento para contadores é irreversível e não pode ser removida."
 
 #. module: account
 #: code:addons/account/models/company.py:85
 #, python-format
 msgid ""
 "The new lock date for advisors must be set after the previous lock date."
-msgstr ""
+msgstr "A nova data de bloqueio para analistas contábeis deve ser definida após a data de bloqueio anterior."
 
 #. module: account
 #: code:addons/account/models/company.py:96
@@ -8247,7 +8248,7 @@ msgstr ""
 msgid ""
 "You cannot lock a period that is not finished yet. Please make sure that the"
 " lock date for advisors is not set after the last day of the previous month."
-msgstr ""
+msgstr "Você não pode bloquear um período que ainda não foi concluído. Certifique-se de que a data de bloqueio para os analistas não esteja definida após o último dia do mês anterior."
 
 #. module: account
 #: code:addons/account/models/company.py:107
@@ -8255,7 +8256,7 @@ msgstr ""
 msgid ""
 "You cannot define stricter conditions on advisors than on users. Please make"
 " sure that the lock date on advisor is set before the lock date for users."
-msgstr ""
+msgstr "Você não pode definir permissões com mais restrições para consultores do que para usuários. Certifique-se de que a data de bloqueio no analista esteja definida antes da data de bloqueio para os usuários."
 
 #. module: account
 #: code:addons/account/models/account_bank_statement.py:170

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-09 09:18+0000\n"
-"PO-Revision-Date: 2018-07-31 07:51+0000\n"
+"PO-Revision-Date: 2019-05-13 01:05+0000\n"
 "Last-Translator: Linkup <link-up@naver.com>\n"
 "Language-Team: Korean (http://www.transifex.com/odoo/odoo-9/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -84,7 +84,7 @@ msgstr ""
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.confirmation
 msgid "<i class=\"fa fa-print\"/> Print"
-msgstr ""
+msgstr "<i class=\"fa fa-print\"/> 인쇄"
 
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.header
@@ -823,7 +823,7 @@ msgstr "기본 가격표"
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.website_config_settings_view_form
 msgid "Default Sales Team"
-msgstr ""
+msgstr "기본 영업팀"
 
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.website_config_settings_view_form

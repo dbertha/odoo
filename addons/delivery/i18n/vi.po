@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 13:16+0000\n"
-"PO-Revision-Date: 2018-07-21 04:29+0000\n"
-"Last-Translator: Duy BQ <duybq86@gmail.com>\n"
+"PO-Revision-Date: 2019-08-14 03:29+0000\n"
+"Last-Translator: Danh Võ <vophuongdanh@gmail.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/odoo/odoo-9/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,12 +30,12 @@ msgstr "SL Định mức Nguyên liệu"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_purchase_num_invoiced
 msgid "# Invoiced in Purchase"
-msgstr ""
+msgstr "# Đơn mua hàng đã lập hóa đơn"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_sale_num_invoiced
 msgid "# Invoiced in Sale"
-msgstr ""
+msgstr "# Đơn bán hàng đã lập hóa đơn"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_mo_count
@@ -152,18 +152,18 @@ msgstr "Thời gian chậm trễ trung bình tính theo ngày để sản xuất
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_sale_avg_price
 msgid "Avg. Price in Customer Invoices."
-msgstr ""
+msgstr "Giá trung bình trong hóa đơn khách hàng"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_purchase_avg_price
 msgid "Avg. Price in Vendor Bills "
-msgstr ""
+msgstr "Giá trung bình trong Thanh toán nhà cung cấp"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_purchase_avg_price
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_sale_avg_price
 msgid "Avg. Unit Price"
-msgstr ""
+msgstr "Đơn giá trung bình"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_barcode
@@ -195,7 +195,7 @@ msgstr "Định mức nguyên liệu"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_stock_picking_weight_bulk
 msgid "Bulk Weight"
-msgstr ""
+msgstr "Trọng lượng hàng loạt"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_purchase_ok
@@ -252,7 +252,7 @@ msgstr "Tuyến theo Nhóm SP"
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_membership
 msgid "Check if the product is eligible for membership."
-msgstr ""
+msgstr "Đánh dấu nếu sản phẩm có đủ điều kiện để sử dụng cho quản lý thành viên."
 
 #. module: delivery
 #: model:ir.actions.act_window,help:delivery.action_delivery_carrier_form
@@ -359,7 +359,7 @@ msgstr "Tham chiếu khách hàng"
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_membership_date_from
 msgid "Date from which membership becomes active."
-msgstr ""
+msgstr "Ngày thẻ thành viên bắt đầu có hiệu lực."
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_message_last_post
@@ -369,7 +369,7 @@ msgstr "Ngày của thông điệp gần nhất được ghi nhận trên một 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_membership_date_to
 msgid "Date until which membership remains active."
-msgstr ""
+msgstr "Có hiệu lực đến ngày"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_uom_id
@@ -469,7 +469,7 @@ msgid ""
 "Each carrier (e.g. UPS) can have several delivery methods (e.g.\n"
 "                UPS Express, UPS Standard) with a set of pricing rules attached\n"
 "                to each method."
-msgstr ""
+msgstr "Mỗi đơn vị vận chuyển (vd: UPS) có thể có nhiều phương thức vận chuyển (vd:\n                UPS Express, UPS Standard) với những quy tắc tính phí vận chuyển đã được đính kèm\n                cho mỗi phương thức."
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_sale_order_delivery_price
@@ -489,32 +489,32 @@ msgstr "Vé Sự kiện"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_expected_margin
 msgid "Expected Margin"
-msgstr ""
+msgstr "Kỳ hạn dự kiến"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_expected_margin_rate
 msgid "Expected Margin (%)"
-msgstr ""
+msgstr "Kỳ hạn dự kiến (%)"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_sale_expected
 msgid "Expected Sale"
-msgstr ""
+msgstr "Bán dự kiến"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_expected_margin
 msgid "Expected Sale - Normal Cost"
-msgstr ""
+msgstr "Bán dự kiến - Chi phí thông thường"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_sales_gap
 msgid "Expected Sale - Turn Over"
-msgstr ""
+msgstr "Dự kiến bán - Turn Over"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_expected_margin_rate
 msgid "Expected margin * 100 / Expected Sale"
-msgstr ""
+msgstr "Biên độ dự kiến * 100 / Doanh số bán dự kiến"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_property_account_expense_id
@@ -713,7 +713,7 @@ msgstr "Xuất hoá đơn lô hàng khi giao hàng"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_invoice_state
 msgid "Invoice State"
-msgstr ""
+msgstr "Trạng thái hóa đơn"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_invoice_policy
@@ -733,7 +733,7 @@ msgstr "Là Kiểu giao hàng"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_is_product_variant
 msgid "Is a product variant"
-msgstr ""
+msgstr "Là biến thể sản phẩm"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_fixed_price
@@ -782,12 +782,12 @@ msgstr "Thời gian sản xuất sản phẩm"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_date_from
 msgid "Margin Date From"
-msgstr ""
+msgstr "Ngày ký quỹ từ"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_date_to
 msgid "Margin Date To"
-msgstr ""
+msgstr "Ngày ký quỹ tới"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule_max_value
@@ -802,17 +802,17 @@ msgstr "Hình ảnh với kích thước vừa phải"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_membership
 msgid "Membership"
-msgstr ""
+msgstr "Quản lý thành viên"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_membership_date_to
 msgid "Membership End Date"
-msgstr ""
+msgstr "Ngày hết hạn"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_membership_date_from
 msgid "Membership Start Date"
-msgstr ""
+msgstr "Ngày bắt đầu"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_message_ids
@@ -846,12 +846,12 @@ msgstr "Chưa có nhà vận chuyển được thiết lập cho đơn hàng nà
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_normal_cost
 msgid "Normal Cost"
-msgstr ""
+msgstr "Chi phí thông thường"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_purchase_gap
 msgid "Normal Cost - Total Cost"
-msgstr ""
+msgstr "Chi phí thông thường - Tổng chi phí"
 
 #. module: delivery
 #: model:delivery.carrier,name:delivery.normal_delivery_carrier
@@ -902,7 +902,7 @@ msgstr "Đối tác"
 #. module: delivery
 #: model:ir.model,name:delivery.model_stock_quant_package
 msgid "Physical Packages"
-msgstr ""
+msgstr "Đóng gói kiện hàng"
 
 #. module: delivery
 #: selection:delivery.price.rule,variable:0
@@ -1019,7 +1019,7 @@ msgstr "Mô tả mua hàng"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_purchase_gap
 msgid "Purchase Gap"
-msgstr ""
+msgstr "Phân tích thu mua"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_uom_po_id
@@ -1079,7 +1079,7 @@ msgstr "Định tuyến"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule_list_base_price
 msgid "Sale Base Price"
-msgstr ""
+msgstr "Giá bán cơ bản"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_description_sale
@@ -1098,7 +1098,7 @@ msgstr "Giá bán"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_sales_gap
 msgid "Sales Gap"
-msgstr ""
+msgstr "Phân tích bán hàng"
 
 #. module: delivery
 #: model:ir.model,name:delivery.model_sale_order
@@ -1221,35 +1221,35 @@ msgstr "Tài khoản xuất kho"
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_normal_cost
 msgid "Sum of Multiplication of Cost price and quantity of Vendor Bills"
-msgstr ""
+msgstr "Tổng số nhân giá chi phí và số lượng của nhà cung cấp hóa đơn"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_turnover
 msgid ""
 "Sum of Multiplication of Invoice price and quantity of Customer Invoices"
-msgstr ""
+msgstr "Tổng số nhân của giá hóa đơn và số lượng hóa đơn khách hàng"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_total_cost
 msgid "Sum of Multiplication of Invoice price and quantity of Vendor Bills "
-msgstr ""
+msgstr "Tổng số nhân của giá hóa đơn và số lượng hóa đơn của nhà cung cấp"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_sale_expected
 msgid ""
 "Sum of Multiplication of Sale Catalog price and quantity of Customer "
 "Invoices"
-msgstr ""
+msgstr "Tổng số nhân giá bán danh mục và số lượng hóa đơn khách hàng"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_sale_num_invoiced
 msgid "Sum of Quantity in Customer Invoices"
-msgstr ""
+msgstr "Tổng số lượng trong hóa đơn khách hàng"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_purchase_num_invoiced
 msgid "Sum of Quantity in Vendor Bills"
-msgstr ""
+msgstr "Tổng số lượng trong thanh toán nhà cung cấp"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_name_template
@@ -1260,7 +1260,7 @@ msgstr "Tên mẫu"
 #: model:delivery.carrier,name:delivery.delivery_carrier
 #: model:product.product,name:delivery.delivery_carrier_product_product
 msgid "The Poste"
-msgstr ""
+msgstr "Poste"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_sale_delay
@@ -1297,7 +1297,7 @@ msgid ""
 "These methods allow to automatically compute the delivery price\n"
 "                according to your settings; on the sales order (based on the\n"
 "                quotation) or the invoice (based on the delivery orders)."
-msgstr ""
+msgstr "Phí vận chuyển của những phương thức thanh toán này được tự động tính\n                tương ứng với thiết lập của; trên đơn bán hàng (dựa trên\n                báo giá) hoặc trên hóa đơn (dựa theo đơn vận chuyển)."
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_property_account_expense_id
@@ -1366,17 +1366,17 @@ msgstr "Toàn bộ chi phí"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_total_margin
 msgid "Total Margin"
-msgstr ""
+msgstr "Tổng biên lợi nhuận"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_total_margin_rate
 msgid "Total Margin Rate(%)"
-msgstr ""
+msgstr "Tổng tỷ lệ biên lợi nhuận(%)"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_total_margin_rate
 msgid "Total margin * 100 / Turnover"
-msgstr ""
+msgstr "Tổng biên lợi nhuận * 100 / Doanh thu"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_track_service
@@ -1402,12 +1402,12 @@ msgstr ""
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_turnover
 msgid "Turnover"
-msgstr ""
+msgstr "Doanh số"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier_total_margin
 msgid "Turnover - Standard price"
-msgstr ""
+msgstr "Doanh số - Giá bình quân"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_event_type_id
@@ -1583,7 +1583,7 @@ msgstr ""
 msgid ""
 "Your delivery method has no redirect on courier provider's website to track "
 "this order."
-msgstr ""
+msgstr "Phương thức giao hàng của bạn không được chuyển hướng đến trang web của nhà cung cấp dịch vụ chuyển phát nhanh để theo dõi đơn đặt hàng này."
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier_zip_from

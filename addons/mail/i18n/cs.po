@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 13:16+0000\n"
-"PO-Revision-Date: 2018-07-15 13:29+0000\n"
-"Last-Translator: trendspotter\n"
+"PO-Revision-Date: 2019-07-25 19:16+0000\n"
+"Last-Translator: trendspotter <j.podhorecky@volny.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/odoo/odoo-9/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -189,7 +189,7 @@ msgstr "-------- Zobrazit starší zprávy --------"
 msgid ""
 "<div class=\"o_mail_notification\">created <a href=\"#\" "
 "class=\"o_channel_redirect\" data-oe-id=\"%s\">#%s</a></div>"
-msgstr ""
+msgstr "<div class=\"o_mail_notification\">vytvořeno<a href=\"#\" class=\"o_channel_redirect\" data-oe-id=\"%s\">#%s</a></div>"
 
 #. module: mail
 #: code:addons/mail/models/mail_channel.py:489
@@ -197,7 +197,7 @@ msgstr ""
 msgid ""
 "<div class=\"o_mail_notification\">joined <a href=\"#\" "
 "class=\"o_channel_redirect\" data-oe-id=\"%s\">#%s</a></div>"
-msgstr ""
+msgstr "<div class=\"o_mail_notification\">připojeno <a href=\"#\" class=\"o_channel_redirect\" data-oe-id=\"%s\">#%s</a></div>"
 
 #. module: mail
 #: code:addons/mail/models/mail_channel.py:151
@@ -205,7 +205,7 @@ msgstr ""
 msgid ""
 "<div class=\"o_mail_notification\">left <a href=\"#\" "
 "class=\"o_channel_redirect\" data-oe-id=\"%s\">#%s</a></div>"
-msgstr ""
+msgstr "<div class=\"o_mail_notification\">zbývá<a href=\"#\" class=\"o_channel_redirect\" data-oe-id=\"%s\">#%s</a></div>"
 
 #. module: mail
 #: code:addons/mail/wizard/invite.py:22
@@ -237,14 +237,14 @@ msgstr ""
 msgid ""
 "<span class=\"o_stat_text\">Add</span>\n"
 "                                    <span class=\"o_stat_text\">Context Action</span>"
-msgstr ""
+msgstr "<span class=\"o_stat_text\">Přidat</span>\n                                    <span class=\"o_stat_text\">související akce</span>"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.email_template_form
 msgid ""
 "<span class=\"o_stat_text\">Remove</span>\n"
 "                                    <span class=\"o_stat_text\">Context Action</span>"
-msgstr ""
+msgstr "<span class=\"o_stat_text\">Odstranit</span>\n                                    <span class=\"o_stat_text\">Související akci</span>"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_general_configuration_mail_alias_domain
@@ -357,7 +357,7 @@ msgstr "Přidat kanál"
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.mail_wizard_invite_form
 msgid "Add channels to notify..."
-msgstr ""
+msgstr "Přidat kanály k oznámení ..."
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.email_compose_message_wizard_form
@@ -551,7 +551,7 @@ msgstr "Automatický odběr"
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_message_subtype_form
 msgid "Auto subscription"
-msgstr ""
+msgstr "Automatický odběr"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_compose_message_body
@@ -575,7 +575,7 @@ msgstr "K dispozici pro hromadnou poštu"
 #: code:addons/mail/static/src/xml/chatter.xml:162
 #, python-format
 msgid "Be careful with channels following internal notifications"
-msgstr ""
+msgstr "Buďte opatrní s kanály sledující interní upozornění"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_email_template_preview_body_html
@@ -642,7 +642,7 @@ msgstr "Změnit"
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_tracking_value_field
 msgid "Changed Field"
-msgstr ""
+msgstr "Změněné pole"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_channel_partner_channel_id
@@ -716,7 +716,7 @@ msgstr ""
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.email_template_preview_form
 msgid "Choose an example"
-msgstr ""
+msgstr "Vyberte příklad"
 
 #. module: mail
 #: code:addons/mail/models/mail_thread.py:308
@@ -748,7 +748,7 @@ msgstr "Uzavřeno"
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.email_template_form
 msgid "Comma-separated carbon copy recipients addresses"
-msgstr ""
+msgstr "Adresy příjemců v kopii  oddělené čárkami"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.email_template_form
@@ -841,14 +841,14 @@ msgstr ""
 #: code:addons/mail/static/src/xml/systray.xml:14
 #, python-format
 msgid "Conversations"
-msgstr ""
+msgstr "Konverzace"
 
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/js/client_action.js:300
 #, python-format
 msgid "Create %s"
-msgstr ""
+msgstr "Vytvořit %s"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_channel_create_date
@@ -950,7 +950,7 @@ msgid ""
 "Default recipients of the record:\n"
 "- partner (using id on a partner or the partner_id field) OR\n"
 "- email (using email_from or email field)"
-msgstr ""
+msgstr "Výchozí příjemci záznamu:\n- partner (pomocí id v poli partner  nebo partner_id) NEBO\n- e-mail (pomocí pole  email_from nebo email)"
 
 #. module: mail
 #. openerp-web
@@ -984,7 +984,7 @@ msgstr "Popis, který bude přidánke zprávě tohoto poddruhu. Je-li prázdné,
 #: code:addons/mail/static/src/xml/client_action.xml:42
 #, python-format
 msgid "Direct Messages"
-msgstr ""
+msgstr "Přímé zprávy"
 
 #. module: mail
 #: model:ir.ui.menu,name:mail.mail_channel_menu_root_chat
@@ -1035,7 +1035,7 @@ msgstr "Odběratelé dokumentu"
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.email_template_form
 msgid "Dynamic Placeholder Generator"
-msgstr ""
+msgstr "Generátor dynamického zástupce"
 
 #. module: mail
 #. openerp-web
@@ -1049,7 +1049,7 @@ msgstr ""
 #: code:addons/mail/static/src/xml/chatter.xml:129
 #, python-format
 msgid "Edit subscription"
-msgstr ""
+msgstr "Upravit odebírání"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_search
@@ -1124,12 +1124,12 @@ msgstr "E-mailová adresa je interně přiřazena tomuto uživateli. Příchozí
 msgid ""
 "Email address of the sender. This field is set when no matching partner is "
 "found and replaces the author_id field in the chatter."
-msgstr ""
+msgstr "E-mailová adresa odesílatele. Toto pole je nastaveno, pokud nebyl nalezen žádný odpovídající partner a nahrazuje pole autor_id v chatu."
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.email_compose_message_wizard_form
 msgid "Email address to redirect replies..."
-msgstr ""
+msgstr "E-mailová adresa pro přesměrování odpovědí ..."
 
 #. module: mail
 #: model:ir.model,name:mail.model_mail_compose_message
@@ -1161,7 +1161,7 @@ msgstr "Chyba v púrůběhu komunikace s 'publisher waranty' serverem."
 msgid ""
 "Error without exception. Probably due do sending an email without computed "
 "recipients."
-msgstr ""
+msgstr "Chyba bez výjimky. Pravděpodobně kvůli odeslání e-mailu bez vypočtených příjemců."
 
 #. module: mail
 #: sql_constraint:mail.followers:0
@@ -1223,7 +1223,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mail.field_mail_mail_starred_partner_ids
 #: model:ir.model.fields,field_description:mail.field_mail_message_starred_partner_ids
 msgid "Favorited By"
-msgstr ""
+msgstr "Oblíbené od"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_email_template_preview_model_object_field
@@ -1287,7 +1287,7 @@ msgstr "Sledující"
 #: model:ir.model.fields,field_description:mail.field_res_partner_message_channel_ids
 #: model:ir.model.fields,field_description:mail.field_res_users_message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Sledující (Kanály)"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_channel_message_partner_ids
@@ -1295,7 +1295,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mail.field_res_partner_message_partner_ids
 #: model:ir.model.fields,field_description:mail.field_res_users_message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Sledující (Partneři)"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_subscription_form
@@ -1305,7 +1305,7 @@ msgstr "Formulář odběratele"
 #. module: mail
 #: selection:mail.alias,alias_contact:0
 msgid "Followers only"
-msgstr ""
+msgstr "pouze sledující"
 
 #. module: mail
 #. openerp-web
@@ -1327,7 +1327,7 @@ msgstr "Od"
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_message_form
 msgid "Gateway"
-msgstr ""
+msgstr "Brána"
 
 #. module: mail
 #: code:addons/mail/models/res_users.py:48
@@ -1411,7 +1411,7 @@ msgstr "ID odebíraného zdroje"
 #: code:addons/mail/static/src/xml/client_action.xml:108
 #, python-format
 msgid "Idle"
-msgstr ""
+msgstr "Nečinný"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_channel_message_unread
@@ -1427,14 +1427,14 @@ msgstr "Pokud je zaškrtnuto, nové zprávy vyžadují vaši pozornost."
 #: model:ir.model.fields,help:mail.field_res_partner_message_needaction
 #: model:ir.model.fields,help:mail.field_res_users_message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Pokud je zaškrtnuto, nové zprávy vyžadují vaši pozornost."
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_wizard_invite_send_mail
 msgid ""
 "If checked, the partners will receive an email warning they have been added "
 "in the document's followers."
-msgstr ""
+msgstr "Pokud je tato možnost zaškrtnuta, partneři obdrží e-mailové upozornění, které bylo přidáno sledujícím dokumentu."
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_email_template_preview_user_signature
@@ -1485,7 +1485,7 @@ msgstr "Počáteční zpráva vlákna."
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_message_subtype_internal
 msgid "Internal Only"
-msgstr ""
+msgstr "Pouze interní"
 
 #. module: mail
 #: code:addons/mail/models/mail_alias.py:99
@@ -1529,7 +1529,7 @@ msgstr "Pozvat"
 #: code:addons/mail/static/src/js/chatter.js:144
 #, python-format
 msgid "Invite Follower"
-msgstr ""
+msgstr "Pozvat sledujícího"
 
 #. module: mail
 #. openerp-web
@@ -1537,14 +1537,14 @@ msgstr ""
 #: code:addons/mail/static/src/xml/client_action.xml:132
 #, python-format
 msgid "Invite people"
-msgstr ""
+msgstr "Pozvat lidi"
 
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/js/client_action.js:626
 #, python-format
 msgid "Invite people to #%s"
-msgstr ""
+msgstr "Pozvat lidi do #%s"
 
 #. module: mail
 #: model:ir.model,name:mail.model_mail_wizard_invite
@@ -1554,7 +1554,7 @@ msgstr "Průvodce pozváním"
 #. module: mail
 #: selection:mail.channel,public:0
 msgid "Invited people only"
-msgstr ""
+msgstr "Jen pozvaní lidé"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_channel_message_is_follower
@@ -1562,7 +1562,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mail.field_res_partner_message_is_follower
 #: model:ir.model.fields,field_description:mail.field_res_users_message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "je Sledující"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_mail_notification
@@ -1572,12 +1572,12 @@ msgstr "Je upozornění"
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_channel_is_member
 msgid "Is a member"
-msgstr ""
+msgstr "Je člen"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_channel_partner_is_pinned
 msgid "Is pinned on the interface"
-msgstr ""
+msgstr "je připnut do rozhraní"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.mail_channel_view_kanban
@@ -1626,7 +1626,7 @@ msgstr "Naposled upraveno"
 #: model:ir.model.fields,field_description:mail.field_mail_channel_channel_last_seen_partner_ids
 #: model:ir.model.fields,field_description:mail.field_mail_channel_partner_seen_message_id
 msgid "Last Seen"
-msgstr ""
+msgstr "Naposledy viděno"
 
 #. module: mail
 #: model:ir.model,name:mail.model_mail_channel_partner
@@ -1670,7 +1670,7 @@ msgstr "Naposled upraveno"
 #: code:addons/mail/static/src/xml/client_action.xml:97
 #, python-format
 msgid "Leave this channel"
-msgstr ""
+msgstr "Opustit tento kanál"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_wizard_invite_channel_ids
@@ -1687,7 +1687,7 @@ msgstr ""
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_followers_channel_id
 msgid "Listener"
-msgstr ""
+msgstr "Posluchač"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_channel_channel_partner_ids
@@ -1697,7 +1697,7 @@ msgstr ""
 #. module: mail
 #: selection:mail.channel,channel_type:0
 msgid "Livechat Conversation"
-msgstr ""
+msgstr "Konverzace v živém chatu"
 
 #. module: mail
 #. openerp-web
@@ -1748,7 +1748,7 @@ msgstr "Nepodařilo se doručit poštu"
 #. module: mail
 #: model:ir.model,name:mail.model_mail_tracking_value
 msgid "Mail Tracking Value"
-msgstr ""
+msgstr "Sledovaná hodnota e-mailu"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_mail_notification
@@ -1772,7 +1772,7 @@ msgstr "Označit vše za přečtené"
 #: code:addons/mail/static/src/xml/client_action.xml:125
 #, python-format
 msgid "Mark all read"
-msgstr ""
+msgstr "Označit vše jako přečtené"
 
 #. module: mail
 #. openerp-web
@@ -1825,7 +1825,7 @@ msgstr "Zpráva"
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_tracking_value_mail_message_id
 msgid "Message ID"
-msgstr ""
+msgstr "Message ID"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message_record_name
@@ -1854,7 +1854,7 @@ msgstr "Odkazy zpráv, jako identifikátory předchozích zpráv"
 #: code:addons/mail/static/src/xml/client_action.xml:122
 #, python-format
 msgid "Message sent in \""
-msgstr ""
+msgstr "Zpráva odeslána v \""
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_message_subtype_name
@@ -1985,7 +1985,7 @@ msgstr "Název použitý u vytvořeného souboru výkazu (může obsahovat place
 #: model:ir.model.fields,help:mail.field_mail_message_needaction
 #: model:ir.ui.view,arch_db:mail.view_message_search
 msgid "Need Action"
-msgstr ""
+msgstr "Vyžaduje činnost"
 
 #. module: mail
 #: selection:res.partner,notify_email:0
@@ -1995,7 +1995,7 @@ msgstr "Nikdy"
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_tracking_value_new_value_char
 msgid "New Value Char"
-msgstr ""
+msgstr "Nová znaková hodnota"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_tracking_value_new_value_datetime
@@ -2010,7 +2010,7 @@ msgstr ""
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_tracking_value_new_value_integer
 msgid "New Value Integer"
-msgstr ""
+msgstr "Nová číselná hodnota"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_tracking_value_new_value_monetary
@@ -2020,7 +2020,7 @@ msgstr ""
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_tracking_value_new_value_text
 msgid "New Value Text"
-msgstr ""
+msgstr "Nová textová hodnota"
 
 #. module: mail
 #. openerp-web
@@ -2052,21 +2052,21 @@ msgstr ""
 #: code:addons/mail/static/src/js/client_action.js:81
 #, python-format
 msgid "New people"
-msgstr ""
+msgstr "Noví lidé"
 
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/js/chatter.js:216
 #, python-format
 msgid "No follower"
-msgstr ""
+msgstr "Žádný sledující"
 
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/xml/thread.xml:16
 #, python-format
 msgid "No matches found"
-msgstr ""
+msgstr "Nenalezeny žádné shody"
 
 #. module: mail
 #. openerp-web
@@ -2080,7 +2080,7 @@ msgstr ""
 #: code:addons/mail/static/src/xml/thread.xml:28
 #, python-format
 msgid "No starred message"
-msgstr ""
+msgstr "Žádná zpráva s hvězdičkou"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message_no_auto_thread
@@ -2099,7 +2099,7 @@ msgstr "Poznámky"
 #: code:addons/mail/static/src/xml/thread.xml:48
 #, python-format
 msgid "Note by"
-msgstr ""
+msgstr "Poznámka od"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_search
@@ -2109,12 +2109,12 @@ msgstr "Upozornění"
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message_notify
 msgid "Notify followers"
-msgstr ""
+msgstr "Upozornit sledující"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_compose_message_notify
 msgid "Notify followers of the document (mass post only)"
-msgstr ""
+msgstr "Upozornit sledující dokumentu (pouze hromadný příspěvek)"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_channel_message_needaction_counter
@@ -2122,7 +2122,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mail.field_res_partner_message_needaction_counter
 #: model:ir.model.fields,field_description:mail.field_res_users_message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Počet akcí"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_channel_message_needaction_counter
@@ -2130,7 +2130,7 @@ msgstr ""
 #: model:ir.model.fields,help:mail.field_res_partner_message_needaction_counter
 #: model:ir.model.fields,help:mail.field_res_users_message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Počet zpráv, které vyžadují akci"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_channel_message_unread_counter
@@ -2138,7 +2138,7 @@ msgstr ""
 #: model:ir.model.fields,help:mail.field_res_partner_message_unread_counter
 #: model:ir.model.fields,help:mail.field_res_users_message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Počet nepřečtených zpráv"
 
 #. module: mail
 #: model:ir.actions.act_window,help:mail.action_contacts
@@ -2165,12 +2165,12 @@ msgstr "Offline"
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_tracking_value_old_value_char
 msgid "Old Value Char"
-msgstr ""
+msgstr "Stará znaková hodnota"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_tracking_value_old_value_datetime
 msgid "Old Value DateTime"
-msgstr ""
+msgstr "Stará hodnota data a času"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_tracking_value_old_value_float
@@ -2214,12 +2214,12 @@ msgstr "Otevřít"
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_alias_form
 msgid "Open Document"
-msgstr ""
+msgstr "Otevřít dokument"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_alias_form
 msgid "Open Parent Document"
-msgstr ""
+msgstr "Otevřít nadřazený dokument"
 
 #. module: mail
 #. openerp-web
@@ -2233,7 +2233,7 @@ msgstr ""
 #: code:addons/mail/static/src/xml/client_action.xml:46
 #, python-format
 msgid "Open chat"
-msgstr ""
+msgstr "Otevřít chat"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_res_partner_opt_out
@@ -2273,7 +2273,7 @@ msgid ""
 "email. If not set, the english version will be used. This should usually be "
 "a placeholder expression that provides the appropriate language, e.g. "
 "${object.partner_id.lang}."
-msgstr ""
+msgstr "Volitelný překladový jazyk (kód ISO), který lze vybrat při odesílání e-mailu. Pokud není nastavena, bude použita anglická verze. To by mělo být obvykle zástupný výraz, který poskytuje vhodný jazyk, např.  ${object.partner_id.lang}."
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_email_template_preview_null_value
@@ -2381,7 +2381,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mail.field_mail_mail_needaction_partner_ids
 #: model:ir.model.fields,field_description:mail.field_mail_message_needaction_partner_ids
 msgid "Partners with Need Action"
-msgstr ""
+msgstr "Partneři s potřebou akce"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_email_template_preview_auto_delete
@@ -2450,7 +2450,7 @@ msgstr ""
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.email_template_form
 msgid "Preferred reply address"
-msgstr ""
+msgstr "Preferovaná adresa odpovědi"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_email_template_preview_reply_to
@@ -2479,7 +2479,7 @@ msgstr "Podmínky"
 #: code:addons/mail/static/src/xml/client_action.xml:44
 #, python-format
 msgid "Private Channels"
-msgstr ""
+msgstr "Soukromé kanály"
 
 #. module: mail
 #: code:addons/mail/wizard/mail_compose_message.py:176
@@ -2495,7 +2495,7 @@ msgstr "Přijaté"
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_channel_partner_partner_id
 msgid "Recipient"
-msgstr ""
+msgstr "Adresát"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_email_template_preview_partner_ids
@@ -2542,7 +2542,7 @@ msgstr "Související dokumentový model"
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_tracking_value_form
 msgid "Related Message"
-msgstr ""
+msgstr "Související zpráva"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_followers_partner_id
@@ -2646,7 +2646,7 @@ msgstr "Uložit jako novou šablonu"
 #: code:addons/mail/static/src/js/chat_window.js:23
 #, python-format
 msgid "Say something"
-msgstr ""
+msgstr "Řekněte něco"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_alias_search
@@ -2669,7 +2669,7 @@ msgstr "Zvolte cílové pole ze souvisejícího dokumentového modelu.\nPokud jd
 #. module: mail
 #: selection:mail.channel,public:0
 msgid "Selected group of users"
-msgstr ""
+msgstr "Vybraná skupina uživatelů"
 
 #. module: mail
 #. openerp-web
@@ -2708,12 +2708,12 @@ msgstr "Odeslat zprávu"
 #: code:addons/mail/static/src/xml/client_action.xml:135
 #, python-format
 msgid "Send mail"
-msgstr ""
+msgstr "Poslat mail"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_channel_email_send
 msgid "Send messages by email"
-msgstr ""
+msgstr "Odeslat zprávy e-mailem"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_email_template_preview_email_from
@@ -2729,7 +2729,7 @@ msgstr ""
 #: code:addons/mail/static/src/xml/client_action.xml:94
 #, python-format
 msgid "Sends messages by email"
-msgstr ""
+msgstr "Odesílá zprávy e-mailem"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_search selection:mail.mail,state:0
@@ -2884,7 +2884,7 @@ msgstr "Předmět:"
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_shortcode_substitution
 msgid "Substitution"
-msgstr ""
+msgstr "Náhrada"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message_subtype_id
@@ -3003,7 +3003,7 @@ msgstr "Pole obsahuje obrázek používaný jako fotografie skupiny, maximálně
 msgid ""
 "This group is visible by non members. Invisible groups can add members "
 "through the invite button."
-msgstr ""
+msgstr "Tato skupina je viditelná nečleny. Neviditelné skupiny mohou přidávat členy prostřednictvím tlačítka Pozvat."
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_search
@@ -3081,20 +3081,20 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mail.view_mail_tracking_value_form
 #: model:ir.ui.view,arch_db:mail.view_mail_tracking_value_tree
 msgid "Tracking Value"
-msgstr ""
+msgstr "Sledovaná hodnota"
 
 #. module: mail
 #: model:ir.actions.act_window,name:mail.action_view_mail_tracking_value
 #: model:ir.ui.menu,name:mail.menu_mail_tracking_value
 msgid "Tracking Values"
-msgstr ""
+msgstr "Sledování hodnot"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message_tracking_value_ids
 #: model:ir.model.fields,field_description:mail.field_mail_mail_tracking_value_ids
 #: model:ir.model.fields,field_description:mail.field_mail_message_tracking_value_ids
 msgid "Tracking values"
-msgstr ""
+msgstr "Sledovací hodnoty"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message_message_type
@@ -3120,7 +3120,7 @@ msgstr "E-mail není možno odeslat. Nastavte prosím e-mailovou adresu nebo ali
 #: code:addons/mail/static/src/xml/client_action.xml:98
 #, python-format
 msgid "Undo"
-msgstr ""
+msgstr "vrátit"
 
 #. module: mail
 #. openerp-web
@@ -3157,28 +3157,28 @@ msgstr "Počítadlo nepřečtených zpráv"
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_message_search
 msgid "Unread messages"
-msgstr ""
+msgstr "Nepřečtené zprávy"
 
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/xml/client_action.xml:126
 #, python-format
 msgid "Unstar all"
-msgstr ""
+msgstr "Odebrat hvězdy všem"
 
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/xml/client_action.xml:126
 #, python-format
 msgid "Unstar all messages"
-msgstr ""
+msgstr "Odznačit všechny zprávy"
 
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/xml/client_action.xml:127
 #, python-format
 msgid "Unsubscribe"
-msgstr ""
+msgstr "Odhlásit odběr"
 
 #. module: mail
 #. openerp-web
@@ -3192,14 +3192,14 @@ msgstr ""
 #: code:addons/mail/static/src/js/client_action.js:425
 #, python-format
 msgid "Unsubscribed"
-msgstr ""
+msgstr "odhlášen"
 
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/xml/thread.xml:178
 #, python-format
 msgid "Uploading"
-msgstr ""
+msgstr "Nahrávání"
 
 #. module: mail
 #. openerp-web
@@ -3211,7 +3211,7 @@ msgstr "Chyba uploadu"
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message_use_active_domain
 msgid "Use active domain"
-msgstr ""
+msgstr "Použít aktivní doménu"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message_template_id
@@ -3270,19 +3270,19 @@ msgstr "Když je pole vztahu vybráno jako první, zobrazuje toto dokumentový m
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_compose_message_is_log
 msgid "Whether the message is an internal note (comment mode only)"
-msgstr ""
+msgstr "Zda je zpráva interní poznámkou (pouze režim poznámek)"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.mail_channel_view_form
 msgid "Who can follow the group's activities?"
-msgstr ""
+msgstr "Kdo může sledovat aktivity skupiny?"
 
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/xml/composer.xml:7
 #, python-format
 msgid "Write something..."
-msgstr ""
+msgstr "Napište něco..."
 
 #. module: mail
 #. openerp-web
@@ -3312,7 +3312,7 @@ msgstr ""
 msgid ""
 "You cannot create a new user from here.\n"
 " To create new user please go to configuration panel."
-msgstr ""
+msgstr "Nelze odtud vytvořit nového uživatele. Chcete-li vytvořit nového uživatele, přejděte na konfigurační panel."
 
 #. module: mail
 #: code:addons/mail/models/mail_channel.py:125
@@ -3320,7 +3320,7 @@ msgstr ""
 msgid ""
 "You cannot delete those groups, as the Whole Company group is required by "
 "other modules."
-msgstr ""
+msgstr "Tyto skupiny nelze smazat, protože ostatní moduly vyžadují skupinu celé společnosti."
 
 #. module: mail
 #: code:addons/mail/models/mail_thread.py:315
@@ -3335,7 +3335,7 @@ msgstr ""
 #: code:addons/mail/static/src/js/chat_manager.js:478
 #, python-format
 msgid "You have been invited to: "
-msgstr ""
+msgstr "Byl jste pozván do:"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_email_template_preview_attachment_ids
@@ -3350,7 +3350,7 @@ msgstr "K této šabloně můžete přiložit soubory, které budou přidány ke
 #: code:addons/mail/static/src/js/client_action.js:401
 #, python-format
 msgid "You unsubscribed from <b>%s</b>."
-msgstr ""
+msgstr "Jste odhlášen z <b>%s</b>."
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_server_action_form_template
@@ -3363,7 +3363,7 @@ msgstr ""
 #: code:addons/mail/models/ir_actions.py:32
 #, python-format
 msgid "Your template should define email_from"
-msgstr ""
+msgstr "Vaše šablona by měla definovat email_from"
 
 #. module: mail
 #: model:ir.model,name:mail.model_base_config_settings
@@ -3430,14 +3430,14 @@ msgstr ""
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_general_configuration_mail_alias_domain
 msgid "mycompany.odoo.com"
-msgstr ""
+msgstr "mycompany.odoo.com"
 
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/js/thread.js:142
 #, python-format
 msgid "now"
-msgstr ""
+msgstr "teď"
 
 #. module: mail
 #. openerp-web
@@ -3455,17 +3455,17 @@ msgstr "publisher_warranty.contract"
 #. module: mail
 #: model:mail.channel,name:mail.channel_3
 msgid "rd"
-msgstr ""
+msgstr "rd"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.email_template_preview_form
 msgid "record:"
-msgstr ""
+msgstr "záznam:"
 
 #. module: mail
 #: model:mail.channel,name:mail.channel_1
 msgid "sales"
-msgstr ""
+msgstr "prodeje"
 
 #. module: mail
 #. openerp-web

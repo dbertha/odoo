@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-09 09:17+0000\n"
-"PO-Revision-Date: 2018-04-25 11:20+0000\n"
+"PO-Revision-Date: 2019-03-19 18:04+0000\n"
 "Last-Translator: Dorin Hongu <dhongu@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/odoo/odoo-9/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -360,7 +360,7 @@ msgstr ""
 #. module: project
 #: model:ir.ui.view,arch_db:project.project_planner
 msgid "<strong>Billing</strong>"
-msgstr ""
+msgstr "<strong>Facturare</strong>"
 
 #. module: project
 #: model:ir.ui.view,arch_db:project.project_planner
@@ -1635,13 +1635,13 @@ msgstr "Urmări"
 #: model:ir.model.fields,field_description:project.field_project_project_message_channel_ids
 #: model:ir.model.fields,field_description:project.field_project_task_message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Urmăritori (Canale)"
 
 #. module: project
 #: model:ir.model.fields,field_description:project.field_project_project_message_partner_ids
 #: model:ir.model.fields,field_description:project.field_project_task_message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Urmăritori (Parteneri)"
 
 #. module: project
 #: model:ir.ui.view,arch_db:project.project_planner
@@ -2396,7 +2396,7 @@ msgstr "Organizează întalniri"
 msgid ""
 "Organize your activities (plan tasks, track issues, invoice timesheets) for "
 "internal, personal or customer projects."
-msgstr ""
+msgstr "Organizați-vă activitățile (planificați sarcini, urmăriți problemele, facturați pontajul) pentru proiecte interne, personale sau pentru clienți."
 
 #. module: project
 #: model:ir.ui.view,arch_db:project.project_planner
