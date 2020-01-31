@@ -345,15 +345,26 @@ var ScaleScreenWidget = ScreenWidget.extend({
             self.order_product();
         });
 
-        queue.schedule(function(){
-            return self.pos.proxy.scale_read().then(function(weight){
-                self.set_weight(weight.weight);
-            });
-        },{duration:500, repeat: true});
+        this.$('.get-weight').click(function(){
+            // add product *after* switching screen to scroll properly
+            self.get_weight();
+        });
+
+        // queue.schedule(function(){
+        //     return self.pos.proxy.scale_read().then(function(weight){
+        //         self.set_weight(weight.weight);
+        //     });
+        // },{duration:500, repeat: true});
 
     },
     get_product: function(){
         return this.gui.get_current_screen_param('product');
+    },
+    get_weight: function(){
+        var self = this;
+        return self.pos.proxy.scale_read().then(function(weight){
+                self.set_weight(weight.weight);
+            });
     },
     _get_active_pricelist: function(){
         var current_order = this.pos.get_order();

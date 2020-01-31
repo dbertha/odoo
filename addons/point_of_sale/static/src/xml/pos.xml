@@ -306,8 +306,13 @@
                         <t t-esc="widget.format_currency(widget.get_product_price()) + '/' + widget.get_product_uom()" />
                     </div>
                     <div class='computed-price'>
-                        123.14 €
+                        0 €
                     </div>
+                    <div class='get-weight'>
+                        Peser
+                        <i class='fa fa-balance-scale'></i>
+                    </div>
+
                     <div class='buy-product'>
                         Order
                         <i class='fa fa-angle-double-right'></i>
