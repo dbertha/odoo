@@ -356,7 +356,7 @@ var ScaleScreenWidget = ScreenWidget.extend({
         }
 
         return current_pricelist;
-    }
+    },
     get_weight: function(){
         var self = this;
         return self.pos.proxy.scale_read().then(function(weight){
