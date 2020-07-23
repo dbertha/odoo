@@ -427,13 +427,17 @@ var ProxyDevice  = core.Class.extend(mixins.PropertiesMixin,{
     scale_read: function () {
         var self = this;
         if (self.use_debug_weight) {
+            console.log("debug mode");
             return Promise.resolve({weight:this.debug_weight, unit:'Kg', info:'ok'});
         }
         return new Promise(function (resolve, reject) {
+            console.log("send scale read");
             self.message('scale_read',{})
             .then(function (weight) {
+                console.log(weight);
                 resolve(weight);
             }, function () { //failed to read weight
+                console.log("failed to read weight");
                 resolve({weight:0.0, unit:'Kg', info:'ok'});
             });
         });

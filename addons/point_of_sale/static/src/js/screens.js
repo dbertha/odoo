@@ -321,7 +321,12 @@ var ScaleScreenWidget = ScreenWidget.extend({
             // add product *after* switching screen to scroll properly
             self.order_product();
         });
-        this._read_scale();
+        this.$('.get-weight').click(function(){
+            console.log("click");            
+            self.get_weight();
+            console.log("end of click");
+        });
+        // this._read_scale();
     },
 
     _read_scale: function() {
@@ -332,10 +337,7 @@ var ScaleScreenWidget = ScreenWidget.extend({
         //         self.set_weight(weight.weight);
         //     });
         // },{duration:500, repeat: true});
-        this.$('.get-weight').click(function(){
-            // add product *after* switching screen to scroll properly
-            self.get_weight();
-        });
+        
 
         // queue.schedule(function(){
         //     return self.pos.proxy.scale_read().then(function(weight){
@@ -358,9 +360,13 @@ var ScaleScreenWidget = ScreenWidget.extend({
         return current_pricelist;
     },
     get_weight: function(){
+        console.log("in get weight");
         var self = this;
         return self.pos.proxy.scale_read().then(function(weight){
+                console.log("set weight");
+                console.log(weight);
                 self.set_weight(weight.weight);
+                console.log("set weight end");
             });
     },
     order_product: function(){
