@@ -2000,6 +2000,9 @@ exports.Orderline = Backbone.Model.extend({
         var taxes =  this.pos.taxes;
         var taxdetail = {};
         var product_taxes = [];
+        console.log(product);
+        console.log(taxes_ids)
+        console.log(taxes)
 
         _(taxes_ids).each(function(el){
             var tax = _.detect(taxes, function(t){
@@ -2008,6 +2011,7 @@ exports.Orderline = Backbone.Model.extend({
             product_taxes.push.apply(product_taxes, self._map_tax_fiscal_position(tax));
         });
         product_taxes = _.uniq(product_taxes, function(tax) { return tax.id; });
+        console.log(product_taxes);
 
         var all_taxes = this.compute_all(product_taxes, price_unit, this.get_quantity(), this.pos.currency.rounding);
         var all_taxes_before_discount = this.compute_all(product_taxes, this.get_unit_price(), this.get_quantity(), this.pos.currency.rounding);
