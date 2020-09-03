@@ -236,6 +236,16 @@ var PosDB = core.Class.extend({
         str = '' + partner.id + ':' + str.replace(':','') + '\n';
         return str;
     },
+    _partner_search_string_reduced: function(partner){
+        var str =  partner.name || '';
+        
+        if(partner.email){
+            str += '|' + partner.email;
+        }
+
+        str = '' + partner.id + ':' + str.replace(':','') + '\n';
+        return str;
+    },
     add_partners: function(partners){
         var updated_count = 0;
         var new_write_date = '';
@@ -272,6 +282,7 @@ var PosDB = core.Class.extend({
             // rebuild the search string and the barcode indexing
 
             this.partner_search_string = "";
+            this.partner_search_string_reduced = "";
             this.partner_by_barcode = {};
 
             for (var id in this.partner_by_id) {
@@ -286,6 +297,7 @@ var PosDB = core.Class.extend({
                                   (partner.state_id ? partner.state_id[1] + ', ': '') +
                                   (partner.country_id ? partner.country_id[1]: '');
                 this.partner_search_string += this._partner_search_string(partner);
+                this.partner_search_string_reduced += this._partner_search_string_reduced(partner);
             }
         }
         return updated_count;
@@ -317,7 +329,9 @@ var PosDB = core.Class.extend({
         }
         var results = [];
         for(var i = 0; i < this.limit; i++){
-            var r = re.exec(utils.unaccent(this.partner_search_string));
+            // var r = re.exec(utils.unaccent(this.partner_search_string));
+            var r = re.exec(utils.unaccent(this.partner_search_string_reduced));
+
             if(r){
                 var id = Number(r[1]);
                 results.push(this.get_partner_by_id(id));
