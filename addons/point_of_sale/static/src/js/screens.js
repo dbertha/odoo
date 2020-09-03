@@ -1249,17 +1249,21 @@ var ClientListScreenWidget = ScreenWidget.extend({
         }
 
         this.$('.searchbox input').on('keypress',function(event){
-
+            clearTimeout(search_timeout);
             var searchbox = this;
-            console.log(searchbox.value);
 
-            if(searchbox.value.length < 3){
-                clearTimeout(search_timeout);
 
-                search_timeout = setTimeout(function(){
+            
+                
+
+            search_timeout = setTimeout(function(){
+                console.log(searchbox.value);
+                console.log(searchbox.value.length);
+                if(searchbox.value.length < 3){
                     self.perform_search(searchbox.value, event.which === 13);
-                },70);
-            }
+                }
+            },70);
+            
         });
 
         this.$('.searchbox .search-clear').click(function(){
