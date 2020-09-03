@@ -1249,13 +1249,17 @@ var ClientListScreenWidget = ScreenWidget.extend({
         }
 
         this.$('.searchbox input').on('keypress',function(event){
-            clearTimeout(search_timeout);
 
             var searchbox = this;
+            console.log(searchbox.value);
 
-            search_timeout = setTimeout(function(){
-                self.perform_search(searchbox.value, event.which === 13);
-            },70);
+            if(searchbox.value.length < 3){
+                clearTimeout(search_timeout);
+
+                search_timeout = setTimeout(function(){
+                    self.perform_search(searchbox.value, event.which === 13);
+                },70);
+            }
         });
 
         this.$('.searchbox .search-clear').click(function(){
@@ -1278,14 +1282,22 @@ var ClientListScreenWidget = ScreenWidget.extend({
     perform_search: function(query, associate_result){
         var customers;
         if(query){
+            console.time('search_partner');
             customers = this.pos.db.search_partner(query);
+            console.timeEnd('search_partner');
+            console.time('display_client_details');
+
             this.display_client_details('hide');
+            console.timeEnd('display_client_details');
+
             if ( associate_result && customers.length === 1){
                 this.new_client = customers[0];
                 this.save_changes();
                 this.gui.back();
             }
+            console.time('render_list');
             this.render_list(customers);
+            console.timeEnd('render_list');
         }else{
             customers = this.pos.db.get_partners_sorted();
             this.render_list(customers);
