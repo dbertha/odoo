@@ -1259,7 +1259,7 @@ var ClientListScreenWidget = ScreenWidget.extend({
             search_timeout = setTimeout(function(){
                 console.log(searchbox.value);
                 console.log(searchbox.value.length);
-                if(searchbox.value.length < 3){
+                if(searchbox.value.length > 3){
                     self.perform_search(searchbox.value, event.which === 13);
                 }
             },70);
