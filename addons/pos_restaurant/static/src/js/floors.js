@@ -328,6 +328,8 @@ var FloorScreenWidget = screens.ScreenWidget.extend({
             model: 'pos.config',
             method: 'get_tables_order_count',
             args: [this.pos.config.id],
+        },{
+            timeout: 500,
         })
         .then(function (result){
             result.forEach(function(table){
