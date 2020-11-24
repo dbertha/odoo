@@ -7,7 +7,7 @@ from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError
 from odoo.osv import expression
 from odoo.tools.float_utils import float_compare, float_is_zero, float_round
-
+import traceback
 import logging
 
 _logger = logging.getLogger(__name__)
@@ -460,7 +460,21 @@ class StockQuant(models.Model):
             # if we want to unreserve
             available_quantity = sum(quants.mapped('reserved_quantity'))
             if float_compare(abs(quantity), available_quantity, precision_rounding=rounding) > 0:
-                raise UserError(_('It is not possible to unreserve more products of %s than you have in stock.') % product_id.display_name)
+                _logger.error(quants)
+                _logger.error(available_quantity)
+                
+                #dirty fix : resync reserve quantity reserved
+                reserved_quantity_ml = sum(self.env['stock.move.line'].sudo().search([('state', 'in', ['partially_available', 'assigned']),('product_id','=', product_id.id),
+                    ('location_id','=', location_id.id),('lot_id','=', lot_id and lot_id.id or False),('package_id','=', package_id and package_id.id or False),('owner_id','=', owner_id and owner_id.id or False)]).mapped('product_uom_qty'))
+                _logger.error(reserved_quantity_ml)
+                if available_quantity <  reserved_quantity_ml :
+                    if sum(quants.mapped('quantity')) > reserved_quantity_ml + available_quantity : #dirty : avoid to reserve more than in stock
+                        self._update_reserved_quantity(product_id,location_id,reserved_quantity_ml - available_quantity,lot_id,package_id,owner_id,strict)
+                    else : 
+                        return reserved_quants #HERE WE KEEP RESERVED QTIES UNSYNC
+                else :
+                    _logger.error(traceback.print_stack())
+                    raise UserError(_('It is not possible to unreserve more products of %s than you have in stock.') % product_id.display_name)
         else:
             return reserved_quants
 
