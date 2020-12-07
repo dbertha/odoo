@@ -193,6 +193,32 @@ class TestFields(common.TransactionCase):
             sum(invalid_transitive_depends in field_triggers.get(None, []) for field_triggers in triggers.values()), 1
         )
 
+    @mute_logger('odoo.fields')
+    def test_10_computed_stored_x_name(self):
+        # create a custom model with two fields
+        self.env["ir.model"].create({
+            "name": "x_test_10_compute_store_x_name",
+            "model": "x_test_10_compute_store_x_name",
+            "field_id": [
+                (0, 0, {'name': 'x_name', 'ttype': 'char'}),
+                (0, 0, {'name': 'x_stuff_id', 'ttype': 'many2one', 'relation': 'ir.model'}),
+            ],
+        })
+        # set 'x_stuff_id' refer to a model not loaded yet
+        self.cr.execute("""
+            UPDATE ir_model_fields
+            SET relation = 'not.loaded'
+            WHERE model = 'x_test_10_compute_store_x_name' AND name = 'x_stuff_id'
+        """)
+        # set 'x_name' be computed and depend on 'x_stuff_id'
+        self.cr.execute("""
+            UPDATE ir_model_fields
+            SET compute = 'pass', depends = 'x_stuff_id.x_custom_1'
+            WHERE model = 'x_test_10_compute_store_x_name' AND name = 'x_name'
+        """)
+        # setting up models should not crash
+        self.registry.setup_models(self.cr)
+
     def test_10_display_name(self):
         """ test definition of automatic field 'display_name' """
         field = type(self.env['test_new_api.discussion']).display_name
@@ -686,6 +712,20 @@ class TestFields(common.TransactionCase):
         })
         check(1.0)
 
+    def test_20_like(self):
+        """ test filtered_domain() on char fields. """
+        record = self.env['test_new_api.multi.tag'].create({'name': 'Foo'})
+        self.assertTrue(record.filtered_domain([('name', 'like', 'F')]))
+        self.assertTrue(record.filtered_domain([('name', 'ilike', 'f')]))
+
+        record.name = 'Bar'
+        self.assertFalse(record.filtered_domain([('name', 'like', 'F')]))
+        self.assertFalse(record.filtered_domain([('name', 'ilike', 'f')]))
+
+        record.name = False
+        self.assertFalse(record.filtered_domain([('name', 'like', 'F')]))
+        self.assertFalse(record.filtered_domain([('name', 'ilike', 'f')]))
+
     def test_21_date(self):
         """ test date fields """
         record = self.env['test_new_api.mixed'].create({})
@@ -983,6 +1023,7 @@ class TestFields(common.TransactionCase):
     def test_25_related_multi(self):
         """ test write() on several related fields based on a common computed field. """
         foo = self.env['test_new_api.foo'].create({'name': 'A', 'value1': 1, 'value2': 2})
+        oof = self.env['test_new_api.foo'].create({'name': 'B', 'value1': 1, 'value2': 2})
         bar = self.env['test_new_api.bar'].create({'name': 'A'})
         self.assertEqual(bar.foo, foo)
         self.assertEqual(bar.value1, 1)
@@ -992,6 +1033,11 @@ class TestFields(common.TransactionCase):
         bar.write({'value1': 3, 'value2': 4})
         self.assertEqual(foo.value1, 3)
         self.assertEqual(foo.value2, 4)
+
+        # modify 'name', and search on 'foo': this should flush 'name'
+        bar.name = 'B'
+        self.assertEqual(bar.foo, oof)
+        self.assertIn(bar, bar.search([('foo', 'in', oof.ids)]))
 
     def test_26_inherited(self):
         """ test inherited fields. """
@@ -1794,10 +1840,21 @@ class TestFields(common.TransactionCase):
         self.assertEqual(image_data_uri(record.image_256)[:30], 'data:image/png;base64,iVBORw0K')
 
         # ensure invalid image raises
-        with self.assertRaises(UserError):
+        with self.assertRaises(UserError), self.cr.savepoint():
             record.write({
                 'image': 'invalid image',
             })
+
+        # assignment of invalid image on new record does nothing, the value is
+        # taken from origin instead (use-case: onchange)
+        new_record = record.new(origin=record)
+        new_record.image = '31.54 Kb'
+        self.assertEqual(record.image, image_h)
+        self.assertEqual(new_record.image, image_h)
+
+        # assignment to new record with origin should not do any query
+        with self.assertQueryCount(0):
+            new_record.image = image_w
 
     def test_95_binary_bin_size(self):
         binary_value = base64.b64encode(b'content')

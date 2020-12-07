@@ -299,6 +299,8 @@ var PosDB = core.Class.extend({
                 this.partner_search_string += this._partner_search_string(partner);
                 this.partner_search_string_reduced += this._partner_search_string_reduced(partner);
             }
+
+            this.partner_search_string = utils.unaccent(this.partner_search_string);
         }
         return updated_count;
     },

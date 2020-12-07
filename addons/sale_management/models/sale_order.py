@@ -155,7 +155,7 @@ class SaleOrderLine(models.Model):
         if self.product_id and self.order_id.sale_order_template_id:
             for line in self.order_id.sale_order_template_id.sale_order_template_line_ids:
                 if line.product_id == self.product_id:
-                    self.name = line.name
+                    self.name = line.name + self._get_sale_order_line_multiline_description_variants()
                     break
         return domain
 
@@ -205,7 +205,8 @@ class SaleOrderOption(models.Model):
         new_sol = self.env['sale.order.line'].new(values)
         new_sol._onchange_discount()
         self.discount = new_sol.discount
-        self.price_unit = new_sol._get_display_price(product)
+        if self.order_id.pricelist_id and self.order_id.partner_id:
+            self.price_unit = new_sol._get_display_price(product)
         return {'domain': domain}
 
     def button_add_to_order(self):
