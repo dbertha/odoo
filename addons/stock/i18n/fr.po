@@ -4382,6 +4382,12 @@ msgid "Please add some items to move."
 msgstr "Ajoutez quelques objets à déplacer."
 
 #. module: stock
+#: code:addons/stock/models/stock_quant.py:92
+#, python-format
+msgid "Please check the following serial number (name, id): "
+msgstr ""
+
+#. module: stock
 #: code:addons/stock/wizard/stock_picking_return.py:0
 #, python-format
 msgid "Please specify at least one non-zero quantity."
@@ -6558,6 +6564,16 @@ msgid ""
 msgstr ""
 "Cette opération semble être chaînée avec une autre. Plus tard, si vous recevez les produits\n"
 "que vous venez de retourner, assurez-vous <b>d'inverser</b> l'opération de retour dans le but d'éviter que les règles logistiques s'appliquent à nouveau (ce qui créerait des opérations dupliquées)"
+
+#. module: stock
+#: code:addons/stock/models/product.py:0
+#, python-format
+msgid ""
+"This product has been used in at least one inventory movement. It is not "
+"advised to change the Product Type since it can lead to inconsistencies. A "
+"better solution could be to archive the product and create a new one "
+"instead."
+msgstr ""
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_change_product_qty__new_quantity
