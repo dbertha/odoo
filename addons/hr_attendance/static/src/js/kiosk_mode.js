@@ -53,7 +53,7 @@ var KioskMode = AbstractAction.extend({
                     self.do_warn(result.warning);
                     var audio = new Audio(); 
                     audio.src = "/hr_attendance/static/src/audio/beep.mp3";
-                    Promise.resolve(this._audio.play()).catch(_.noop);
+                    Promise.resolve(audio.play()).catch(_.noop);
                     core.bus.on('barcode_scanned', self, self._onBarcodeScanned);
                 }
             }, function () {
