@@ -40,6 +40,8 @@ var KioskMode = AbstractAction.extend({
 
     _onBarcodeScanned: function(barcode) {
         var self = this;
+        console.log('_onBarcodeScanned');
+        console.log(barcode);
         core.bus.off('barcode_scanned', this, this._onBarcodeScanned);
         this._rpc({
                 model: 'hr.employee',
