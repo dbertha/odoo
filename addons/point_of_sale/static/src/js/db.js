@@ -245,6 +245,9 @@ var PosDB = core.Class.extend({
         if(partner.phone){
             str += '|' + partner.phone.split(' ').join('');
         }
+        if(partner.mobile){
+            str += '|' + partner.mobile.split(' ').join('');
+        }
 
         str = '' + partner.id + ':' + str.replace(':','') + '\n';
         return str;
