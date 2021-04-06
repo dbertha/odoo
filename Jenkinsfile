@@ -40,7 +40,7 @@ echo "$MODULE_LIST";
 
     stage('Test') {
       steps {
-        sh './odoo/odoo-bin --test-enable --stop-after-init -d $BUILD_NUMBER'
+        sh './odoo/odoo-bin --test-enable --stop-after-init -d $BUILD_NUMBER -u $module_list'
       }
     }
 
