@@ -29,10 +29,10 @@ pipeline {
 
         sh 'createdb $BUILD_NUMBER'
         script { 
-          module_list = sh(returnStdout: true, script: """MODULE_LIST=`psql -h pg11-xlarge.cedyenranbub.eu-west-3.rds.amazonaws.com -U reporting fonteynev13prod -t -c "select >
+          module_list = sh(returnStdout: true, script: '''MODULE_LIST=`psql -h pg11-xlarge.cedyenranbub.eu-west-3.rds.amazonaws.com -U reporting fonteynev13prod -t -c "select >
   MODULE_LIST=`echo $MODULE_LIST | sed 's/ /,/g'`;
   echo "$MODULE_LIST";
-  """).trim()
+  ''').trim()
         }
         echo "$module_list"
       }
