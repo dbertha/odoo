@@ -28,6 +28,7 @@ pipeline {
         }
 
         sh 'createdb $BUILD_NUMBER'
+        sh 'MODULE_LIST=`psql -h pg11-xlarge.cedyenranbub.eu-west-3.rds.amazonaws.com -U reporting fonteynev13prod -t -c "select name from ir_module_module where state = \'installed\';"`;env.MODULE_LIST=`echo $MODULE_LIST | sed \'s/ /,/g\'`'
       }
     }
 
