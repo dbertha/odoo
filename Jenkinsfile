@@ -27,7 +27,7 @@ pipeline {
           git(url: 'https://github.com/dbertha/odoo.git', branch: '13.0', credentialsId: 'b4450363-44ee-4dea-b6a4-cdb8165a5daf')
         }
 
-        sh 'createdb -U postgres $BUILD_NUMBER'
+        sh 'createdb $BUILD_NUMBER'
       }
     }
 
