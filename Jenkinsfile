@@ -28,8 +28,8 @@ pipeline {
         }
 
         sh 'createdb $BUILD_NUMBER'
-        module_list = sh(returnStdout: true, script: 'MODULE_LIST=`psql -h pg11-xlarge.cedyenranbub.eu-west-3.rds.amazonaws.com -U reporting fonteynev13prod -t -c "select name from ir_module_module where state = 'installed';"`;MODULE_LIST=`echo $MODULE_LIST | sed 's/ /,/g'`;echo "$MODULE_LIST"
-').trim()
+        module_list = sh(returnStdout: true, script: """MODULE_LIST=`psql -h pg11-xlarge.cedyenranbub.eu-west-3.rds.amazonaws.com -U reporting fonteynev13prod -t -c "select name from ir_module_module where state = 'installed';"`;MODULE_LIST=`echo $MODULE_LIST | sed 's/ /,/g'`;echo "$MODULE_LIST"
+""").trim()
     }
 
     stage('Test') {
