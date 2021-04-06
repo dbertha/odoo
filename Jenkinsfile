@@ -33,7 +33,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh './odoo/odoo-bin --test-enable'
+        sh './odoo/odoo-bin --test-enable --stop-after-init -d $BUILD_NUMBER'
       }
     }
 
