@@ -32,7 +32,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh './odoo-bin --test-enable'
+        sh './odoo/odoo-bin --test-enable'
       }
     }
 
