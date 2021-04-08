@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'mandatory-label'
+      label 'master'
       customWorkspace '/data/jenkins/odoo_pipeline'
     }
   }
