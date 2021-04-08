@@ -46,7 +46,7 @@ echo "$MODULE_LIST";
                 }
       steps {
         echo "$module_list"
-        sh(returnStdout: true, script:'./odoo/odoo-bin --test-enable --stop-after-init -d $BUILD_NUMBER -i $module_list')
+        sh(returnStdout: true, script:'./odoo/odoo-bin --test-enable --stop-after-init -d $BUILD_NUMBER -i $module_list --log-level=error')
       }
     }
 
