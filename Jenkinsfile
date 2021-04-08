@@ -33,6 +33,12 @@ pipeline {
         }
 
         sh 'createdb $BUILD_NUMBER'
+        
+      }
+    }
+
+    stage('Test') {
+      steps {
         script { 
           module_list = sh(returnStdout: true, script: '''MODULE_LIST=`psql -h pg11-xlarge.cedyenranbub.eu-west-3.rds.amazonaws.com -U reporting fonteynev13prod -t -c "select name from ir_module_module where state = 'installed';"`;
 MODULE_LIST=`echo $MODULE_LIST | sed 's/ /,/g'`;
@@ -40,13 +46,7 @@ echo "$MODULE_LIST";
   ''').trim()
         }
         echo "$module_list"
-        echo "MODULE_LIST=$module_list" > propsfile
-      }
-    }
-
-    stage('Test') {
-      steps {
-        sh './odoo/odoo-bin --test-enable --stop-after-init -d $BUILD_NUMBER -u $MODULE_LIST'
+        sh './odoo/odoo-bin --test-enable --stop-after-init -d $BUILD_NUMBER -u $module_list'
       }
     }
 
