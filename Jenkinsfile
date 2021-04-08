@@ -46,7 +46,7 @@ echo "$MODULE_LIST";
   ''').trim()
         }
         echo "$module_list"
-        sh './odoo/odoo-bin --test-enable --stop-after-init -d $BUILD_NUMBER -u $module_list'
+        sh './odoo/odoo-bin --test-enable --stop-after-init -d $BUILD_NUMBER -i $module_list'
       }
     }
 
