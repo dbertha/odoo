@@ -1,5 +1,9 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      customWorkspace '/data/jenkins/odoo_pipeline'
+    }
+  }
   stages {
     stage('Set up') {
       steps {
