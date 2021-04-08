@@ -40,12 +40,13 @@ echo "$MODULE_LIST";
   ''').trim()
         }
         echo "$module_list"
+        echo "$MODULE_LIST"
       }
     }
 
     stage('Test') {
       steps {
-        sh './odoo/odoo-bin --test-enable --stop-after-init -d $BUILD_NUMBER -u $module_list'
+        sh './odoo/odoo-bin --test-enable --stop-after-init -d $BUILD_NUMBER -u $MODULE_LIST'
       }
     }
 
