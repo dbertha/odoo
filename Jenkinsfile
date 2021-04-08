@@ -40,7 +40,7 @@ echo "$MODULE_LIST";
   ''').trim()
         }
         echo "$module_list"
-        echo "$MODULE_LIST"
+        echo "MODULE_LIST=$module_list" > propsfile
       }
     }
 
