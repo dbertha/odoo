@@ -47,9 +47,9 @@ echo "$MODULE_LIST";
                 }
       steps {
         echo "Testing on New DB"
-        sh(returnStdout: true, script:'./odoo/odoo-bin --test-enable --test-tags ftktest,sale,point_of_sale,account,website_sale --stop-after-init -d $BUILD_NUMBER -i $module_list --log-level=error')
+        sh(returnStdout: true, script:'./odoo/odoo-bin --test-enable --test-tags ftktest --stop-after-init -d $BUILD_NUMBER -i $module_list --log-level=error')
         echo "Testing on Test DB"
-        sh(returnStdout: true, script:'./odoo/odoo-bin --test-enable --test-tags ftktest,sale,point_of_sale,account,website_sale --stop-after-init -d fonteyne_testing -u all --log-level=error')
+        sh(returnStdout: true, script:'./odoo/odoo-bin --test-enable --test-tags ftktest --stop-after-init -d fonteyne_testing -u all --log-level=error')
         script {currentBuild.result = 'SUCCESS'}
       }
     }
