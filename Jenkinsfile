@@ -49,7 +49,7 @@ echo "$MODULE_LIST";
         sh(returnStdout: true, script:'./odoo/odoo-bin --test-enable --test-tags ftktest,sale,point_of_sale,account,website_sale --stop-after-init -d $BUILD_NUMBER -i $module_list --log-level=error')
         echo "Testing on Test DB"
         sh(returnStdout: true, script:'./odoo/odoo-bin --test-enable --test-tags ftktest,sale,point_of_sale,account,website_sale --stop-after-init -d fonteyne_testing -u all --log-level=error')
-        currentBuild.result = 'SUCCESS'
+        script {currentBuild.result = 'SUCCESS'}
       }
     }
     
