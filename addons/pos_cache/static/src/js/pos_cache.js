@@ -20,7 +20,8 @@ models.PosModel = models.PosModel.extend({
         // We don't want to load product.product the normal
         // uncached way, so get rid of it.
         if (product_index !== -1) {
-            this.models.splice(product_index, 1);
+            // this.models.splice(product_index, 1);
+            product_model.domain = product_model.domain.concat([['name', 'ilike', 'work']])
         }
         return posmodel_super.load_server_data.apply(this, arguments).then(function () {
           // Give both the fields and domain to pos_cache in the
@@ -30,6 +31,8 @@ models.PosModel = models.PosModel.extend({
           // other modules) in js.
           var product_fields =  typeof product_model.fields === 'function'  ? product_model.fields(self)  : product_model.fields;
           var product_domain =  typeof product_model.domain === 'function'  ? product_model.domain(self)  : product_model.domain;
+          //don't load product with 'work' in the name with the new way
+          product_domain = product_domain.concat([['name', 'not ilike', 'work']])
             var records = rpc.query({
                     model: 'pos.config',
                     method: 'get_products_from_cache',
