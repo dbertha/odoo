@@ -1590,7 +1590,12 @@ exports.Product = Backbone.Model.extend({
     get_display_price: function(pricelist, quantity) {
         if (this.pos.config.iface_tax_included === 'total') {
             var taxes = [];
-            this.taxes_id.forEach(id => taxes.push(this.pos.taxes_by_id[id]));
+            for (var i = 0; i < this.taxes_id.length; i++) {
+                if (this.pos.taxes_by_id[this.taxes_id[i]]) {
+                    taxes.push(this.pos.taxes_by_id[this.taxes_id[i]]);
+                }
+            }
+            // this.taxes_id.forEach(id => taxes.push(this.pos.taxes_by_id[id]));
             var all_taxes = this.pos.compute_all(taxes, this.get_price(pricelist, quantity), 1, this.pos.currency.rounding);
             return all_taxes.total_included;
         } else {
