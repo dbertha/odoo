@@ -411,6 +411,14 @@ exports.PosModel = Backbone.Model.extend({
                 }
                 product.categ = _.findWhere(self.product_categories, {'id': product.categ_id[0]});
                 product.pos = self;
+                var taxes = [];
+                for (var i = 0; i < product.taxes_id.length; i++) {
+                    if (self.taxes_by_id[product.taxes_id[i]]) {
+                        taxes.push(product.taxes_id[i]);
+                    }
+                }
+                product.taxes_id = taxes; //remove taxes from other companies
+
                 return new exports.Product({}, product);
             }));
         },
