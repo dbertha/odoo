@@ -5,7 +5,7 @@ from collections import defaultdict
 from datetime import timedelta
 
 from odoo import api, fields, models, _
-from odoo.exceptions import UserError, ValidationError
+from odoo.exceptions import AccessError, UserError, ValidationError
 from odoo.tools import float_is_zero
 
 
@@ -290,14 +290,14 @@ class PosSession(models.Model):
         # Users without any accounting rights won't be able to create the journal entry. If this
         # case, switch to sudo for creation and posting.
         sudo = False
-        if (
-            not self.env['account.move'].check_access_rights('create', raise_exception=False)
-            and self.user_has_groups('point_of_sale.group_pos_user')
-        ):
-            sudo = True
-            self.sudo()._create_account_move()
-        else:
+        try:
             self._create_account_move()
+        except AccessError as e:
+            if self.user_has_groups('point_of_sale.group_pos_user'):
+                sudo = True
+                self.sudo()._create_account_move()
+            else:
+                raise e
         if self.move_id.line_ids:
             self.move_id.post() if not sudo else self.move_id.sudo().post()
             # Set the uninvoiced orders' state to 'done'
@@ -542,7 +542,7 @@ class PosSession(models.Model):
         split_cash_receivable_vals = defaultdict(list)
         for payment, amounts in split_receivables_cash.items():
             statement = statements_by_journal_id[payment.payment_method_id.cash_journal_id.id]
-            split_cash_statement_line_vals[statement].append(self._get_statement_line_vals(statement, payment.payment_method_id.receivable_account_id, amounts['amount'], payment.payment_date.date()))
+            split_cash_statement_line_vals[statement].append(self._get_statement_line_vals(statement, payment.payment_method_id.receivable_account_id, amounts['amount'], payment.payment_date))
             split_cash_receivable_vals[statement].append(self._get_split_receivable_vals(payment, amounts['amount'], amounts['amount_converted']))
         # handle combine cash payments
         combine_cash_statement_line_vals = defaultdict(list)
@@ -654,9 +654,9 @@ class PosSession(models.Model):
         ).mapped('move_lines')
         stock_account_move_lines = self.env['account.move'].search([('stock_move_id', 'in', stock_moves.ids)]).mapped('line_ids')
         for account_id in stock_output_lines:
-            ( stock_output_lines[account_id].filtered(lambda aml: not aml.reconciled)
+            ( stock_output_lines[account_id]
             | stock_account_move_lines.filtered(lambda aml: aml.account_id == account_id)
-            ).reconcile()
+            ).filtered(lambda aml: not aml.reconciled).reconcile()
         return data
 
     def _get_extra_move_lines_vals(self):
@@ -768,7 +768,7 @@ class PosSession(models.Model):
 
     def _get_statement_line_vals(self, statement, receivable_account, amount, date=False):
         return {
-            'date': date or fields.Date.context_today(self),
+            'date': fields.Date.context_today(self, timestamp=date),
             'amount': amount,
             'name': self.name,
             'statement_id': statement.id,

@@ -24,6 +24,8 @@
 # Maryam Samadi Nia <samadi@zaka.ir>, 2020
 # Martin Trigaux, 2020
 # Hamed Mohammadi <hamed@dehongi.com>, 2020
+# Mohsen Mohammadi <iammohsen.123@gmail.com>, 2021
+# rahim agh <rahim.aghareb@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
@@ -31,7 +33,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-01 12:20+0000\n"
 "PO-Revision-Date: 2019-08-26 09:06+0000\n"
-"Last-Translator: Hamed Mohammadi <hamed@dehongi.com>, 2020\n"
+"Last-Translator: rahim agh <rahim.aghareb@gmail.com>, 2021\n"
 "Language-Team: Persian (https://www.transifex.com/odoo/teams/41243/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -835,6 +837,10 @@ msgid ""
 "                your cash box, and then post entries when money comes in or\n"
 "                goes out of the cash box."
 msgstr ""
+"یک ثبت نقدی به شما امکان ثبت وجوه نقد در دفتر ثبت نقدی را می‌دهد. این ویژگی "
+"راه حل ساده‌ای برای پیگیری روزانه پرداخت‌های نقدی است. شما می‌توانید "
+"سکه‌هایی که در دخل خود دارید را وارد کنید و ورودی و خروجی به دخل را نیز به "
+"صورت مدخل جدید ثبت کنید."
 
 #. module: account
 #: code:addons/account/models/account_payment_term.py:0
@@ -946,6 +952,10 @@ msgid ""
 "either in 'Tax-Included' or in 'Tax-Excluded' mode\n"
 "(or switch twice the mode if you are already in the desired one)."
 msgstr ""
+"یک کاربر نمی‌تواند هم مالیات ‌B2B داشته باشد و هم مالیات B2C.\n"
+"شما باید به تنظیمات عمومی بروید و انتخاب کنید که قیمت‌ محصولات\n"
+"را درحالت 'با مالیات' یا 'بدون مالیات' نمایش دهد\n"
+"(یا اگر در حالت مورد نظر هستید یکبار به حالت دیگر تغییر دهید و دوباره حالت مورد نظر برگردید)."
 
 #. module: account
 #: model:res.groups,name:account.group_warning_account
@@ -1879,7 +1889,7 @@ msgstr "مقدار:"
 #: code:addons/account/models/account.py:0
 #, python-format
 msgid "An Off-Balance account can not be reconcilable"
-msgstr ""
+msgstr "یک حساب تراز نشده نمی‌تواند تهاتر شود"
 
 #. module: account
 #: code:addons/account/models/account.py:0
@@ -2492,7 +2502,7 @@ msgstr "تازیخ صورتحساب"
 #. module: account
 #: model:ir.model.fields,field_description:account.field_res_config_settings__module_account_invoice_extract
 msgid "Bill Digitalization"
-msgstr ""
+msgstr "دیجیتال سازی قبض"
 
 #. module: account
 #: model:res.groups,name:account.group_account_invoice
@@ -5786,7 +5796,7 @@ msgstr "نصب بسته‌های بیشتر"
 #. module: account
 #: model:ir.model.fields,field_description:account.field_res_company__transfer_account_id
 msgid "Inter-Banks Transfer Account"
-msgstr ""
+msgstr "حساب انتقال بین بانکی"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_res_company__transfer_account_id
@@ -5801,11 +5811,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:account.field_account_account_type__internal_group
 msgid "Internal Group"
 msgstr "گروه داخلی"
-
-#. module: account
-#: model:ir.model.fields,field_description:account.field_account_move__narration
-msgid "Internal Note"
-msgstr "یادداشت داخلی"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_account__note
@@ -7290,6 +7295,8 @@ msgid ""
 "No users can edit journal entries related to a tax prior and inclusive of "
 "this date."
 msgstr ""
+"هیچ کاربری نمی تواند ثبت سندهای مربوط به یک مالیات قبل و شامل این تاریخ را "
+"ویرایش کند."
 
 #. module: account
 #: model:ir.model.fields,help:account.field_res_company__fiscalyear_lock_date
@@ -7377,7 +7384,7 @@ msgstr "یادداشت"
 #: model:ir.model.fields,field_description:account.field_account_reconcile_model__match_note_param
 #: model:ir.model.fields,field_description:account.field_account_reconcile_model_template__match_note_param
 msgid "Note Parameter"
-msgstr ""
+msgstr "یادداشت پارامتر"
 
 #. module: account
 #: model_terms:ir.actions.act_window,help:account.action_move_out_refund_type
@@ -7719,6 +7726,12 @@ msgstr "مبدا"
 #. module: account
 #: model:ir.actions.report,name:account.action_account_original_vendor_bill
 msgid "Original Bills"
+msgstr ""
+
+#. module: account
+#: model_terms:ir.ui.view,arch_db:account.view_move_line_tree
+#: model_terms:ir.ui.view,arch_db:account.view_move_line_tree_grouped
+msgid "Original Currency"
 msgstr ""
 
 #. module: account
@@ -8436,7 +8449,7 @@ msgstr ""
 #: code:addons/account/static/src/xml/account_reconciliation.xml:0
 #, python-format
 msgid "Presets config"
-msgstr ""
+msgstr "پیکربندی از قبل تنظیم شده"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
@@ -8904,7 +8917,7 @@ msgstr "پاسخ-به"
 #: model:ir.model,name:account.model_ir_actions_report
 #: model:ir.model.fields,field_description:account.field_account_tax_report_line__report_action_id
 msgid "Report Action"
-msgstr ""
+msgstr "اکشن گزارش"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_tax_adjustments_wizard__tax_report_line_id
@@ -8974,7 +8987,7 @@ msgstr "مقدار برجا در ارز"
 #: code:addons/account/models/account_journal_dashboard.py:0
 #, python-format
 msgid "Residual amount"
-msgstr ""
+msgstr "مقدار برجا"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_bank_statement__user_id
@@ -8992,13 +9005,13 @@ msgstr "کاربر پاسخگو"
 #: model:ir.model.fields,field_description:account.field_account_reconcile_model__match_partner_category_ids
 #: model:ir.model.fields,field_description:account.field_account_reconcile_model_template__match_partner_category_ids
 msgid "Restrict Partner Categories to"
-msgstr ""
+msgstr "دسته بندی همکار محدود کن به"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_reconcile_model__match_partner_ids
 #: model:ir.model.fields,field_description:account.field_account_reconcile_model_template__match_partner_ids
 msgid "Restrict Partners to"
-msgstr ""
+msgstr "همکاران محدود کن به"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_reconcile_model__match_same_currency
@@ -9530,7 +9543,7 @@ msgstr "ارسال رسید با ایمیل"
 #. module: account
 #: model:ir.actions.act_window,name:account.account_send_payment_receipt_by_email_action_multi
 msgid "Send receipts by email"
-msgstr ""
+msgstr "ارسال رسید توسط ایمیل"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.onboarding_sample_invoice_step
@@ -9902,6 +9915,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"وضعیت بر اساس فعالیت\n"
+"Overdue: Due date is already passed\n"
+"امروز:تاریخ فعالیت امروز است\n"
+"برنامه‌ریزی شده: برنامه‌های آینده."
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.onboarding_bank_account_step
@@ -10144,7 +10161,7 @@ msgstr "پیام تاریخ قفل مالیات"
 #: model:ir.model.fields,field_description:account.field_account_fiscal_position_template__tax_ids
 #: model_terms:ir.ui.view,arch_db:account.view_account_position_form
 msgid "Tax Mapping"
-msgstr ""
+msgstr "نگاشت مالیات"
 
 #. module: account
 #: model:ir.model,name:account.model_account_fiscal_position_tax_template
@@ -10340,7 +10357,7 @@ msgstr "مالیات ها"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
 msgid "Taxes Applied"
-msgstr ""
+msgstr "مالیات های اعمال شده"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_position_template_form
@@ -10895,8 +10912,11 @@ msgstr ""
 #. module: account
 #: code:addons/account/models/account.py:0
 #, python-format
-msgid "The holder of a journal's bank account must be the company (%s)."
-msgstr "صاحب روزنامه حساب بانکی باید این شرکت باشد (%s)."
+msgid ""
+"The holder of the bank account of a \"Bank\" type journal must be the company (%s).\n"
+"However, the holder of \"%s\" is \"%s\".\n"
+"Please select another bank account or change the holder of \"%s\"."
+msgstr ""
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_journal__code
@@ -11189,7 +11209,7 @@ msgstr "در حال حاضر فاکتور و پرداختی برای حساب ش
 #: code:addons/account/wizard/account_validate_account_move.py:0
 #, python-format
 msgid "There are no journal items in the draft state to post."
-msgstr ""
+msgstr "هیچ آیتم روزنامه‌ای در حالت پیشنویس برای ارسال نیست."
 
 #. module: account
 #: code:addons/account/models/company.py:0
@@ -11277,6 +11297,8 @@ msgid ""
 "This account will be used instead of the default one as the payable account "
 "for the current partner"
 msgstr ""
+"این حساب به عنوان حساب پرداختنی به جای پیشفرض برای این همکار استفاده خواهد "
+"شد"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_res_partner__property_account_receivable_id
@@ -11500,7 +11522,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:account.view_account_move_line_filter
 #, python-format
 msgid "To Check"
-msgstr ""
+msgstr "برای بررسی"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_invoice_report_search
@@ -12634,6 +12656,12 @@ msgstr ""
 #. module: account
 #: code:addons/account/models/account_move.py:0
 #, python-format
+msgid "The entry %s (id %s) is already posted."
+msgstr ""
+
+#. module: account
+#: code:addons/account/models/account_move.py:0
+#, python-format
 msgid "You need to add a line before posting."
 msgstr "شما قبل از ارسال باید یک سطر اضافه کنید."
 
@@ -12686,7 +12714,7 @@ msgstr "دامنه زیپ از"
 #: model:ir.model.fields,field_description:account.field_account_fiscal_position__zip_to
 #: model:ir.model.fields,field_description:account.field_account_fiscal_position_template__zip_to
 msgid "Zip Range To"
-msgstr ""
+msgstr "دامنه زیپ تا"
 
 #. module: account
 #. openerp-web
@@ -12855,6 +12883,15 @@ msgstr "شرکت مادر"
 #: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
 msgid "to check"
 msgstr "برای بررسی"
+
+#. module: account
+#: code:addons/account/models/account_move.py:0
+#, python-format
+msgid ""
+"The chosen journal has a type that is not compatible with your invoice type."
+" Sales operations should go to 'sale' journals, and purchase operations to "
+"'purchase' ones."
+msgstr ""
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
