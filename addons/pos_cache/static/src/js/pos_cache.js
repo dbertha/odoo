@@ -17,6 +17,15 @@ models.PosModel = models.PosModel.extend({
 
         var product_model = self.models[product_index];
 
+        // Give both the fields and domain to pos_cache in the
+          // backend. This way we don't have to hardcode these
+          // values in the backend and they automatically stay in
+          // sync with whatever is defined (and maybe extended by
+          // other modules) in js.
+          var product_fields =  typeof product_model.fields === 'function'  ? product_model.fields(self)  : product_model.fields;
+          var product_domain =  typeof product_model.domain === 'function'  ? product_model.domain(self)  : product_model.domain;
+
+
         // We don't want to load product.product the normal
         // uncached way, so get rid of it.
         if (product_index !== -1) {
@@ -24,14 +33,7 @@ models.PosModel = models.PosModel.extend({
             product_model.domain = product_model.domain.concat([['name', 'ilike', 'work']])
         }
         return posmodel_super.load_server_data.apply(this, arguments).then(function () {
-          // Give both the fields and domain to pos_cache in the
-          // backend. This way we don't have to hardcode these
-          // values in the backend and they automatically stay in
-          // sync with whatever is defined (and maybe extended by
-          // other modules) in js.
-          var product_fields =  typeof product_model.fields === 'function'  ? product_model.fields(self)  : product_model.fields;
-          var product_domain =  typeof product_model.domain === 'function'  ? product_model.domain(self)  : product_model.domain;
-          //don't load product with 'work' in the name with the new way
+                    //don't load product with 'work' in the name with the new way
           product_domain = product_domain.concat([['name', 'not ilike', 'work']])
             var records = rpc.query({
                     model: 'pos.config',
