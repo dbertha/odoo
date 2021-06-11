@@ -326,7 +326,7 @@ var ScaleScreenWidget = ScreenWidget.extend({
             self.get_weight();
             console.log("end of click");
         });
-        // this._read_scale();
+        this._read_scale();
     },
 
     _read_scale: function() {
