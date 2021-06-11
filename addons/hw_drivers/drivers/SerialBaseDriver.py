@@ -105,7 +105,8 @@ class SerialDriver(Driver):
         :param data: the `_actions` key mapped to the action method we want to call
         :type data: string
         """
-
+        _logger.error("in do action")
+        _logger.error(self)
         try:
             with self._device_lock:
                 self._actions[data['action']](data)
