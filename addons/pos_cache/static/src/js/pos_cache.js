@@ -30,11 +30,11 @@ models.PosModel = models.PosModel.extend({
         // uncached way, so get rid of it.
         if (product_index !== -1) {
             // this.models.splice(product_index, 1);
-            product_model.domain = product_model.domain.concat([['name', 'ilike', 'work']])
+            product_model.domain = product_model.domain.concat([['default_code', 'ilike', 'work']])
         }
         return posmodel_super.load_server_data.apply(this, arguments).then(function () {
                     //don't load product with 'work' in the name with the new way
-          product_domain = product_domain.concat([['name', 'not ilike', 'work']])
+          product_domain = product_domain.concat([['default_code', 'not ilike', 'work']])
             var records = rpc.query({
                     model: 'pos.config',
                     method: 'get_products_from_cache',
