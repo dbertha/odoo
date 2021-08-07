@@ -1948,7 +1948,7 @@ var PaymentScreenWidget = ScreenWidget.extend({
         var paymentline = this.pos.get_order().selected_paymentline;
 
         // disable changing amount on paymentlines with running or done payments on a payment terminal
-        if (this.payment_interface && !['pending', 'retry'].includes(paymentline.get_payment_status())) {
+        if (paymentline && this.payment_interface && !['pending', 'retry'].includes(paymentline.get_payment_status())) {
             return;
         }
 
