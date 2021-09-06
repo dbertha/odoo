@@ -2273,6 +2273,9 @@ var PaymentScreenWidget = ScreenWidget.extend({
         $('body').off('keydown', this.keyboard_keydown_handler);
         var order = this.pos.get_order();
         if (order) {
+            if(order.electronic_payment_in_progress()){
+                throw new Error("Paiement en cours, veuillez annuler ou terminer le paiement d'abord");
+            }
             order.stop_electronic_payment();
         }
         this._super();

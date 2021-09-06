@@ -339,10 +339,10 @@
                     <div class='computed-price'>
                         0 €
                     </div>
-                    <div class='get-weight'>
+<!--                     <div class='get-weight'>
                         Peser
                         <i class='fa fa-balance-scale'></i>
-                    </div>
+                    </div> -->
                     <div class='buy-product'>
                         Order
                         <i class='fa fa-angle-double-right'></i>
