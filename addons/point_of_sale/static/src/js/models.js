@@ -1536,8 +1536,8 @@ exports.Product = Backbone.Model.extend({
             category_ids.push(category.id);
             category = category.parent;
         }
-        console.log(pricelist);
-        console.log(self);
+        // console.log(pricelist);
+        // console.log(self);
         var pricelist_items = _.filter(pricelist.items, function (item) {
             return (! item.product_tmpl_id || item.product_tmpl_id[0] === (Array.isArray(self.product_tmpl_id) ? self.product_tmpl_id[0] : self.product_tmpl_id)) &&
                    (! item.product_id || item.product_id[0] === self.id) &&
@@ -1547,8 +1547,8 @@ exports.Product = Backbone.Model.extend({
         });
 
         var price = self.lst_price;
-        console.log(price);
-        console.log(pricelist_items);
+        // console.log(price);
+        // console.log(pricelist_items);
         _.find(pricelist_items, function (rule) {
             if (rule.min_quantity && quantity < rule.min_quantity) {
                 return false;
@@ -1591,7 +1591,7 @@ exports.Product = Backbone.Model.extend({
         // being used further. Note that this cannot happen here,
         // because it would cause inconsistencies with the backend for
         // pricelist that have base == 'pricelist'.
-        console.log(price);
+        // console.log(price);
         return price;
     },
 
