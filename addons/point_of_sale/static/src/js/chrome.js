@@ -45,6 +45,14 @@ var OrderSelectorWidget = PosBaseWidget.extend({
         }
     },
     neworder_click_handler: function(event, $el) {
+        var order = this.pos.get_order();
+        if(order.electronic_payment_in_progress() && ! this.pos.config.selfscan){
+                this.pos.gui.show_popup("error", {
+                        'title': _t("Paiement en cours"),
+                        'body':  _t("Veuillez annuler ou terminer le paiement d'abord"),
+                    });
+                return;
+        }
         this.pos.add_new_order();
     },
     deleteorder_click_handler: function(event, $el) {
@@ -890,7 +898,6 @@ var Chrome = PosBaseWidget.extend(AbstractAction.prototype, {
     build_widgets: function() {
         var self = this;
         this.load_widgets(this.widgets);
-
         this.screens = {};
         var classe;
         for (var i = 0; i < this.gui.screen_classes.length; i++) {
@@ -902,7 +909,6 @@ var Chrome = PosBaseWidget.extend(AbstractAction.prototype, {
                 this.gui.add_screen(classe.name, screen);
             }
         }
-
         this.popups = {};
         _.forEach(this.gui.popup_classes, function (classe) {
             if (!classe.condition || classe.condition.call(self)) {

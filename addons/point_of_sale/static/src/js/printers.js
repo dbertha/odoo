@@ -49,6 +49,25 @@ var PrinterMixin = {
         $('.pos-receipt-print').html(receipt);
         var promise = new Promise(function (resolve, reject) {
             self.receipt = $('.pos-receipt-print>.pos-receipt');
+            // console.log(self.receipt);
+            // console.log($("#barcode_21"));
+            // console.log($("#barcode_12"));
+            $("#barcode_21").barcode(
+                $("#barcode_21").attr('value'), // Value barcode (dependent on the type of barcode)
+                "ean13", // type (string),
+                {barWidth: 3,
+                barHeight: 150,
+                fontSize: 15,
+                }
+                );
+            $("#barcode_12").barcode(
+                $("#barcode_12").attr('value'), // Value barcode (dependent on the type of barcode)
+                "ean13", // type (string)
+                {barWidth: 3,
+                    barHeight: 150,
+                    fontSize: 15,
+                    }
+                );
             html2canvas(self.receipt[0], {
                 onparsed: function(queue) {
                     queue.stack.ctx.height = Math.ceil(self.receipt.outerHeight() + self.receipt.offset().top);

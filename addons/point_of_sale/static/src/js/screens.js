@@ -2215,9 +2215,26 @@ var PaymentScreenWidget = ScreenWidget.extend({
         this.$('.js_customer_name').text( client ? client.name : _t('Customer') );
     },
     click_set_customer: function(){
+        var order = this.pos.get_order();
+        if(order.electronic_payment_in_progress() && ! this.pos.config.selfscan){
+                this.pos.gui.show_popup("error", {
+                        'title': _t("Paiement en cours"),
+                        'body':  _t("Veuillez annuler ou terminer le paiement d'abord"),
+                    });
+                return;
+        }
         this.gui.show_screen('clientlist');
     },
     click_back: function(){
+        var order = this.pos.get_order();
+
+        if(order.electronic_payment_in_progress() && ! this.pos.config.selfscan){
+                this.pos.gui.show_popup("error", {
+                        'title': _t("Paiement en cours"),
+                        'body':  _t("Veuillez annuler ou terminer le paiement d'abord"),
+                    });
+                return;
+        }
         this.gui.show_screen('products');
     },
     renderElement: function() {
@@ -2273,9 +2290,6 @@ var PaymentScreenWidget = ScreenWidget.extend({
         $('body').off('keydown', this.keyboard_keydown_handler);
         var order = this.pos.get_order();
         if (order) {
-            if(order.electronic_payment_in_progress()){
-                throw new Error("Paiement en cours, veuillez annuler ou terminer le paiement d'abord");
-            }
             order.stop_electronic_payment();
         }
         this._super();
