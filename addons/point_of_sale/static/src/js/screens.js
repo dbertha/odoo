@@ -322,9 +322,7 @@ var ScaleScreenWidget = ScreenWidget.extend({
             self.order_product();
         });
         this.$('.get-weight').click(function(){
-            console.log("click");            
             self.get_weight();
-            console.log("end of click");
         });
         this._read_scale();
     },
@@ -360,13 +358,9 @@ var ScaleScreenWidget = ScreenWidget.extend({
         return current_pricelist;
     },
     get_weight: function(){
-        console.log("in get weight");
         var self = this;
         return self.pos.proxy.scale_read().then(function(weight){
-                console.log("set weight");
-                console.log(weight);
                 self.set_weight(weight.weight);
-                console.log("set weight end");
             });
     },
     order_product: function(){
@@ -1058,7 +1052,6 @@ var ProductScreenWidget = ScreenWidget.extend({
     },
 
     start: function(){ 
-
         var self = this;
 
         this.actionpad = new ActionpadWidget(this,{});
@@ -2579,7 +2572,7 @@ define_action_button({
     'name': 'set_fiscal_position',
     'widget': set_fiscal_position_button,
     'condition': function(){
-        return this.pos.fiscal_positions.length > 0;
+        return this.pos.fiscal_positions.length > 1;
     },
 });
 
