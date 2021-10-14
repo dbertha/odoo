@@ -608,7 +608,7 @@
             </t>
             <t t-elif="['waiting', 'waitingCancel'].includes(line.payment_status)">
                 <td colspan="3">
-                    Request sent
+                    Request sent <t t-if="line.deposit">(deposit : <t t-esc="line.deposit"/>€)</t> <t t-if="line.dispense">(dispense : <t t-esc="line.dispense"/>€)</t>
                 </td>
                 <td colspan="2">
                     <i class='fa fa-spinner fa-spin' role='img'/>
@@ -625,7 +625,7 @@
             <t t-elif="line.payment_status == 'done'">
                 <t t-if="line.can_be_reversed">
                     <td colspan="3">
-                        Payment Successful
+                        Payment Successful <t t-if="line.deposit">(deposit : <t t-esc="line.deposit"/>€)</t> <t t-if="line.dispense">(dispense : <t t-esc="line.dispense"/>€)</t>
                     </td>
                     <td colspan="2" class='button send_payment_reversal' title="Reverse Payment" t-att-data-cid='line.cid'>
                         Reverse
