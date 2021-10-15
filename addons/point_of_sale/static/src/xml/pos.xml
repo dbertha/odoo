@@ -633,7 +633,7 @@
                 </t>
                 <t t-else="">
                     <td colspan="5">
-                        Payment Successful
+                        Payment Successful <t t-if="line.deposit">(deposit : <t t-esc="line.deposit"/>€)</t> <t t-if="line.dispense">(dispense : <t t-esc="line.dispense"/>€)</t>
                     </td>
                 </t>
             </t>
