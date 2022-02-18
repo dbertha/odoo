@@ -188,8 +188,15 @@ class ScaleDriver(SerialDriver):
         if match:
             self.data = {
                 'value': float(match.group(1)),
-                'status': self._status
+                'status': self._status,
+                'last_read_success' : True
             }
+            _logger.error("scale read success")
+            _logger.error(self.data)
+        else :
+            _logger.error("scale read fail")
+            self.data['last_read_success'] = False
+            _logger.error(self.data)
 
     # Ensures compatibility with older versions of Odoo
     def _scale_read_old_route(self):
