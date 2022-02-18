@@ -74,8 +74,14 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
     },
 
     handle_buffered_keys: function() {
-        var str = this.buffered_key_events.reduce(function(memo, e) { return memo + String.fromCharCode(e.which) }, '');
+        console.log("getting events into str");
+        var str = this.buffered_key_events.reduce(function(memo, e) { 
+            console.log(e.which);
+            return memo + String.fromCharCode(e.which) }, '');
+        console.log(str);
         var match = str.match(this.regexp);
+        console.log(this.regexp);
+        console.log(match);
 
         if (match) {
             var barcode = match[1];
@@ -167,6 +173,9 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
     },
 
     handler: function(e){
+        console.log("handler");
+        console.log(e);
+        console.log(e.which);
         // Don't catch events we resent
         if (e.dispatched_by_barcode_reader)
             return;
@@ -188,6 +197,7 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
             return;
 
         // Catch and buffer the event
+        console.log("pushing it");
         this.buffered_key_events.push(e);
         e.preventDefault();
         e.stopImmediatePropagation();
@@ -196,6 +206,7 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
         // of a barcode or after x milliseconds without a new keypress
         clearTimeout(this.timeout);
         if (String.fromCharCode(e.which).match(this.suffix)) {
+            console.log('call to handle');
             this.handle_buffered_keys();
         } else {
             this.timeout = setTimeout(_.bind(this.handle_buffered_keys, this), this.max_time_between_keys_in_ms);
@@ -222,9 +233,11 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
         if ($(document.activeElement).not('input:text, textarea, [contenteditable], ' +
             '[type="email"], [type="number"], [type="password"], [type="tel"], [type="search"]').length) {
             $('body').append(this.$barcodeInput);
+            console.log("appened barcode input and focus");
             this.$barcodeInput.focus();
         }
         if (this.$barcodeInput.is(":focus")) {
+            console.log("focus case");
             // Handle buffered keys immediately if the keypress marks the end
             // of a barcode or after x milliseconds without a new keypress.
             clearTimeout(this.timeout);
@@ -248,7 +261,9 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
      * @param  {jQuery.Event} keydown event
      */
     _handleBarcodeValue: function (e) {
+        console.log("handle barcode value");
         var barcodeValue = this.$barcodeInput.val();
+        console.log(barcodeValue);
         if (barcodeValue.match(this.regexp)) {
             core.bus.trigger('barcode_scanned', barcodeValue, $(e.target).parent()[0]);
             this._blurBarcodeInput();
