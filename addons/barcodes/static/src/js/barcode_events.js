@@ -59,6 +59,7 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
         this.$barcodeInput = $('<input/>', {
             name: 'barcode',
             type: 'text',
+            inputmode : 'none',
             css: {
                 'position': 'fixed',
                 'top': '50%',
@@ -237,12 +238,14 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
             this.$barcodeInput.focus();
         }
         if (this.$barcodeInput.is(":focus")) {
-            console.log("focus case");
             // Handle buffered keys immediately if the keypress marks the end
             // of a barcode or after x milliseconds without a new keypress.
             clearTimeout(this.timeout);
             // On chrome mobile, e.which only works for some special characters like ENTER or TAB.
             if (String.fromCharCode(e.which).match(this.suffix)) {
+                console.log("event content : ");
+                console.log(e);
+                console.log(e.which);
                 this._handleBarcodeValue(e);
             } else {
                 this.timeout = setTimeout(this._handleBarcodeValue.bind(this, e),
@@ -291,11 +294,13 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
         // all other cases.
         // In master, we could remove the behavior with keypress and only use keydown.
         if (this.isChromeMobile) {
+            console.log("is chrome mobile");
             $('body').on("keydown", this._listenBarcodeScanner.bind(this));
         } else {
             $('body').bind("keypress", this.__handler);
         }
         if (prevent_key_repeat === true) {
+            console.log("prevent key repeat");
             $('body').bind("keydown", this.__keydown_handler);
             $('body').bind('keyup', this.__keyup_handler);
         }
