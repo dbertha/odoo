@@ -244,6 +244,7 @@ class KeyboardUSBDriver(Driver):
         Args:
             scancode (int): The scancode of the pressed key.
         """
+        _logger.error(scancode)
         if scancode == 28:  # Return
             self.data['value'] = self._current_barcode
             _logger.error('return')
@@ -252,6 +253,7 @@ class KeyboardUSBDriver(Driver):
             self._barcodes.put((time.time(), self._current_barcode))
             self._current_barcode = ''
         else:
+            _logger.error(self._scancode_to_char(scancode))
             self._current_barcode += self._scancode_to_char(scancode)
 
     def _scancode_to_char(self, scancode):
