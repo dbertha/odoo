@@ -27,6 +27,7 @@ var BarcodeReader = core.Class.extend({
         this.action_callback_stack = [];
 
         core.bus.on('barcode_scanned', this, function (barcode) {
+            console.log("barcode in event : " + barcode);
             this.scan(barcode);
         });
     },
