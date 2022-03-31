@@ -100,16 +100,17 @@ exports.PosModel = Backbone.Model.extend({
         });
     },
     after_load_server_data: function(){
-        this.load_orders();
-        this.set_start_order();
-        if(this.config.use_proxy){
-            if (this.config.iface_customer_facing_display) {
-                this.on('change:selectedOrder', this.send_current_order_to_customer_facing_display, this);
-            }
+        var self = this;
+        return this.load_orders().then(function() {
+            self.set_start_order();
 
-            return this.connect_to_proxy();
-        }
-        return Promise.resolve();
+            if(self.config.use_proxy){
+                if (self.config.iface_customer_facing_display) {
+                    self.on('change:selectedOrder', self.send_current_order_to_customer_facing_display, self);
+                }
+                return self.connect_to_proxy();
+            }
+        });
     },
     // releases ressources holds by the model at the end of life of the posmodel
     destroy: function(){
@@ -693,6 +694,7 @@ exports.PosModel = Backbone.Model.extend({
      * Only if tho order has orderlines.
      */
     load_orders: function(){
+        var self = this;
         var jsons = this.db.get_unpaid_orders();
         var orders = [];
 
@@ -720,15 +722,47 @@ exports.PosModel = Backbone.Model.extend({
         orders = orders.sort(function(a,b){
             return a.sequence_number - b.sequence_number;
         });
-
-        if (orders.length) {
-            this.get('orders').add(orders);
+        var names = [];
+        for (var i = 0; i < orders.length; i++) {
+            names.push(orders[i].name);
         }
+        var domain = [['pos_reference', 'in', names], ['state', '!=', 'draft']];
+        return rpc.query({
+                    model: 'pos.order',
+                    method: 'search_read',
+                    args: [domain, ['id','pos_reference']],
+                }, {
+                    timeout: 3000,
+                    shadow: true,
+                }).then(function(result){
+                    var new_orders = [];
+                    for (var i = 0; i < orders.length; i++) {
+                        var order = orders[i];
+                        var is_already_validated = false;
+                        for (var j = 0; j < result.length; j++) {
+                            if(order.name == result[j].pos_reference){
+                                is_already_validated = true;
+                            }
+                        }
+                        if(! is_already_validated){
+                            new_orders.push(order);
+                        }
+                    }
+                    return new_orders;
+
+                }).then(function(orders){
+                    if(orders.length){
+                        self.get('orders').add(orders);
+                    }
+                    return true;
+                    
+                });
+
+        
     },
 
     set_start_order: function(){
         var orders = this.get('orders').models;
-
         if (orders.length && !this.get('selectedOrder')) {
             this.set('selectedOrder',orders[0]);
         } else {
