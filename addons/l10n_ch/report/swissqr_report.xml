@@ -44,7 +44,7 @@
                             <div class="swissqr_text">
                               <span class="title">Account / Payable to</span><br/>
                               <span class="content" t-field="o.invoice_partner_bank_id.acc_number"/><br/>
-                              <span class="content" t-field="o.company_id.name"/><br/>
+                              <span class="content" t-esc="o.invoice_partner_bank_id.acc_holder_name or o.company_id.name"/><br/>
                               <span class="content" t-field="o.company_id.street"/><br/>
                               <span class="content" t-field="o.company_id.country_id.code"/>
                               <span class="content" t-field="o.company_id.zip"/>
@@ -94,14 +94,14 @@
                             <span>Payment Part</span>
                         </div>
 
-                        <img class="swissqr" t-att-src="o.invoice_partner_bank_id.build_swiss_code_url(o.amount_residual, o.currency_id.name, None, o.partner_id, None, o.invoice_payment_ref, o.ref or o.name)"/>
+                        <img class="swissqr" t-att-src="o.invoice_partner_bank_id.build_swiss_code_base64(o.amount_residual, o.currency_id.name, None, o.partner_id, None, o.invoice_payment_ref, o.ref or o.name)"/>
                         <img class="ch_cross" src="/l10n_ch/static/src/img/CH-Cross_7mm.png"/>
 
                         <div id="indications_zone" class="swissqr_column_right indication_zone">
                             <div class="swissqr_text">
                                 <span class="title">Account / Payable to</span><br/>
                                 <span class="content" t-field="o.invoice_partner_bank_id.acc_number"/><br/>
-                                <span class="content" t-field="o.company_id.name"/><br/>
+                                <span class="content" t-esc="o.invoice_partner_bank_id.acc_holder_name or o.company_id.name"/><br/>
                                 <span class="content" t-field="o.company_id.street"/><br/>
                                 <span class="content" t-field="o.company_id.country_id.code"/>
                                 <span class="content" t-field="o.company_id.zip"/>

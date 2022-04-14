@@ -306,7 +306,7 @@ class MailComposer(models.TransientModel):
         blacklisted_rec_ids = set()
         if mass_mail_mode and issubclass(type(self.env[self.model]), self.pool['mail.thread.blacklist']):
             self.env['mail.blacklist'].flush(['email'])
-            self._cr.execute("SELECT email FROM mail_blacklist")
+            self._cr.execute("SELECT email FROM mail_blacklist WHERE active=true")
             blacklist = {x[0] for x in self._cr.fetchall()}
             if blacklist:
                 targets = self.env[self.model].browse(res_ids).read(['email_normalized'])
@@ -360,7 +360,7 @@ class MailComposer(models.TransientModel):
                     new_attach_id = self.env['ir.attachment'].browse(attach_id).copy({'res_model': self._name, 'res_id': self.id})
                     attachment_ids.append(new_attach_id.id)
                 attachment_ids.reverse()
-                mail_values['attachment_ids'] = self.env['mail.thread']._message_post_process_attachments(
+                mail_values['attachment_ids'] = self.env['mail.thread'].with_context(attached_to=record)._message_post_process_attachments(
                     mail_values.pop('attachments', []),
                     attachment_ids,
                     {'model': 'mail.message', 'res_id': 0}
@@ -442,9 +442,17 @@ class MailComposer(models.TransientModel):
                 'subject': record.subject or False,
                 'body_html': record.body or False,
                 'model_id': model.id or False,
-                'attachment_ids': [(6, 0, [att.id for att in record.attachment_ids])],
             }
             template = self.env['mail.template'].create(values)
+
+            if record.attachment_ids:
+                # transfer pending attachments to the new template
+                attachments = self.env['ir.attachment'].sudo().browse(record.attachment_ids.ids).filtered(
+                    lambda a: a.res_model == 'mail.compose.message' and a.create_uid.id == self._uid)
+                if attachments:
+                    attachments.write({'res_model': template._name, 'res_id': template.id})
+                template.attachment_ids |= record.attachment_ids
+
             # generate the saved template
             record.write({'template_id': template.id})
             record.onchange_template_id_wrapper()

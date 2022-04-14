@@ -95,6 +95,18 @@ class AccountMove(models.Model):
         :param tree: The tree of the Factur-x xml file.
         :return: A dictionary containing account.invoice values to create/update it.
         '''
+        def find_partner(partner_type):
+            elements = tree.xpath('//ram:%s/ram:SpecifiedTaxRegistration/ram:ID' % partner_type, namespaces=tree.nsmap)
+            partner = elements and self.env['res.partner'].search([('vat', '=', elements[0].text)], limit=1)
+            if not partner:
+                elements = tree.xpath('//ram:%s/ram:Name' % partner_type, namespaces=tree.nsmap)
+                partner_name = elements and elements[0].text
+                partner = elements and self.env['res.partner'].search([('name', 'ilike', partner_name)], limit=1)
+            if not partner:
+                elements = tree.xpath('//ram:%s//ram:URIID[@schemeID=\'SMTP\']' % partner_type, namespaces=tree.nsmap)
+                partner = elements and self.env['res.partner'].search([('email', '=', elements[0].text)], limit=1)
+            return partner or self.env["res.partner"]
+
         amount_total_import = None
 
         default_type = False
@@ -142,17 +154,7 @@ class AccountMove(models.Model):
         with Form(self.with_context(default_type=default_type)) as invoice_form:
             # Partner (first step to avoid warning 'Warning! You must first select a partner.').
             partner_type = invoice_form.journal_id.type == 'purchase' and 'SellerTradeParty' or 'BuyerTradeParty'
-            elements = tree.xpath('//ram:'+partner_type+'/ram:SpecifiedTaxRegistration/ram:ID', namespaces=tree.nsmap)
-            partner = elements and self.env['res.partner'].search([('vat', '=', elements[0].text)], limit=1)
-            if not partner:
-                elements = tree.xpath('//ram:'+partner_type+'/ram:Name', namespaces=tree.nsmap)
-                partner_name = elements and elements[0].text
-                partner = elements and self.env['res.partner'].search([('name', 'ilike', partner_name)], limit=1)
-            if not partner:
-                elements = tree.xpath('//ram:'+partner_type+'//ram:URIID[@schemeID=\'SMTP\']', namespaces=tree.nsmap)
-                partner = elements and self.env['res.partner'].search([('email', '=', elements[0].text)], limit=1)
-            if partner:
-                invoice_form.partner_id = partner
+            invoice_form.partner_id = find_partner(partner_type)
 
             # Reference.
             elements = tree.xpath('//rsm:ExchangedDocument/ram:ID', namespaces=tree.nsmap)
@@ -177,6 +179,11 @@ class AccountMove(models.Model):
                 if elements[0].attrib.get('currencyID'):
                     currency_str = elements[0].attrib['currencyID']
                     currency = self.env.ref('base.%s' % currency_str.upper(), raise_if_not_found=False)
+                    if currency and not currency.active:
+                        raise UserError(
+                            _('The currency (%s) of the document you are uploading is not active in this database.\n'
+                              'Please activate it before trying again to import.') % currency.name
+                        )
                     if currency != self.env.company.currency_id and currency.active:
                         invoice_form.currency_id = currency
 
@@ -237,6 +244,24 @@ class AccountMove(models.Model):
                                 invoice_line_form.price_unit = float(line_elements[0].text) / float(quantity_elements[0].text)
                             else:
                                 invoice_line_form.price_unit = float(line_elements[0].text)
+                            # For Gross price, we need to check if a discount must be taken into account
+                            discount_elements = element.xpath('.//ram:AppliedTradeAllowanceCharge',
+                                                          namespaces=tree.nsmap)
+                            if discount_elements:
+                                discount_percent_elements = element.xpath(
+                                    './/ram:AppliedTradeAllowanceCharge/ram:CalculationPercent', namespaces=tree.nsmap)
+                                if discount_percent_elements:
+                                    invoice_line_form.discount = float(discount_percent_elements[0].text)
+                                else:
+                                    # if discount not available, it will be computed from the gross and net prices.
+                                    net_price_elements = element.xpath('.//ram:NetPriceProductTradePrice/ram:ChargeAmount',
+                                                                  namespaces=tree.nsmap)
+                                    if net_price_elements:
+                                        quantity_elements = element.xpath(
+                                            './/ram:NetPriceProductTradePrice/ram:BasisQuantity', namespaces=tree.nsmap)
+                                        net_unit_price = float(net_price_elements[0].text) / float(quantity_elements[0].text) \
+                                            if quantity_elements else float(net_price_elements[0].text)
+                                        invoice_line_form.discount = (invoice_line_form.price_unit - net_unit_price) / invoice_line_form.price_unit * 100.0
                         else:
                             line_elements = element.xpath('.//ram:NetPriceProductTradePrice/ram:ChargeAmount', namespaces=tree.nsmap)
                             if line_elements:
@@ -245,10 +270,6 @@ class AccountMove(models.Model):
                                     invoice_line_form.price_unit = float(line_elements[0].text) / float(quantity_elements[0].text)
                                 else:
                                     invoice_line_form.price_unit = float(line_elements[0].text)
-                        # Discount.
-                        line_elements = element.xpath('.//ram:AppliedTradeAllowanceCharge/ram:CalculationPercent', namespaces=tree.nsmap)
-                        if line_elements:
-                            invoice_line_form.discount = float(line_elements[0].text)
 
                         # Taxes
                         line_elements = element.xpath('.//ram:SpecifiedLineTradeSettlement/ram:ApplicableTradeTax/ram:RateApplicablePercent', namespaces=tree.nsmap)

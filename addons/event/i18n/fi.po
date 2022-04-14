@@ -22,7 +22,7 @@
 # Pekko Tuomisto <pekko.tuomisto@web-veistamo.fi>, 2019
 # Jenni Heikkilä <jenni.heikkila@sv-oy.fi>, 2019
 # Tuomo Aura <tuomo.aura@web-veistamo.fi>, 2020
-# Jarmo Kortetjärvi <jarmo.kortetjarvi@gmail.com>, 2020
+# Jarmo Kortetjärvi <jarmo.kortetjarvi@gmail.com>, 2021
 # Miika Nissi <miika.nissi@tawasta.fi>, 2021
 # 
 msgid ""
@@ -1357,7 +1357,7 @@ msgstr "Käytyään kurssin, osallistujat kykenevät:"
 #. module: event
 #: model:event.event,name:event.event_5
 msgid "Hockey Tournament"
-msgstr ""
+msgstr "Jääkiekkoturnaus"
 
 #. module: event
 #: model:ir.model.fields.selection,name:event.selection__event_mail__interval_unit__hours
@@ -1534,7 +1534,7 @@ msgstr "Rajattu määrä paikkoja"
 #. module: event
 #: model:event.event,name:event.event_3
 msgid "Live Music Festival"
-msgstr ""
+msgstr "Suoran musiikin festivaali"
 
 #. module: event
 #: model:ir.model.fields,field_description:event.field_event_event__address_id
@@ -1599,7 +1599,7 @@ msgstr "Pääliite"
 #. module: event
 #: model_terms:ir.ui.view,arch_db:event.res_config_settings_view_form
 msgid "Manage &amp; publish a schedule with tracks"
-msgstr ""
+msgstr "Hallitse ja julkaise aikatalu esityksillä"
 
 #. module: event
 #: model:ir.model.fields,field_description:event.field_event_event__seats_availability
@@ -1717,7 +1717,7 @@ msgstr "Virheiden määrä"
 #: model:ir.model.fields,help:event.field_res_partner__event_count
 #: model:ir.model.fields,help:event.field_res_users__event_count
 msgid "Number of events the partner has participated."
-msgstr ""
+msgstr "Tapahtumien määrä, joihin kumppani on osallistunut."
 
 #. module: event
 #: model:ir.model.fields,help:event.field_event_event__message_needaction_counter
@@ -1740,7 +1740,7 @@ msgstr "Lukemattomia viestejä"
 #. module: event
 #: model_terms:event.event,description:event.event_2
 msgid "Objectives"
-msgstr ""
+msgstr "Tavoitteet"
 
 #. module: event
 #: model:event.type,name:event.event_type_data_online
@@ -1935,6 +1935,8 @@ msgid ""
 "Schedule and organize your events efficiently:\n"
 "                track registrations and participations, automate the confirmation emails, sell tickets, etc."
 msgstr ""
+"Suunnittele ja järjestä tapahtumasi tehokkaasti:\n"
+"Seuraa rekisteröintejä ja osallistumisia, automatisoi vahvistusviestit, myy lippuja jne."
 
 #. module: event
 #: model:ir.model.fields,field_description:event.field_event_mail__scheduled_date
@@ -2017,7 +2019,7 @@ msgstr "Lähdedokumentti"
 #. module: event
 #: model:event.type,name:event.event_type_5
 msgid "Sport"
-msgstr ""
+msgstr "Urheilu"
 
 #. module: event
 #: model:ir.model.fields,field_description:event.field_event_event__date_begin
@@ -2219,7 +2221,7 @@ msgstr "Näkyvyys"
 #: code:addons/event/models/event_mail.py:0
 #, python-format
 msgid "WARNING: Event Scheduler Error for event: %s"
-msgstr ""
+msgstr "VAROITUS: Tapahtuman ajastimen virhe tapahtumalle: %s"
 
 #. module: event
 #: model_terms:event.event,description:event.event_2

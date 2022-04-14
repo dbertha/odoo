@@ -12,6 +12,7 @@ from odoo.api import call_kw
 from odoo.exceptions import AccessError
 from odoo.tests import tagged
 from odoo.tools import mute_logger, formataddr
+from odoo.tests.common import users
 
 
 @tagged('mail_post')
@@ -40,6 +41,43 @@ class TestMessagePost(BaseFunctionalTest, TestRecipients, MockEmails):
         # Use call_kw as shortcut to simulate a RPC call.
         messageId = call_kw(self.env['mail.channel'], 'message_post', [test_channel.id], {'body': 'test'})
         self.assertTrue(isinstance(messageId, int))
+
+    @users('employee')
+    def test_notify_prepare_template_context_company_value(self):
+        """ Verify that the template context company value is right
+        after switching the env company or if a company_id is set
+        on mail record.
+        """
+        current_user = self.env.user
+        main_company = current_user.company_id
+        other_company = self.env['res.company'].with_user(self.user_admin).create({'name': 'Company B'})
+        current_user.sudo().write({'company_ids': [(4, other_company.id)]})
+        test_record = self.env['mail.test.multi.company'].with_user(self.user_admin).create({
+            'name': 'Multi Company Record',
+            'company_id': False,
+        })
+
+        # self.env.company.id = Main Company    AND    test_record.company_id = False
+        self.assertEqual(self.env.company.id, main_company.id)
+        self.assertEqual(test_record.company_id.id, False)
+        template_values = test_record._notify_prepare_template_context(test_record.message_ids, {})
+        self.assertEqual(template_values.get('company').id, self.env.company.id)
+
+        # self.env.company.id = Other Company    AND    test_record.company_id = False
+        current_user.company_id = other_company
+        test_record = self.env['mail.test.multi.company'].browse(test_record.id)
+        self.assertEqual(self.env.company.id, other_company.id)
+        self.assertEqual(test_record.company_id.id, False)
+        template_values = test_record._notify_prepare_template_context(test_record.message_ids, {})
+        self.assertEqual(template_values.get('company').id, self.env.company.id)
+
+        # self.env.company.id = Other Company    AND    test_record.company_id = Main Company
+        test_record.company_id = main_company
+        test_record = self.env['mail.test.multi.company'].browse(test_record.id)
+        self.assertEqual(self.env.company.id, other_company.id)
+        self.assertEqual(test_record.company_id.id, main_company.id)
+        template_values = test_record._notify_prepare_template_context(test_record.message_ids, {})
+        self.assertEqual(template_values.get('company').id, main_company.id)
 
     def test_notify_recipients_internals(self):
         pdata = self._generate_notify_recipients(self.partner_1 | self.partner_employee)
@@ -72,6 +110,41 @@ class TestMessagePost(BaseFunctionalTest, TestRecipients, MockEmails):
         self.assertIn('res_id=%s' % self.test_record.id, emp_info['button_access']['url'])
         self.assertNotIn('body', emp_info['button_access']['url'])
         self.assertNotIn('subject', emp_info['button_access']['url'])
+
+        # test when notifying on non-records (e.g. MailThread._message_notify())
+        for model, res_id in ((self.test_record._name, False),
+                              (self.test_record._name, 0),  # browse(0) does not return a valid recordset
+                              (False, self.test_record.id),
+                              (False, False),
+                              ('mail.thread', False),
+                              ('mail.thread', self.test_record.id)):
+            msg_vals.update({
+                'model': model,
+                'res_id': res_id,
+            })
+            # note that msg_vals wins over record on which method is called
+            notify_msg_vals = dict(msg_vals, **link_vals)
+            classify_res = self.test_record._notify_classify_recipients(
+                pdata, 'Test', msg_vals=notify_msg_vals)
+            # find back information for partner
+            partner_info = next(item for item in classify_res if item['recipients'] == self.partner_1.ids)
+            emp_info = next(item for item in classify_res if item['recipients'] == self.partner_employee.ids)
+            # check there is no access button
+            self.assertFalse(partner_info['has_button_access'])
+            self.assertFalse(emp_info['has_button_access'])
+
+            # test on falsy records (False model cannot be browsed, skipped)
+            if model:
+                record_falsy = self.env[model].browse(res_id)
+                classify_res = record_falsy._notify_classify_recipients(
+                    pdata, 'Test', msg_vals=notify_msg_vals)
+                # find back information for partner
+                partner_info = next(item for item in classify_res if item['recipients'] == self.partner_1.ids)
+                emp_info = next(item for item in classify_res if item['recipients'] == self.partner_employee.ids)
+                # check there is no access button
+                self.assertFalse(partner_info['has_button_access'])
+                self.assertFalse(emp_info['has_button_access'])
+
 
     @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_post_needaction(self):
@@ -229,6 +302,16 @@ class TestMessagePost(BaseFunctionalTest, TestRecipients, MockEmails):
 
         self.assertEqual(new_msg.parent_id.id, parent_msg.id, 'message_post: flatten error')
         self.assertEqual(new_msg.partner_ids, self.env['res.partner'])
+
+    @mute_logger('odoo.addons.mail.models.mail_mail')
+    def test_post_email_with_multiline_subject(self):
+        _body, _body_alt, _subject = '<p>Test Body</p>', 'Test Body', '1st line\n2nd line'
+        msg = self.test_record.with_user(self.user_employee).message_post(
+            body=_body, subject=_subject,
+            message_type='comment', subtype='mt_comment',
+            partner_ids=[self.partner_1.id, self.partner_2.id]
+        )
+        self.assertEqual(msg.subject, '1st line 2nd line')
 
     @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_post_portal_ok(self):

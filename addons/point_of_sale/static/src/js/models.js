@@ -709,7 +709,7 @@ exports.PosModel = Backbone.Model.extend({
         }
         for (var i = 0; i < jsons.length; i++) {
             var json = jsons[i];
-            if (json.pos_session_id !== this.pos_session.id && json.lines.length > 0) {
+            if (json.pos_session_id !== this.pos_session.id && (json.lines.length > 0 || json.statement_ids.length > 0)) {
                 orders.push(new exports.Order({},{
                     pos:  this,
                     json: json,
@@ -1370,7 +1370,7 @@ exports.PosModel = Backbone.Model.extend({
                 else if(tax.amount_type === 'division')
                     incl_division_amount += tax.amount;
                 else if(tax.amount_type === 'fixed')
-                    incl_fixed_amount += quantity * tax.amount
+                    incl_fixed_amount += Math.abs(quantity) * tax.amount
                 else{
                     var tax_amount = self._compute_all(tax, base, quantity);
                     incl_fixed_amount += tax_amount;
@@ -1384,7 +1384,7 @@ exports.PosModel = Backbone.Model.extend({
             i -= 1;
         });
 
-        var total_excluded = recompute_base(base, incl_fixed_amount, incl_percent_amount, incl_division_amount, currency_rounding);
+        var total_excluded = recompute_base(base, incl_fixed_amount, incl_percent_amount, incl_division_amount, this.currency.rounding);
         var total_included = total_excluded;
 
         // 5) Iterate the taxes in the sequence order to fill missing base/amount values.
@@ -1428,6 +1428,9 @@ exports.PosModel = Backbone.Model.extend({
     },
 
     electronic_payment_interfaces: {},
+    htmlToImgLetterRendering() {
+        return false;
+    }
 });
 
 /**
@@ -2890,6 +2893,7 @@ exports.Order = Backbone.Model.extend({
      * Stops a payment on the terminal if one is running
      */
     stop_electronic_payment: function () {
+        var self = this;
         var lines = this.get_paymentlines();
         var line = lines.find(function (line) {
             var status = line.get_payment_status();
@@ -2899,6 +2903,16 @@ exports.Order = Backbone.Model.extend({
             line.set_payment_status('waitingCancel');
             line.payment_method.payment_terminal.send_payment_cancel(this, line.cid).finally(function () {
                 line.set_payment_status('retry');
+
+                // If stop_electronic_payment is triggered by pressing the back button, and you wait a bit, this
+                // payment status update will happen when on the main screen. If you then press the pay button
+                // again, the payment will be in the retry state as intended, because moving to the payment screen
+                // re-renders the lines. If however after pressing the back button, you immediately press the pay button
+                // again, the state will still update, but the line in the UI won't, because there's nothing triggering a
+                // re-render on it. Hence we do that here.
+                if (self.pos.chrome.gui.current_screen && self.pos.chrome.gui.current_screen.render_paymentlines) {
+                    self.pos.chrome.gui.current_screen.render_paymentlines();
+                }
             });
         }
     },

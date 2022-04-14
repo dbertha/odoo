@@ -169,7 +169,8 @@ class account_journal(models.Model):
                 next_date = start_date + timedelta(days=7)
                 query += " UNION ALL ("+select_sql_clause+" and invoice_date_due >= '"+start_date.strftime(DF)+"' and invoice_date_due < '"+next_date.strftime(DF)+"')"
                 start_date = next_date
-
+        # Ensure results returned by postgres match the order of data list
+        query += " ORDER BY aggr_date ASC"
         self.env.cr.execute(query, query_args)
         query_results = self.env.cr.dictfetchall()
         is_sample_data = True
@@ -266,7 +267,7 @@ class account_journal(models.Model):
                     company_id
                 FROM account_move move
                 WHERE journal_id = %s
-                AND date <= %s
+                AND invoice_date_due <= %s
                 AND state = 'posted'
                 AND invoice_payment_state = 'not_paid'
                 AND type IN ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt');

@@ -232,24 +232,26 @@ var BasicModel = AbstractModel.extend({
         const mainFieldInfo = dataPoint.fieldsInfo[dataPoint[viewInfo.viewType]];
         dataPoint.fieldsInfo[viewInfo.viewType] = _.defaults({}, viewInfo.fieldInfo, mainFieldInfo);
 
-        // Some fields in the new fields info might not be in the previous one,
-        // so we might have stored changes for them (e.g. coming from onchange
-        // RPCs), that we haven't been able to process earlier (because those
-        // fields were unknown at that time). So we now try to process them.
-        return this.applyRawChanges(dataPointID, viewInfo.viewType).then(() => {
+        // recursively apply the new field info on sub datapoints
+        if (dataPoint.type === 'list') {
+            // case 'list': on all datapoints in the list
             const proms = [];
-            const fieldInfo = dataPoint.fieldsInfo[viewInfo.viewType];
-            // recursively apply the new field info on sub datapoints
-            if (dataPoint.type === 'list') {
-                // case 'list': on all datapoints in the list
-                Object.values(dataPoint._cache).forEach(subDataPointID => {
-                    proms.push(this.addFieldsInfo(subDataPointID, {
-                        fields: dataPoint.fields,
-                        fieldInfo: dataPoint.fieldsInfo[viewInfo.viewType],
-                        viewType: viewInfo.viewType,
-                    }));
-                });
-            } else {
+            Object.values(dataPoint._cache).forEach(subDataPointID => {
+                proms.push(this.addFieldsInfo(subDataPointID, {
+                    fields: dataPoint.fields,
+                    fieldInfo: dataPoint.fieldsInfo[viewInfo.viewType],
+                    viewType: viewInfo.viewType,
+                }));
+            });
+            return Promise.all(proms);
+        } else {
+            // Some fields in the new fields info might not be in the previous one,
+            // so we might have stored changes for them (e.g. coming from onchange
+            // RPCs), that we haven't been able to process earlier (because those
+            // fields were unknown at that time). So we now try to process them.
+            return this.applyRawChanges(dataPointID, viewInfo.viewType).then(() => {
+                const proms = [];
+                const fieldInfo = dataPoint.fieldsInfo[viewInfo.viewType];
                 // case 'record': on datapoints of all x2many fields
                 const values = _.extend({}, dataPoint.data, dataPoint._changes);
                 Object.keys(fieldInfo).forEach(fieldName => {
@@ -267,9 +269,10 @@ var BasicModel = AbstractModel.extend({
                         }
                     }
                 });
-            }
-            return Promise.all(proms);
-        });
+                return Promise.all(proms);
+            });
+        }
+
 
     },
     /**
@@ -456,6 +459,11 @@ var BasicModel = AbstractModel.extend({
                     if (parent && parent.type === 'list') {
                         parent.data = _.without(parent.data, record.id);
                         delete self.localData[record.id];
+                        // Check if we are on last page and all records are deleted from current
+                        // page i.e. if there is no state.data.length then go to previous page
+                        if (!parent.data.length && parent.offset > 0) {
+                            parent.offset = Math.max(parent.offset - parent.limit, 0);
+                        }
                     } else {
                         record.res_ids.splice(record.offset, 1);
                         record.offset = Math.min(record.offset, record.res_ids.length - 1);
@@ -1009,6 +1017,7 @@ var BasicModel = AbstractModel.extend({
         var params = {
             model: modelName,
             ids: resIDs,
+            context: data.getContext(),
         };
         if (options.offset) {
             params.offset = options.offset;
@@ -1032,6 +1041,7 @@ var BasicModel = AbstractModel.extend({
                     model: modelName,
                     method: 'read',
                     args: [resIDs, [field]],
+                    context: data.getContext(),
                 }).then(function (records) {
                     if (data.data.length) {
                         var dataType = self.localData[data.data[0]].type;
@@ -1284,14 +1294,27 @@ var BasicModel = AbstractModel.extend({
                 // optionally clear the DataManager's cache
                 self._invalidateCache(parent);
                 if (!_.isEmpty(action)) {
-                    return self.do_action(action, {
-                        on_close: function () {
-                            return self.trigger_up('reload');
-                        }
+                    return new Promise(function (resolve, reject) {
+                        self.do_action(action, {
+                            on_close: function (result) {
+                                return self.trigger_up('reload', {
+                                    onSuccess: resolve,
+                                });
+                            }
+                        });
                     });
                 } else {
                     return self.reload(parentID);
                 }
+            }).then(function (datapoint) {
+                // if there are no records to display and we are not on first page(we check it
+                // by checking offset is greater than limit i.e. we are not on first page)
+                // reason for adding logic after reload to make sure there is no records after operation
+                if (parent && parent.type === 'list' && !parent.data.length && parent.offset > 0) {
+                    parent.offset = Math.max(parent.offset - parent.limit, 0);
+                    return self.reload(parentID);
+                }
+                return datapoint;
             });
     },
     /**
@@ -1316,14 +1339,27 @@ var BasicModel = AbstractModel.extend({
                 // optionally clear the DataManager's cache
                 self._invalidateCache(parent);
                 if (!_.isEmpty(action)) {
-                    return self.do_action(action, {
-                        on_close: function () {
-                            return self.trigger_up('reload');
-                        }
+                    return new Promise(function (resolve, reject) {
+                        self.do_action(action, {
+                            on_close: function () {
+                                return self.trigger_up('reload', {
+                                    onSuccess: resolve,
+                                });
+                            }
+                        });
                     });
                 } else {
                     return self.reload(parentID);
                 }
+            }).then(function (datapoint) {
+                // if there are no records to display and we are not on first page(we check it
+                // by checking offset is greater than limit i.e. we are not on first page)
+                // reason for adding logic after reload to make sure there is no records after operation
+                if (parent && parent.type === 'list' && !parent.data.length && parent.offset > 0) {
+                    parent.offset = Math.max(parent.offset - parent.limit, 0);
+                    return self.reload(parentID);
+                }
+                return datapoint;
             });
     },
     /**
@@ -4832,8 +4868,16 @@ var BasicModel = AbstractModel.extend({
         var fieldNames = list.getFieldNames();
         var prom;
         if (list.__data) {
-            // the data have already been fetched (alonside the groups by the
+            // the data have already been fetched (alongside the groups by the
             // call to 'web_read_group'), so we can bypass the search_read
+            // But the web_read_group returns the rawGroupBy field's value, which may not be present
+            // in the view. So we filter it out.
+            const fieldNameSet = new Set(fieldNames);
+            fieldNameSet.add("id"); // don't filter out the id
+            list.__data.records.forEach(record =>
+                Object.keys(record)
+                    .filter(fieldName => !fieldNameSet.has(fieldName))
+                    .forEach(fieldName => delete record[fieldName]));
             prom = Promise.resolve(list.__data);
         } else {
             prom = this._rpc({
@@ -5047,6 +5091,7 @@ var BasicModel = AbstractModel.extend({
         var fieldsInfo = view ? view.fieldsInfo : fieldInfo.fieldsInfo;
         var fields = view ? view.fields : fieldInfo.relatedFields;
         var viewType = view ? view.type : fieldInfo.viewType;
+        var id2Values = new Map(values.map((value) => [value.id, value]))
 
         _.each(records, function (record) {
             var x2mList = self.localData[record.data[fieldName]];
@@ -5054,7 +5099,7 @@ var BasicModel = AbstractModel.extend({
             _.each(x2mList.res_ids, function (res_id) {
                 var dataPoint = self._makeDataPoint({
                     modelName: field.relation,
-                    data: _.findWhere(values, {id: res_id}),
+                    data: id2Values.get(res_id),
                     fields: fields,
                     fieldsInfo: fieldsInfo,
                     parentID: x2mList.id,

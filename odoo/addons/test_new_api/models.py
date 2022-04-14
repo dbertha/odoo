@@ -18,6 +18,7 @@ class Category(models.Model):
     color = fields.Integer('Color Index')
     parent = fields.Many2one('test_new_api.category', ondelete='cascade')
     parent_path = fields.Char(index=True)
+    depth = fields.Integer(compute="_compute_depth")
     root_categ = fields.Many2one(_name, compute='_compute_root_categ')
     display_name = fields.Char(compute='_compute_display_name', inverse='_inverse_display_name')
     dummy = fields.Char(store=False)
@@ -43,6 +44,11 @@ class Category(models.Model):
             while current.parent:
                 current = current.parent
             cat.root_categ = current
+
+    @api.depends('parent_path')
+    def _compute_depth(self):
+        for cat in self:
+            cat.depth = cat.parent_path.count('/') - 1
 
     def _inverse_display_name(self):
         for cat in self:
@@ -345,6 +351,7 @@ class Foo(models.Model):
     name = fields.Char()
     value1 = fields.Integer(change_default=True)
     value2 = fields.Integer()
+    text = fields.Char(trim=False)
 
 
 class Bar(models.Model):
@@ -355,6 +362,8 @@ class Bar(models.Model):
     foo = fields.Many2one('test_new_api.foo', compute='_compute_foo', search='_search_foo')
     value1 = fields.Integer(related='foo.value1', readonly=False)
     value2 = fields.Integer(related='foo.value2', readonly=False)
+    text1 = fields.Char('Text1', related='foo.text', readonly=False)
+    text2 = fields.Char('Text2', related='foo.text', readonly=False, trim=True)
 
     @api.depends('name')
     def _compute_foo(self):
@@ -468,6 +477,32 @@ class MoveLine(models.Model):
     quantity = fields.Integer()
 
 
+class Order(models.Model):
+    _name = _description = 'test_new_api.order'
+
+    line_ids = fields.One2many('test_new_api.order.line', 'order_id')
+
+
+class OrderLine(models.Model):
+    _name = _description = 'test_new_api.order.line'
+
+    order_id = fields.Many2one('test_new_api.order', required=True, ondelete='cascade')
+    product = fields.Char()
+    reward = fields.Boolean()
+
+    def unlink(self):
+        # also delete associated reward lines
+        reward_lines = [
+            other_line
+            for line in self
+            if not line.reward
+            for other_line in line.order_id.line_ids
+            if other_line.reward and other_line.product == line.product
+        ]
+        self = self.union(*reward_lines)
+        return super().unlink()
+
+
 class CompanyDependent(models.Model):
     _name = 'test_new_api.company'
     _description = 'Test New API Company'
@@ -476,6 +511,9 @@ class CompanyDependent(models.Model):
     date = fields.Date(company_dependent=True)
     moment = fields.Datetime(company_dependent=True)
     tag_id = fields.Many2one('test_new_api.multi.tag', company_dependent=True)
+    truth = fields.Boolean(company_dependent=True)
+    count = fields.Integer(company_dependent=True)
+    phi = fields.Float(company_dependent=True, digits=(2, 5))
 
 
 class CompanyDependentAttribute(models.Model):
@@ -572,6 +610,40 @@ class ComputeOnchange(models.Model):
         for record in self:
             if record.active:
                 record.baz = record.foo
+
+
+class ComputeOne2many(models.Model):
+    _name = 'test_new_api.one2many'
+    _description = "A computed editable one2many field with a domain"
+
+    name = fields.Char()
+    line_ids = fields.One2many(
+        'test_new_api.one2many.line', 'container_id',
+        compute='_compute_line_ids', store=True, readonly=False,
+        domain=[('count', '>', 0)],
+    )
+
+    @api.depends('name')
+    def _compute_line_ids(self):
+        # increment counter of line with the same name, or create a new line
+        for record in self:
+            if not record.name:
+                continue
+            for line in record.line_ids:
+                if line.name == record.name:
+                    line.count += 1
+                    break
+            else:
+                record.line_ids = [(0, 0, {'name': record.name})]
+
+
+class ComputeOne2manyLine(models.Model):
+    _name = 'test_new_api.one2many.line'
+    _description = "Line of a computed one2many"
+
+    name = fields.Char()
+    count = fields.Integer(default=1)
+    container_id = fields.Many2one('test_new_api.one2many', required=True)
 
 
 class ModelBinary(models.Model):

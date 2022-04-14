@@ -49,11 +49,13 @@ models.Order = models.Order.extend({
     get_rounding_applied: function() {
         if(this.pos.config.cash_rounding) {
             const only_cash = this.pos.config.only_round_cash_method;
-            const has_cash = this.selected_paymentline ? this.selected_paymentline.payment_method.is_cash_count == true: false;
-            if (!only_cash || (only_cash && has_cash)) {
+            const paymentlines = this.get_paymentlines();
+            const last_line = paymentlines ? paymentlines[paymentlines.length-1]: false;
+            const last_line_is_cash = last_line ? last_line.payment_method.is_cash_count == true: false;
+            if (!only_cash || (only_cash && last_line_is_cash)) {
                 var remaining = this.get_total_with_tax() - this.get_total_paid();
                 var total = round_pr(remaining, this.pos.cash_rounding[0].rounding);
-                var sign = total > 0 ? 1.0 : -1.0;
+                var sign = remaining > 0 ? 1.0 : -1.0;
 
                 var rounding_applied = total - remaining;
                 rounding_applied *= sign;
@@ -61,17 +63,21 @@ models.Order = models.Order.extend({
                 if (utils.float_is_zero(rounding_applied, this.pos.currency.decimals)){
                     // https://xkcd.com/217/
                     return 0;
-                } else if(this.pos.cash_rounding[0].rounding_method === "UP" && rounding_applied < 0) {
+                } else if(this.get_total_with_tax() < this.pos.cash_rounding[0].rounding) {
+                    return 0;
+                } else if(this.pos.cash_rounding[0].rounding_method === "UP" && rounding_applied < 0 && remaining > 0) {
+                    rounding_applied += this.pos.cash_rounding[0].rounding;
+                } else if(this.pos.cash_rounding[0].rounding_method === "UP" && rounding_applied > 0 && remaining < 0) {
+                    rounding_applied -= this.pos.cash_rounding[0].rounding;
+                }  else if(this.pos.cash_rounding[0].rounding_method === "DOWN" && rounding_applied > 0 && remaining > 0){
+                    rounding_applied -= this.pos.cash_rounding[0].rounding;
+                } else if(this.pos.cash_rounding[0].rounding_method === "DOWN" && rounding_applied < 0 && remaining < 0){
                     rounding_applied += this.pos.cash_rounding[0].rounding;
                 }
-                else if(this.pos.cash_rounding[0].rounding_method === "DOWN" && rounding_applied > 0){
-                    rounding_applied -= this.pos.cash_rounding[0].rounding;
-                }
                 return sign * rounding_applied;
-              }
-              else {
+            } else {
                 return 0;
-              }
+            }
         }
         return 0;
     },
@@ -82,6 +88,8 @@ models.Order = models.Order.extend({
             for(var id in this.get_paymentlines()) {
                 var line = this.get_paymentlines()[id];
                 var diff = round_pr(round_pr(line.amount, cash_rounding) - round_pr(line.amount, default_rounding), default_rounding);
+                if(this.get_total_with_tax() < this.pos.cash_rounding[0].rounding)
+                    return true;
                 if(diff && line.payment_method.is_cash_count) {
                     return false;
                 } else if(!this.pos.config.only_round_cash_method && diff) {

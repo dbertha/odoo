@@ -194,7 +194,7 @@ class PosOrder(models.Model):
             .mapped('picking_id.move_lines')\
             .filtered(lambda m: m.product_id.id == product.id)\
             .sorted(lambda x: x.date)
-        price_unit = product._compute_average_price(0, quantity, moves)
+        price_unit = product.with_context(force_company=self.company_id.id)._compute_average_price(0, quantity, moves)
         return - price_unit
 
     name = fields.Char(string='Order Ref', required=True, readonly=True, copy=False, default='/')
@@ -519,6 +519,7 @@ class PosOrder(models.Model):
             for line in order.lines.filtered(lambda l: l.product_id.type in ['product', 'consu'] and not float_is_zero(l.qty, precision_rounding=l.product_id.uom_id.rounding)):
                 moves |= Move.create({
                     'name': line.name,
+                    'company_id': line.company_id.id,
                     'product_uom': line.product_id.uom_id.id,
                     'picking_id': order_picking.id if line.qty >= 0 else return_picking.id,
                     'picking_type_id': picking_type.id if line.qty >= 0 else return_pick_type.id,
@@ -577,7 +578,7 @@ class PosOrder(models.Model):
                             if stock_production_lot.product_id.tracking == 'lot':
                                 qty = abs(pos_pack_lot.pos_order_line_id.qty)
                             qty_done += qty
-                            quant = stock_production_lot.quant_ids.filtered(lambda q: q.quantity > 0.0 or q.location_id.parent_path.startswith(move.location_id.parent_path))[-1:]
+                            quant = stock_production_lot.quant_ids.filtered(lambda q: q.quantity > 0.0 and q.location_id.parent_path.startswith(move.location_id.parent_path))[-1:]
                             pack_lots.append({'lot_id': stock_production_lot.id, 'quant_location_id': quant.location_id.id, 'qty': qty})
                         else:
                             has_wrong_lots = True
@@ -672,7 +673,6 @@ class PosOrder(models.Model):
             'datas': ticket,
             'res_model': 'pos.order',
             'res_id': orders[:1].id,
-            'store_fname': filename,
             'mimetype': 'image/jpeg',
         })
         template_data = {
@@ -691,7 +691,6 @@ class PosOrder(models.Model):
                 'name': filename,
                 'type': 'binary',
                 'datas': base64.b64encode(report[0]),
-                'store_fname': filename,
                 'res_model': 'pos.order',
                 'res_id': orders[:1].id,
                 'mimetype': 'application/x-pdf'

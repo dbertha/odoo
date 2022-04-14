@@ -177,7 +177,7 @@ class _Cleaner(clean.Cleaner):
                 del el.attrib['style']
 
 
-def html_sanitize(src, silent=True, sanitize_tags=True, sanitize_attributes=False, sanitize_style=False, strip_style=False, strip_classes=False):
+def html_sanitize(src, silent=True, sanitize_tags=True, sanitize_attributes=False, sanitize_style=False, strip_style=False, strip_classes=False, sanitize_form=True):
     if not src:
         return src
     src = ustr(src, errors='replace')
@@ -195,7 +195,7 @@ def html_sanitize(src, silent=True, sanitize_tags=True, sanitize_attributes=Fals
         'page_structure': True,
         'style': strip_style,              # True = remove style tags/attrs
         'sanitize_style': sanitize_style,  # True = sanitize styling
-        'forms': True,                     # True = remove form tags
+        'forms': sanitize_form,            # True = remove form tags
         'remove_unknown_tags': False,
         'comments': False,
         'processing_instructions': False
@@ -524,6 +524,19 @@ def email_escape_char(email_address):
     """ Escape problematic characters in the given email address string"""
     return email_address.replace('\\', '\\\\').replace('%', '\\%').replace('_', '\\_')
 
+
+def email_domain_extract(email):
+    """Return the domain of the given email."""
+    if not email:
+        return
+
+    email_split = getaddresses([email])
+    if not email_split or not email_split[0]:
+        return
+
+    _, _, domain = email_split[0][1].rpartition('@')
+    return domain
+
 # was mail_message.decode()
 def decode_smtp_header(smtp_header, quoted=False):
     """Returns unicode() string conversion of the given encoded smtp header
@@ -590,3 +603,31 @@ def formataddr(pair, charset='utf-8'):
                 name=email_addr_escapes_re.sub(r'\\\g<0>', name),
                 addr=address)
     return address
+
+
+def encapsulate_email(old_email, new_email):
+    """Change the FROM of the message and use the old one as name.
+
+    e.g.
+    * Old From: "Admin" <admin@gmail.com>
+    * New From: notifications@odoo.com
+    * Output: "Admin" <notifications@odoo.com>
+    """
+    old_email_split = getaddresses([old_email])
+    if not old_email_split or not old_email_split[0]:
+        return old_email
+
+    new_email_split = getaddresses([new_email])
+    if not new_email_split or not new_email_split[0]:
+        return
+
+    old_name, old_email = old_email_split[0]
+    if old_name:
+        name_part = old_name
+    else:
+        name_part = old_email.split("@")[0]
+
+    return formataddr((
+        name_part,
+        new_email_split[0][1],
+    ))

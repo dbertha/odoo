@@ -540,6 +540,7 @@
                                         widget="many2many_tags"
                                         options="{'no_create': True}"
                                         domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id)]"
+                                        context="{'active_test': True}"
                                         attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}"
                                         optional="show"
                                     />
@@ -1167,11 +1168,8 @@
                     <xpath expr="//field[@name='partner_id']" position="after">
                        <field name="partner_shipping_id"
                               groups="sale.group_delivery_invoice_address"
-                              attrs="{'invisible': [('type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund'))]}"/>
+                              attrs="{'invisible': [('type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}"/>
                    </xpath>
-                    <xpath expr="//field[@name='invoice_line_ids']//field[@name='discount']" position="attributes">
-                        <attribute name="groups">product.group_discount_per_so_line</attribute>
-                    </xpath>
                     <xpath expr="//group[@name='sale_info_group']/field[@name='invoice_user_id']" position="after">
                         <field name="team_id" kanban_view_ref="%(sales_team.crm_team_view_kanban)s"/>
                     </xpath>
@@ -1291,7 +1289,7 @@
             <field name="res_model">sale.report</field>
             <field name="view_mode">graph</field>
             <field name="domain">[('state','not in',('draft','cancel'))]</field>
-            <field name="context">{'search_default_Sales': 1, 'time_ranges': {'field':'date_order', 'range':'last_30_days'}, 'search_default_team_id': [active_id]}</field>
+            <field name="context">{'search_default_Sales': 1, 'time_ranges': {'field':'date', 'range':'last_30_days'}, 'search_default_team_id': [active_id]}</field>
             <field name="help">This report performs analysis on your sales orders. Analysis check your sales revenues and sort it by different group criteria (salesman, partner, product, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application.</field>
         </record>
 
