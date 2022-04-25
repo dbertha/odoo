@@ -479,6 +479,7 @@ class StockQuant(models.Model):
                 action_fix_unreserve = self.env.ref(
                     'stock.stock_quant_stock_move_line_desynchronization', raise_if_not_found=False)
                 if action_fix_unreserve and self.user_has_groups('base.group_system'):
+                    action_fix_unreserve.run()
                     raise RedirectWarning(
                         _("""It is not possible to unreserve more products of %s than you have in stock.
 The correction could unreserve some operations with problematics products.""") % product_id.display_name,
