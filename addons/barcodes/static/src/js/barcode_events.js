@@ -75,14 +75,12 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
     },
 
     handle_buffered_keys: function() {
-        console.log("getting events into str");
         var str = this.buffered_key_events.reduce(function(memo, e) { 
-            console.log(e.which);
+            if(e.originalEvent.code === 'BracketRight'){
+                return memo + ']';
+            }
             return memo + String.fromCharCode(e.which) }, '');
-        console.log(str);
         var match = str.match(this.regexp);
-        console.log(this.regexp);
-        console.log(match);
 
         if (match) {
             var barcode = match[1];
@@ -92,8 +90,9 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
             core.bus.trigger('barcode_scanned', barcode, this.buffered_key_events[0].target);
 
             // Dispatch a barcode_scanned DOM event to elements that have barcode_events="true" set.
-            if (this.buffered_key_events[0].target.getAttribute("barcode_events") === "true")
+            if (this.buffered_key_events[0].target.getAttribute("barcode_events") === "true"){
                 $(this.buffered_key_events[0].target).trigger('barcode_scanned', barcode);
+            }
         } else {
             this.resend_buffered_keys();
         }
@@ -147,7 +146,7 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
     is_special_key: function(e) {
         if (e.key === "ArrowLeft" || e.key === "ArrowRight" ||
             e.key === "ArrowUp" || e.key === "ArrowDown" ||
-            e.key === "Escape" || e.key === "Tab" ||
+            e.key === "Escape" || e.key === "Tab" || e.key === "Shift" ||
             e.key === "Backspace" || e.key === "Delete" ||
             e.key === "Home" || e.key === "End" ||
             e.key === "PageUp" || e.key === "PageDown" ||
@@ -174,31 +173,32 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
     },
 
     handler: function(e){
-        console.log("handler");
-        console.log(e);
-        console.log(e.which);
         // Don't catch events we resent
-        if (e.dispatched_by_barcode_reader)
+        if (e.dispatched_by_barcode_reader){
             return;
+        }
         // Don't catch non-printable keys for which Firefox triggers a keypress
-        if (this.is_special_key(e))
+        if (this.is_special_key(e)){
             return;
+        }
         // Don't catch keypresses which could have a UX purpose (like shortcuts)
-        if (e.ctrlKey || e.metaKey || e.altKey)
+        if ((e.ctrlKey || e.metaKey || e.altKey) && e.originalEvent.code != 'BracketRight'){
             return;
+        }
         // Don't catch Return when nothing is buffered. This way users
         // can still use Return to 'click' on focused buttons or links.
-        if (e.which === 13 && this.buffered_key_events.length === 0)
+        if (e.which === 13 && this.buffered_key_events.length === 0){
             return;
+        }
         // Don't catch events targeting elements that are editable because we
         // have no way of redispatching 'genuine' key events. Resent events
         // don't trigger native event handlers of elements. So this means that
         // our fake events will not appear in eg. an <input> element.
-        if ((this.element_is_editable(e.target) && !$(e.target).data('enableBarcode')) && e.target.getAttribute("barcode_events") !== "true")
+        if ((this.element_is_editable(e.target) && !$(e.target).data('enableBarcode')) && e.target.getAttribute("barcode_events") !== "true"){
             return;
+        }
 
         // Catch and buffer the event
-        console.log("pushing it");
         this.buffered_key_events.push(e);
         e.preventDefault();
         e.stopImmediatePropagation();
@@ -207,7 +207,6 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
         // of a barcode or after x milliseconds without a new keypress
         clearTimeout(this.timeout);
         if (String.fromCharCode(e.which).match(this.suffix)) {
-            console.log('call to handle');
             this.handle_buffered_keys();
         } else {
             this.timeout = setTimeout(_.bind(this.handle_buffered_keys, this), this.max_time_between_keys_in_ms);
@@ -234,7 +233,6 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
         if ($(document.activeElement).not('input:text, textarea, [contenteditable], ' +
             '[type="email"], [type="number"], [type="password"], [type="tel"], [type="search"]').length) {
             $('body').append(this.$barcodeInput);
-            console.log("appened barcode input and focus");
             this.$barcodeInput.focus();
         }
         if (this.$barcodeInput.is(":focus")) {
@@ -243,9 +241,6 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
             clearTimeout(this.timeout);
             // On chrome mobile, e.which only works for some special characters like ENTER or TAB.
             if (String.fromCharCode(e.which).match(this.suffix)) {
-                console.log("event content : ");
-                console.log(e);
-                console.log(e.which);
                 this._handleBarcodeValue(e);
             } else {
                 this.timeout = setTimeout(this._handleBarcodeValue.bind(this, e),
@@ -264,9 +259,7 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
      * @param  {jQuery.Event} keydown event
      */
     _handleBarcodeValue: function (e) {
-        console.log("handle barcode value");
         var barcodeValue = this.$barcodeInput.val();
-        console.log(barcodeValue);
         if (barcodeValue.match(this.regexp)) {
             core.bus.trigger('barcode_scanned', barcodeValue, $(e.target).parent()[0]);
             this._blurBarcodeInput();
@@ -297,10 +290,9 @@ var BarcodeEvents = core.Class.extend(mixins.PropertiesMixin, {
             console.log("is chrome mobile");
             $('body').on("keydown", this._listenBarcodeScanner.bind(this));
         } else {
-            $('body').bind("keypress", this.__handler);
+            $('body').bind("keydown", this.__handler);
         }
         if (prevent_key_repeat === true) {
-            console.log("prevent key repeat");
             $('body').bind("keydown", this.__keydown_handler);
             $('body').bind('keyup', this.__keyup_handler);
         }
