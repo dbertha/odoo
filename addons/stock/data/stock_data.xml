@@ -15,7 +15,10 @@
             <field name="model_id" ref="base.model_ir_actions_server"/>
             <field name="state">code</field>
             <field name="code">
-quants = env['stock.quant'].sudo().search([])
+if context.get('product_to_fix') :
+    quants = env['stock.quant'].sudo().search([('product_id', '=', context.get('product_to_fix'))])
+else :
+    quants = env['stock.quant'].sudo().search([])
 
 move_line_ids = []
 move_line_to_recompute_ids = []
@@ -90,7 +93,12 @@ for quant in quants:
                     move_line_to_recompute_ids += move_lines.ids
                     quant.write({'reserved_quantity': 0})
 
-move_lines = env['stock.move.line'].search([('product_id.type', '=',
+if context.get('product_to_fix') :
+    move_lines = env['stock.move.line'].search([('product_id','=', context.get('product_to_fix')), ('product_id.type', '=',
+        'product'), ('product_qty', '!=', 0), ('id', 'not in',
+        move_line_ids)])
+else:
+    move_lines = env['stock.move.line'].search([('product_id.type', '=',
         'product'), ('product_qty', '!=', 0), ('id', 'not in',
         move_line_ids)])
 
