@@ -255,6 +255,12 @@ class Website(models.Model):
         # Test validity of the sale_order_id
         sale_order = self.env['sale.order'].with_context(force_company=request.website.company_id.id).sudo().browse(sale_order_id).exists() if sale_order_id else None
 
+        if sale_order and sale_order.partner_id.id != partner.id and request.website.partner_id.id != partner.id:
+            if sale_order.partner_id.id != request.website.partner_id.id : #sale_order already assigned to another user !! force to use a new one
+                _logger.error('partner %s trying to take over sale_order %s that belongs to %s' % (partner.name, sale_order.name, sale_order.partner_id.name))
+                request.session['sale_order_id'] = None
+                sale_order = self.env['sale.order']
+
         # Do not reload the cart of this user last visit if the Fiscal Position has changed.
         if check_fpos and sale_order:
             fpos_id = (
