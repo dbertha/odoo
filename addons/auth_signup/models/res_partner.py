@@ -9,6 +9,10 @@ from datetime import datetime, timedelta
 
 from odoo import api, exceptions, fields, models, _
 
+import logging
+_logger = logging.getLogger(__name__)
+
+
 class SignupError(Exception):
     pass
 
@@ -131,8 +135,13 @@ class ResPartner(models.Model):
             if expiration or not partner.signup_valid:
                 token = random_token()
                 while self._signup_retrieve_partner(token):
+                    _logger.error('in the while loop')
                     token = random_token()
                 partner.write({'signup_token': token, 'signup_type': signup_type, 'signup_expiration': expiration})
+                _logger.error("new token")
+                _logger.error(partner.id)
+                _logger.error(partner.name)
+                _logger.error({'signup_token': token, 'signup_type': signup_type, 'signup_expiration': expiration})
         return True
 
     @api.model
@@ -143,7 +152,10 @@ class ResPartner(models.Model):
             :param raise_exception: if True, raise exception instead of returning False
             :return: partner (browse record) or False (if raise_exception is False)
         """
-        partner = self.search([('signup_token', '=', token)], limit=1)
+        partner = self.env['res.partner']
+        _logger.error('retrieve with token %s' % token)
+        if token :
+            partner = self.search([('signup_token', '=', token)], limit=1)
         if not partner:
             if raise_exception:
                 raise exceptions.UserError(_("Signup token '%s' is not valid") % token)
