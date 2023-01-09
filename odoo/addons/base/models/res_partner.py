@@ -825,6 +825,8 @@ class Partner(models.Model):
                 while to_scan:
                     record = to_scan.pop(0)
                     visited.add(record)
+                    if 'invoice' in adr_pref and record.parent_id : #CUSTOM : use parent as invoice addr
+                        result['invoice'] = record.parent_id.id
                     if record.type in adr_pref and not result.get(record.type):
                         result[record.type] = record.id
                     if len(result) == len(adr_pref):
