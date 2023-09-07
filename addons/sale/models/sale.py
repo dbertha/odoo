@@ -392,7 +392,7 @@ class SaleOrder(models.Model):
         values = {
             'pricelist_id': self.partner_id.property_product_pricelist and self.partner_id.property_product_pricelist.id or False,
             'payment_term_id': self.partner_id.property_payment_term_id and self.partner_id.property_payment_term_id.id or False,
-            'partner_invoice_id': addr['invoice'],
+            'partner_invoice_id': self.partner_id.parent_id and self.partner_id.parent_id.id or addr['invoice'],
             'partner_shipping_id': addr['delivery'],
         }
         user_id = partner_user.id
