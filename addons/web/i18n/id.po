@@ -1,2965 +1,4797 @@
-# Indonesian translation for openerp-web
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
-# This file is distributed under the same license as the openerp-web package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
-#
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* web
+# 
+# Translators:
+# Edi Santoso <repopamor@gmail.com>, 2019
+# oon arfiandwi <oon.arfiandwi@gmail.com>, 2019
+# Muhammad Herdiansyah <herdiansyah@openmailbox.org>, 2019
+# Rizky Fajar Ryanda <rizky.rikuverse@gmail.com>, 2019
+# Muhammad Syarif <mhdsyarif.ms@gmail.com>, 2019
+# Andhitia Rama <andhitia.r@gmail.com>, 2019
+# Edy Kend <edy@azmall.co.id>, 2019
+# Deddy Ddr <deddy.ddr@gmail.com>, 2019
+# Febrasari Almania <febrasari.almania@gmail.com>, 2019
+# Ikhsanul Wirsa <iwirsa02@outlook.co.id>, 2019
+# Wahyu Setiawan <wahyusetiaaa@gmail.com>, 2019
+# PAS IRVANUS <ipankbiz@gmail.com>, 2019
+# William Surya Permana <zarambie_game@yahoo.com>, 2020
+# Martin Trigaux, 2020
+# Bonny Useful <bonny.useful@gmail.com>, 2020
+# Gradien Foundation <gradien.co@gmail.com>, 2020
+# whenwesober <gulmugurzu@yevme.com>, 2020
+# Altela Eleviansyah Pramardhika <altela_pramardhika@yahoo.com>, 2021
+# Ryanto The <ry.the77@gmail.com>, 2021
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: openerp-web\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-01-21 14:08+0000\n"
-"PO-Revision-Date: 2014-08-14 16:14+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Indonesian <id@li.org>\n"
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-27 10:17+0000\n"
+"PO-Revision-Date: 2019-08-26 09:15+0000\n"
+"Last-Translator: Ryanto The <ry.the77@gmail.com>, 2021\n"
+"Language-Team: Indonesian (https://www.transifex.com/odoo/teams/41243/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-01-22 08:53+0000\n"
-"X-Generator: Launchpad (build 17306)\n"
+"Content-Transfer-Encoding: \n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2138
-#: code:addons/web/static/src/js/search.js:2305
+#: code:addons/web/static/src/js/views/calendar/calendar_model.js:0
+#, python-format
+msgid " [Me]"
+msgstr " [Me]"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#, python-format
+msgid " and "
+msgstr "dan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_facet.js:0
+#, python-format
+msgid " or "
+msgstr "atau"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/field_utils.js:0
+#, python-format
+msgid " records"
+msgstr "catatan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "# Code editor"
+msgstr "# Penyunting kode"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
 #, python-format
 msgid "%(field)s %(operator)s"
-msgstr ""
+msgstr "%(field)s %(operator)s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2139
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
 #, python-format
 msgid "%(field)s %(operator)s \"%(value)s\""
-msgstr ""
+msgstr "%(field)s %(operator)s \"%(value)s\""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:1517
-#, python-format
-msgid "%(page)d/%(page_count)d"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/views.js:596
-#, python-format
-msgid "%(view_type)s view"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:434
-#, python-format
-msgid "%d / %d"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/core.js:679
+#: code:addons/web/static/src/js/core/translation.js:0
 #, python-format
 msgid "%d days ago"
-msgstr ""
+msgstr "%d hari yang lalu"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:677
+#: code:addons/web/static/src/js/core/translation.js:0
 #, python-format
 msgid "%d hours ago"
-msgstr ""
+msgstr "%d jam yang lalu"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:675
+#: code:addons/web/static/src/js/core/translation.js:0
 #, python-format
 msgid "%d minutes ago"
 msgstr "%d menit yang lalu"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:681
+#: code:addons/web/static/src/js/core/translation.js:0
 #, python-format
 msgid "%d months ago"
-msgstr ""
+msgstr "%d bulan yang lalu"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:683
+#: code:addons/web/static/src/js/core/translation.js:0
 #, python-format
 msgid "%d years ago"
+msgstr "%d tahun yang lalu"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.webclient_bootstrap
+msgid ""
+"&lt;!--[if lt IE 10]&gt;\n"
+"                        &lt;body class=\"ie9\"&gt;\n"
+"                    &lt;![endif]--&gt;"
 msgstr ""
+"&lt;!--[if lt IE 10]&gt;\n"
+"                        &lt;body class=\"ie9\"&gt;\n"
+"                    &lt;![endif]--&gt;"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:422
+#: code:addons/web/static/src/xml/notification.xml:0
 #, python-format
-msgid "%d-%d of %d"
-msgstr ""
+msgid "&times;"
+msgstr "&times;"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:1426
-#, python-format
-msgid "%s (%d)"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/formats.js:302
+#: code:addons/web/static/src/js/fields/field_utils.js:0
 #, python-format
 msgid "'%s' is not a correct date"
-msgstr ""
+msgstr "'%s' bukan tanggal yang benar"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/formats.js:325
+#: code:addons/web/static/src/js/core/time.js:0
 #, python-format
 msgid "'%s' is not a correct date, datetime nor time"
-msgstr ""
+msgstr "'%s' bukan tanggal maupun waktu yang benar"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/formats.js:289
+#: code:addons/web/static/src/js/fields/field_utils.js:0
 #, python-format
 msgid "'%s' is not a correct datetime"
-msgstr ""
+msgstr "'%s' bukan tipe datetime yang benar"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/formats.js:253
+#: code:addons/web/static/src/js/fields/field_utils.js:0
 #, python-format
 msgid "'%s' is not a correct float"
-msgstr ""
+msgstr "'%s' bukan tipe float yang benar"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/formats.js:238
+#: code:addons/web/static/src/js/fields/field_utils.js:0
 #, python-format
 msgid "'%s' is not a correct integer"
-msgstr ""
+msgstr "'%s' bukan tipe integer yang benar"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/formats.js:310
+#: code:addons/web/static/src/js/fields/field_utils.js:0
 #, python-format
-msgid "'%s' is not a correct time"
-msgstr ""
+msgid "'%s' is not a correct monetary field"
+msgstr "'%s' bukan kolom jumlah uang yang benar"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/formats.js:337
+#: code:addons/web/static/src/js/core/time.js:0
 #, python-format
 msgid "'%s' is not convertible to date, datetime nor time"
-msgstr ""
+msgstr "'%s' tidak dapat diubah ke date,datetime maupun time"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/formats.js:190
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
-msgid "(%d records)"
-msgstr ""
+msgid "(change)"
+msgstr "(ubah)"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1612
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "(Any existing filter with the same name will be replaced)"
-msgstr ""
+msgid "(count)"
+msgstr "(hitung)"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:390
-#, python-format
-msgid "(Formerly OpenERP)"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1459
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "(no string)"
-msgstr ""
+msgstr "(tidak ada uraian)"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:957
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "(nolabel)"
+msgstr "(tidak ada label)"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/field_utils.js:0
+#, python-format
+msgid "1 record"
+msgstr "1 catatan"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.external_layout_background
+msgid "<i class=\"fa fa-at\" role=\"img\" aria-label=\"Email\" title=\"Email\"/>"
+msgstr "<i class=\"fa fa-at\" role=\"img\" aria-label=\"Email\" title=\"Email\"/>"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.external_layout_background
+msgid "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"Fiscal number\"/>"
+msgstr "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"Fiscal number\"/>"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.external_layout_background
+msgid "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Website\" title=\"Website\"/>"
+msgstr "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Website\" title=\"Website\"/>"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.external_layout_background
+msgid "<i class=\"fa fa-phone\" role=\"img\" aria-label=\"Phone\" title=\"Phone\"/>"
+msgstr "<i class=\"fa fa-phone\" role=\"img\" aria-label=\"Phone\" title=\"Phone\"/>"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.frontend_layout
+msgid "<span>Copyright &amp;copy;</span>"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1602
+#: code:addons/web/static/src/js/views/control_panel/search/add_new_favorite_menu.js:0
 #, python-format
-msgid "-- Actions --"
+msgid "A name for your favorite is required."
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1593
+#: code:addons/web/static/src/js/chrome/action_manager.js:0
 #, python-format
-msgid "-- Filters --"
+msgid ""
+"A popup window has been blocked. You may need to change your browser "
+"settings to allow popup windows for this page."
 msgstr ""
+"Jendela pop up terblokir. Anda harus mengubah pengaturan browser untuk "
+"mengizinkan jendela pop up untuk halaman ini."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1969
+#: code:addons/web/static/src/js/chrome/action_manager_report.js:0
 #, python-format
-msgid "--- Don't Import ---"
+msgid ""
+"A popup window with your report was blocked. You may need to change your "
+"browser settings to allow popup windows for this page."
 msgstr ""
+"Jendela pop up untuk report anda terblokir. Anda harus mengubah pengaturan "
+"browser untuk mengizinkan pop up untuk halaman ini."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1400
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "...Upload in progress..."
-msgstr ""
+msgid "ALL"
+msgstr "SEMUA"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1919
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "1. Import a .CSV file"
-msgstr ""
+msgid "ANY"
+msgstr "APAPUN"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:427
-#, python-format
-msgid "1367 Grand-Rosière"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1927
-#, python-format
-msgid "2. Check your file format"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2647
-#, python-format
-msgid "<Prev"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:1096
-#, python-format
-msgid "About"
-msgstr "Mengenai"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:369
-#, python-format
-msgid "About Odoo"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:580
+#: code:addons/web/static/src/js/services/crash_manager.js:0
 #, python-format
 msgid "Access Denied"
 msgstr "Akses Ditolak"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:4500
+#: code:addons/web/static/src/js/services/crash_manager.js:0
 #, python-format
-msgid "Action Button"
-msgstr ""
+msgid "Access Error"
+msgstr "Akses Eror"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1479
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Access to all Enterprise Apps"
+msgstr "Akses ke semua Aplikasi Enterprise"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/chrome/sidebar.js:0
+#, python-format
+msgid "Action"
+msgstr "Tindakan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Action ID:"
-msgstr ""
+msgstr "ID Tindakan:"
+
+#. module: web
+#: model:ir.model,name:web.model_ir_actions_act_window_view
+msgid "Action Window View"
+msgstr "Jendela Tindakan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:381
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
-msgid "Activate the developer mode"
-msgstr ""
+msgid "Activate Assets Debugging"
+msgstr "Aktifkan Debug Aset"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5035
-#: code:addons/web/static/src/xml/base.xml:1543
-#: code:addons/web/static/src/xml/base.xml:1842
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "Activate Tests Assets Debugging"
+msgstr "Aktifkan Tes Debug Aset"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
 #, python-format
 msgid "Add"
-msgstr ""
+msgstr "Tambahkan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1603
+#: code:addons/web/static/src/js/views/calendar/calendar_renderer.js:0
 #, python-format
-msgid "Add Advanced Filter"
-msgstr ""
+msgid "Add %s"
+msgstr "Tambahkan %s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1757
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Add Custom Filter"
+msgstr "Tambahkan Penyaring Sendiri"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Add Custom Group"
+msgstr "Tambahkan Grup Kustom"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Add a Column"
+msgstr "Tambahkan Kolom"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Add a condition"
-msgstr ""
+msgstr "Tambah kondisi"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3953
+#: code:addons/web/static/src/js/views/list/list_editable_renderer.js:0
+#: code:addons/web/static/src/js/views/list/list_editable_renderer.js:0
 #, python-format
-msgid "Add an item"
-msgstr ""
+msgid "Add a line"
+msgstr "Tambahkan satu baris"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:656
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Add branch"
+msgstr "Tambahkan Cabang"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/kanban.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Add column"
+msgstr "Tambahkan Kolom"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Add filter"
+msgstr "Tambah filter"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Add new value"
+msgstr "Tambah nilai baru"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Add node"
+msgstr "Tambahkan node"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Add tag"
+msgstr "Tambahkan tanda"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Add to Favorites"
+msgstr "Tambahkan ke Favorit"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Add..."
-msgstr ""
+msgstr "Tambah..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:4928
-#: code:addons/web/static/src/js/view_form.js:5077
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
 msgid "Add: "
-msgstr ""
+msgstr "Tambahkan: "
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2019
+#: code:addons/web/static/src/js/fields/signature.js:0
 #, python-format
-msgid "Advanced"
-msgstr ""
+msgid "Adopt Your Signature"
+msgstr "Tambahkan tanda tangan anda"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1752
+#: code:addons/web/static/src/js/fields/signature.js:0
 #, python-format
-msgid "Advanced Search"
-msgstr ""
+msgid "Adopt and Sign"
+msgstr "Ambil dan Tandai"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1562
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Advanced Search..."
-msgstr ""
+msgstr "Pencarian lanjutan..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:902
+#: code:addons/web/static/src/js/core/dialog.js:0
+#, python-format
+msgid "Alert"
+msgstr "Peringatan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "All"
+msgstr "Semua"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/calendar/calendar_model.js:0
+#: code:addons/web/static/src/js/views/calendar/calendar_renderer.js:0
+#, python-format
+msgid "All day"
+msgstr "Sepanjang hari"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "All users"
-msgstr ""
+msgstr "Seluruh pengguna"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1758
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
 #, python-format
-msgid "Apply"
-msgstr ""
+msgid "Alt"
+msgstr "Alt"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:630
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Attachment :"
-msgstr "lampiran"
+msgid "Among the"
+msgstr "Diantara"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1826
+#: code:addons/web/static/src/xml/crash_manager.xml:0
 #, python-format
-msgid "Available fields"
-msgstr ""
+msgid "An error occurred"
+msgstr "Terjadi eror"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:307
-#, python-format
-msgid "Back to Login"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:555
-#, python-format
-msgid "Backed"
-msgstr "back up"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:209
-#: code:addons/web/static/src/xml/base.xml:316
-#, python-format
-msgid "Backup"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/controllers/main.py:742
-#: code:addons/web/static/src/xml/base.xml:207
-#, python-format
-msgid "Backup Database"
-msgstr "Cadangkan basis data"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:270
-#, python-format
-msgid "Backup Restore"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:229
-#, python-format
-msgid "Backup format:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:428
-#, python-format
-msgid "Belgium"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:461
-#, python-format
-msgid "Browser's timezone"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1456
-#, python-format
-msgid "Button"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1471
-#, python-format
-msgid "Button Type:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:93
+#: code:addons/web/static/src/js/services/crash_manager.js:0
 #, python-format
 msgid ""
-"By default, the master password is 'admin'. This password\n"
-"                    is required to create, delete, dump or restore databases."
+"An unknown CORS error occured. The error probably originates from a "
+"JavaScript file served from a different origin. (Opening your browser "
+"console might give you a hint on the error.)"
 msgstr ""
+"Terjadi Kesalahan CORS yang tidak diketahui. Kesalahan eror ini mungkin "
+"berasal dari JavaScript file yang berada pada lokasi berbeda. (Membuka "
+"konsol browser mungkin akan membantu anda menunjukkan pesan errornya)."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/formats.js:117
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
-msgstr ""
+msgid "And more"
+msgstr "Dan lebih"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1924
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "CSV File:"
-msgstr ""
+msgid "Any"
+msgstr "Banyak"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:1874
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Can't convert value %s to context"
-msgstr ""
+msgid "Apply"
+msgstr "Terapkan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2482
+#: code:addons/web/static/src/js/views/form/form_controller.js:0
+#: code:addons/web/static/src/js/views/list/list_controller.js:0
 #, python-format
-msgid "Can't send email to invalid e-mail address"
+msgid "Archive"
+msgstr "Arsip"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Archive All"
+msgstr "Arsipkan Semua"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_column.js:0
+#, python-format
+msgid ""
+"Are you sure that you want to archive all the records from this column?"
+msgstr "Apakah anda yakin ingin mengarsip seluruh rekord dari kolom ini?"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/list/list_controller.js:0
+#, python-format
+msgid "Are you sure that you want to archive all the selected records?"
+msgstr "Apakah anda yakin untuk mengarsipkan seluruh rekord terpilih?"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/form/form_controller.js:0
+#, python-format
+msgid "Are you sure that you want to archive this record?"
+msgstr "Apakah anda yakin untuk mengarsipkan rekord ini?"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_column.js:0
+#, python-format
+msgid "Are you sure that you want to remove this column ?"
+msgstr "Apakah Anda yakin ingin menghapus kolom ini?"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/favorite_menu.js:0
+#, python-format
+msgid "Are you sure that you want to remove this filter?"
+msgstr "Apakah Anda yakin ingin menghapus penyaring ini?"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/basic/basic_controller.js:0
+#: code:addons/web/static/src/js/views/calendar/calendar_controller.js:0
+#, python-format
+msgid "Are you sure you want to delete this record ?"
+msgstr "Apakah Anda yakin ingin menghapus catatan ini?"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Are you sure you want to perform the following update on those"
+msgstr "Apakah anda yakin untuk memperbarui rekord ini?"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Attach"
+msgstr "Lampirkan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Attachment"
+msgstr "Lampiran"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Attachment :"
+msgstr "Lampiran :"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/name_and_signature.xml:0
+#, python-format
+msgid "Auto"
+msgstr "Otomatis"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Available fields"
+msgstr "Isian tersedia"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/kanban.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#: code:addons/web/static/src/xml/web_calendar.xml:0
+#: code:addons/web/static/src/xml/web_calendar.xml:0
+#, python-format
+msgid "Avatar"
+msgstr "Avatar"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#, python-format
+msgid "Badges"
+msgstr "Lencana"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Bar Chart"
+msgstr "Bagan Bilah"
+
+#. module: web
+#: model:ir.model,name:web.model_base
+msgid "Base"
+msgstr "Dasar"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Based On"
+msgstr "Based On"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "Become Superuser"
+msgstr "Ubah Menjadi Akun Superuser"
+
+#. module: web
+#: code:addons/web/controllers/main.py:0
+#, python-format
+msgid ""
+"Binary fields can not be exported to Excel unless their content is "
+"base64-encoded. That does not seem to be the case for %s."
+msgstr ""
+"Kolom binary tidak dapat diekspor ke Excel kecuali memiliki konten berbasis "
+"base64. Dalam kasus ini tampaknya tidak demikian %s"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Binary file"
+msgstr "Berkas biner"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/colorpicker_dialog.xml:0
+#, python-format
+msgid "Blue"
+msgstr "Biru"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Bugfixes guarantee"
+msgstr "Jaminan bebas bug"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Button"
+msgstr "Tombol"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Button Type:"
+msgstr "Tipe Tombol:"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/name_and_signature.xml:0
+#, python-format
+msgid ""
+"By clicking Adopt and Sign, I agree that the chosen signature/initials will "
+"be a valid electronic representation of my hand-written signature/initials "
+"for all purposes when it is used on documents, including legally binding "
+"contracts."
+msgstr ""
+"Dengan mengklik tombol Ambil dan Tandai, Saya setuju bahwa tanda "
+"tangan/inisial akan menjadi representasi elektronik dari tanda "
+"tangan/inisial saya dalam bentuk manual untuk segala hal ketika digunakan "
+"pada dokumen, termasuk kontrak yang mengikat."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/core/utils.js:0
+#, python-format
+msgid "Bytes|Kb|Mb|Gb|Tb|Pb|Eb|Zb|Yb"
+msgstr "Bytes|Kb|Mb|Gb|Tb|Pb|Eb|Zb|Yb"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "CLEAR"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:1954
-#: code:addons/web/static/src/xml/base.xml:345
-#: code:addons/web/static/src/xml/base.xml:1513
-#: code:addons/web/static/src/xml/base.xml:2006
+#: code:addons/web/static/src/js/views/calendar/calendar_view.js:0
+#, python-format
+msgid "Calendar"
+msgstr "Kalender"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/web_calendar.xml:0
+#, python-format
+msgid "Calendar toolbar"
+msgstr "Toolbar Kalender"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/calendar/calendar_view.js:0
+#, python-format
+msgid "Calendar view has not defined 'date_start' attribute."
+msgstr "Tampilan kalender belum mendefinisikan atribut 'date_start'."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/core/dialog.js:0
+#: code:addons/web/static/src/js/core/dialog.js:0
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#: code:addons/web/static/src/js/fields/signature.js:0
+#: code:addons/web/static/src/js/fields/upgrade_fields.js:0
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#: code:addons/web/static/src/js/views/calendar/calendar_quick_create.js:0
+#: code:addons/web/static/src/js/views/kanban/kanban_column.js:0
+#: code:addons/web/static/src/js/views/list/list_confirm_dialog.js:0
+#: code:addons/web/static/src/js/views/view_dialogs.js:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Cancel"
-msgstr "Batal"
+msgstr "Batalkan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:281
+#: code:addons/web/static/src/js/views/graph/graph_renderer.js:0
 #, python-format
-msgid "Change Master Password"
-msgstr "Ubah Kata sandi utama"
+msgid "Cannot render chart with mode : "
+msgstr "Tidak bisa render grafik dengan mode :"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/controllers/main.py:762
-#: code:addons/web/controllers/main.py:764
-#: code:addons/web/controllers/main.py:796
-#: code:addons/web/controllers/main.py:798
-#: code:addons/web/controllers/main.py:804
-#: code:addons/web/controllers/main.py:805
-#: code:addons/web/static/src/js/chrome.js:723
-#: code:addons/web/static/src/xml/base.xml:283
-#: code:addons/web/static/src/xml/base.xml:343
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#, python-format
+msgid "Card color: %s"
+msgstr "Warna Kartu: %s"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/controllers/main.py:0 code:addons/web/controllers/main.py:0
+#: code:addons/web/controllers/main.py:0
+#: code:addons/web/static/src/js/widgets/change_password.js:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Change Password"
 msgstr "Ubah Sandi"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:994
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Change default:"
-msgstr ""
+msgstr "Ubah standar:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:606
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Changed Password"
-msgstr ""
+msgid "Change graph"
+msgstr "Ganti grafik"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:426
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
-msgid "Chaussée de Namur 40"
-msgstr ""
+msgid "Checkbox"
+msgstr "Kotak centang"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:114
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
-msgid "Check this box to evaluate Odoo."
-msgstr ""
+msgid "Checkboxes"
+msgstr "Kotak centang"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2669
+#: code:addons/web/static/src/js/widgets/colorpicker_dialog.js:0
 #, python-format
-msgid "Choose Time"
-msgstr ""
+msgid "Choose"
+msgstr "Pilih"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:132
-#, python-format
-msgid "Choose a password:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2643
-#: code:addons/web/static/src/xml/base.xml:1305
-#: code:addons/web/static/src/xml/base.xml:1359
-#: code:addons/web/static/src/xml/base.xml:1361
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/name_and_signature.xml:0
 #, python-format
 msgid "Clear"
-msgstr ""
+msgstr "Bersihkan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:465
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
-msgid "Click here to change your user's timezone."
-msgstr ""
+msgid "Clear Events"
+msgstr "Bersihkan Acara"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:298
-#: code:addons/web/static/src/js/chrome.js:1259
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Client Error"
-msgstr "Error Klien"
+msgid "Clear Signature"
+msgstr "Hapus Tanda Tangan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/data_export.js:35
-#: code:addons/web/static/src/js/view_form.js:1085
-#: code:addons/web/static/src/xml/base.xml:1530
+#: code:addons/web/static/src/js/tools/debug_manager_backend.js:0
+#: code:addons/web/static/src/js/views/view_dialogs.js:0
+#: code:addons/web/static/src/js/widgets/data_export.js:0
+#: code:addons/web/static/src/js/widgets/domain_selector_dialog.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/dialog.xml:0
+#: code:addons/web/static/src/xml/notification.xml:0
 #, python-format
 msgid "Close"
-msgstr "Selesai"
+msgstr "Tutup"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2646
+#: code:addons/web/static/src/js/views/kanban/kanban_renderer.js:0
 #, python-format
-msgid "Close without change"
+msgid "Column %s"
+msgstr "Kolom %s"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Column title"
+msgstr "Judul kolom"
+
+#. module: web
+#: model:ir.model,name:web.model_res_company
+msgid "Companies"
+msgstr "Perusahaan"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.frontend_layout
+msgid "Company name"
+msgstr "Nama Perusahaan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Compare To"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:876
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Condition:"
-msgstr ""
+msgstr "Kondisi:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:1952
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Confirm"
-msgstr ""
+msgid "Confirm New Password"
+msgstr "Konfirmasi Kata Sandi Baru"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:337
+#: code:addons/web/static/src/js/core/dialog.js:0
+#: code:addons/web/static/src/js/core/dialog.js:0
+#: code:addons/web/static/src/js/views/list/list_confirm_dialog.js:0
 #, python-format
-msgid "Confirm New Password:"
-msgstr ""
+msgid "Confirmation"
+msgstr "Konfirmasi"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:297
+#: code:addons/web/static/src/js/chrome/abstract_web_client.js:0
 #, python-format
-msgid "Confirm new master password:"
-msgstr ""
+msgid "Connection lost"
+msgstr "Kehilangan koneksi"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:136
+#: code:addons/web/static/src/js/chrome/abstract_web_client.js:0
 #, python-format
-msgid "Confirm password:"
-msgstr ""
+msgid "Connection restored"
+msgstr "Koneksi sudah pulih"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:982
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Context:"
-msgstr ""
+msgstr "Konteks:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:271
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
+#: code:addons/web/static/src/xml/menu.xml:0
 #, python-format
-msgid "Copy of an existing database"
-msgstr ""
+msgid "Control"
+msgstr "Kontrol"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:419
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Copyright © 2004-TODAY OpenERP SA. All Rights Reserved."
+msgid "Control panel toolbar"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5763
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#, python-format
+msgid "Copied !"
+msgstr "Disalin !"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Copy Text"
+msgstr "Salin Teks"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/crash_manager.xml:0
+#, python-format
+msgid "Copy the full error to clipboard"
+msgstr "Salin semua eror ke clipboard"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Copy to Clipboard"
+msgstr "Salin ke Clipboard"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/core/ajax.js:0
+#, python-format
+msgid "Could not connect to the server"
+msgstr "Tidak dapat terhubung ke server"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#: code:addons/web/static/src/js/fields/signature.js:0
 #, python-format
 msgid "Could not display the selected image."
-msgstr ""
-
-#. module: web
-#: code:addons/web/controllers/main.py:724
-#, python-format
-msgid "Could not drop database !"
-msgstr ""
+msgstr "Tak bisa tampilkan gambar terpilih"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:1051
-#, python-format
-msgid "Could not find id in dataset"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:586
-#, python-format
-msgid "Could not restore the database"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/views.js:1693
+#: code:addons/web/static/src/js/core/utils.js:0
 #, python-format
 msgid "Could not serialize XML"
-msgstr ""
+msgstr "Tak bisa serialisasikan XML"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:20
-#: code:addons/web/static/src/js/view_list.js:2373
-#: code:addons/web/static/src/xml/base.xml:313
-#: code:addons/web/static/src/xml/base.xml:837
-#: code:addons/web/static/src/xml/base.xml:1512
-#: code:addons/web/static/src/xml/base.xml:2004
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#, python-format
+msgid ""
+"Could not set the cover image: incorrect field (\"%s\") is provided in the "
+"view."
+msgstr ""
+"Tidak dapat menentukan cover gambar: field tidak sesuai (\"%s\") pada "
+"tampilan."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/graph/graph_view.js:0
+#: code:addons/web/static/src/js/views/graph/graph_view.js:0
+#: code:addons/web/static/src/js/views/pivot/pivot_view.js:0
+#: code:addons/web/static/src/js/views/pivot/pivot_view.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Count"
+msgstr "Hitung"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#: code:addons/web/static/src/js/views/calendar/calendar_controller.js:0
+#: code:addons/web/static/src/js/views/calendar/calendar_quick_create.js:0
+#: code:addons/web/static/src/js/views/kanban/kanban_controller.js:0
+#: code:addons/web/static/src/js/views/view_dialogs.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Create"
-msgstr ""
+msgstr "Buat"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3379
+#: code:addons/web/static/src/js/views/form/form_controller.js:0
+#: code:addons/web/static/src/js/views/view_dialogs.js:0
+#, python-format
+msgid "Create "
+msgstr "Buat"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
 msgid "Create \"<strong>%s</strong>\""
-msgstr ""
+msgstr "Buat \"<strong>%s</strong>\""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:141
-#, python-format
-msgid "Create Database"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3467
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
 msgid "Create a %s"
-msgstr ""
+msgstr "Buat %s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:82
+#: code:addons/web/static/src/xml/menu.xml:0
 #, python-format
-msgid "Create a New Database"
-msgstr ""
+msgid "Create a new record"
+msgstr "Buat rekord baru"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3390
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
 msgid "Create and Edit..."
-msgstr ""
+msgstr "Buat dan Ubah..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:2005
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
 msgid "Create and edit"
-msgstr ""
+msgstr "Buat dan Ubah"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3434
-#: code:addons/web/static/src/js/view_form.js:4453
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
 msgid "Create: "
-msgstr ""
+msgstr "Buat: "
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:635
+#: code:addons/web/static/src/js/views/calendar/calendar_controller.js:0
+#, python-format
+msgid "Create: %s"
+msgstr "Buat: %s"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Created by :"
-msgstr ""
+msgstr "Dibuat oleh:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:573
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "Creation Date:"
-msgstr ""
+msgstr "Tanggal Dibuat:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:569
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "Creation User:"
-msgstr ""
+msgstr "Pengguna Dibuat:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1778
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Custom Filter"
-msgstr ""
+msgid "Current state"
+msgstr "Status saat ini"
 
 #. module: web
-#: view:website:web.database_select
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Dark blue"
+msgstr "Biru gelap"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Dark purple"
+msgstr "Ungu gelap"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.login
 msgid "Database"
+msgstr "Database"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Date"
+msgstr "Tanggal"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Date & Time"
+msgstr "Tanggal & Waktu"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/web_calendar.xml:0
+#, python-format
+msgid "Day"
+msgstr "Hari"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.debug_icon
+msgid ""
+"Debug mode is activated#{debug_mode_help}. Click here to exit debug mode."
 msgstr ""
+"Debug mode diaktifkan#{debug_mode_help}. Klik disini untuk keluar dari debug"
+" mode."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:311
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
-msgid "Database Management"
-msgstr ""
+msgid "Decimal"
+msgstr "Desimal"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:555
-#, python-format
-msgid "Database backed up successfully"
-msgstr "Database telah berhasil di back up"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:592
-#, python-format
-msgid "Database restored successfully"
-msgstr "Database berhasil dipulihkan"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:184
-#: code:addons/web/static/src/xml/base.xml:216
-#, python-format
-msgid "Database:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:537
-#, python-format
-msgid "Debug View#"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:120
-#, python-format
-msgid "Default language:"
-msgstr "Bahasa standar:"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:859
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Default:"
-msgstr ""
+msgstr "Standar:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:204
-#: code:addons/web/static/src/js/view_list.js:351
-#: code:addons/web/static/src/xml/base.xml:1909
+#: code:addons/web/static/src/js/views/form/form_controller.js:0
+#: code:addons/web/static/src/js/views/list/list_controller.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#: code:addons/web/static/src/xml/web_calendar.xml:0
 #, python-format
 msgid "Delete"
-msgstr ""
+msgstr "Hapus"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:647
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Delete node"
+msgstr "Hapus node"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/list/list_editable_renderer.js:0
+#, python-format
+msgid "Delete row "
+msgstr "Hapus baris"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Delete this attachment"
-msgstr ""
+msgstr "Hapus lampiran ini"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1407
+#: code:addons/web/static/src/xml/menu.xml:0
 #, python-format
-msgid "Delete this file"
-msgstr ""
+msgid "Description"
+msgstr "Deskripsi"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1942
-#, python-format
-msgid "Delimiter:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:798
-#: code:addons/web/static/src/xml/base.xml:842
-#: code:addons/web/static/src/xml/base.xml:1527
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/js/views/view_dialogs.js:0
+#: code:addons/web/static/src/js/widgets/colorpicker_dialog.js:0
+#: code:addons/web/static/src/js/widgets/domain_selector_dialog.js:0
+#: code:addons/web/static/src/js/widgets/translation_dialog.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
 #, python-format
 msgid "Discard"
-msgstr ""
+msgstr "Abaikan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:435
+#: code:addons/web/static/src/xml/menu.xml:0
 #, python-format
-msgid "Discover Events of Odoo around the world..."
-msgstr ""
+msgid "Discard a record modification"
+msgstr "Buang modifikasi rekord"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:537
+#: code:addons/web/static/src/js/widgets/data_export.js:0
 #, python-format
-msgid "Do you really want to delete the database: %s ?"
-msgstr ""
+msgid "Do you really want to delete this export template?"
+msgstr "Anda yakin ingin menghapus template ekspor ini?"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/views.js:1350
+#: code:addons/web/static/src/js/views/calendar/calendar_renderer.js:0
 #, python-format
-msgid "Do you really want to delete this attachment ?"
-msgstr ""
+msgid "Do you really want to delete this filter from favorites ?"
+msgstr "Apakah Anda yakin ingin menghapus filter ini dari favorit?"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:779
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Do you really want to delete this record?"
-msgstr ""
+msgid "Documentation"
+msgstr "Dokumentasi"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:609
+#: code:addons/web/static/src/js/widgets/domain_selector_dialog.js:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Do you really want to remove these records?"
-msgstr ""
+msgid "Domain"
+msgstr "Ruang Lingkup"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1934
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
 #, python-format
-msgid "Does your file have titles?"
-msgstr ""
+msgid "Domain error"
+msgstr "Eror domain"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:986
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Domain node"
+msgstr "Node domain"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Domain:"
-msgstr ""
+msgstr "Domain:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:704
+#: code:addons/web/static/src/js/core/misc.js:0
 #, python-format
 msgid "Don't leave yet,<br />it's still loading..."
-msgstr ""
+msgstr "Jangan beralih,<br  />masih memuat..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2645
-#: code:addons/web/static/src/js/view_form.js:2675
-#, python-format
-msgid "Done"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5702
-#: code:addons/web/static/src/js/view_list.js:2305
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Download"
 msgstr "Unduh"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:2317
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Download \"%s\""
-msgstr ""
+msgid "Download xls"
+msgstr "Unduh xls"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:178
-#: code:addons/web/static/src/xml/base.xml:315
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/name_and_signature.xml:0
 #, python-format
-msgid "Drop"
-msgstr ""
+msgid "Draw"
+msgstr "Gambar"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/controllers/main.py:724
-#: code:addons/web/static/src/xml/base.xml:176
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Drop Database"
-msgstr ""
+msgid "Dropdown menu"
+msgstr "Menu dropdown"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:545
-#, python-format
-msgid "Dropping database"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:205
-#: code:addons/web/static/src/xml/base.xml:152
-#: code:addons/web/static/src/xml/base.xml:314
+#: code:addons/web/static/src/js/views/form/form_controller.js:0
 #, python-format
 msgid "Duplicate"
-msgstr ""
+msgstr "Gandakan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:150
-#, python-format
-msgid "Duplicate Database"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:527
-#, python-format
-msgid "Duplicating database"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2482
-#, python-format
-msgid "E-mail Error"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:550
-#: code:addons/web/static/src/xml/base.xml:834
-#: code:addons/web/static/src/xml/base.xml:1304
+#: code:addons/web/static/src/js/views/calendar/calendar_quick_create.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#: code:addons/web/static/src/xml/web_calendar.xml:0
 #, python-format
 msgid "Edit"
-msgstr ""
+msgstr "Sunting"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:552
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "Edit Action"
-msgstr ""
-
-#. module: web
-#: view:website:web.menu_secondary
-msgid "Edit Company data"
-msgstr ""
+msgstr "Sunting Tindakan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:551
+#: code:addons/web/static/src/js/views/kanban/kanban_column.js:0
 #, python-format
-msgid "Edit SearchView"
-msgstr ""
+msgid "Edit Column"
+msgstr "Ubah Kolom"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:553
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
-msgid "Edit Workflow"
-msgstr ""
+msgid "Edit ControlPanelView"
+msgstr "Sunting ControlPanelView"
 
 #. module: web
-#: view:website:web.login
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Edit Domain"
+msgstr "Ubah Domain"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Edit Stage"
+msgstr "Ubah Tahapan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "Edit View:"
+msgstr "Sunting View:"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/menu.xml:0
+#, python-format
+msgid "Edit a record"
+msgstr "Sunting rekord"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#: model_terms:ir.ui.view,arch_db:web.login
+#, python-format
 msgid "Email"
-msgstr ""
+msgstr "Email"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.external_layout_standard
+msgid "Email:"
+msgstr "Email:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1946
-#, python-format
-msgid "Encoding:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/website.tour.xml:25
-#, python-format
-msgid "End This Tutorial"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2644
-#, python-format
-msgid "Erase the current date"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/search.js:1886
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/add_new_favorite_menu.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/add_new_favorite_menu.js:0
 #, python-format
 msgid "Error"
-msgstr ""
+msgstr "Eror!"
 
 #. module: web
-#: code:addons/web/controllers/main.py:764
-#: code:addons/web/controllers/main.py:805
+#: code:addons/web/controllers/main.py:0
 #, python-format
 msgid "Error, password not changed !"
-msgstr ""
+msgstr "Eror, password tidak berubah !"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/pyeval.js:912
+#: code:addons/web/static/src/xml/kanban.xml:0
 #, python-format
-msgid "Evaluation Error"
-msgstr ""
+msgid "Esc to discard"
+msgstr "Tekan esc untuk membatalkan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:350
-#: code:addons/web/static/src/xml/base.xml:1802
+#: code:addons/web/static/src/js/views/calendar/calendar_model.js:0
+#, python-format
+msgid "Everybody's calendars"
+msgstr "Kalender semua orang"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/calendar/calendar_model.js:0
+#, python-format
+msgid "Everything"
+msgstr "Semua"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Expand all"
+msgstr "Perluas semua"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/list/list_controller.js:0
+#: code:addons/web/static/src/js/widgets/data_export.js:0
 #, python-format
 msgid "Export"
-msgstr ""
+msgstr "Ekspor"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/data_export.js:11
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Export All"
+msgstr "Ekspor Semua"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/data_export.js:0
 #, python-format
 msgid "Export Data"
 msgstr "Ekspor Data"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1820
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Export Formats"
+msgid "Export Format:"
+msgstr "Format Ekspor:"
+
+#. module: web
+#: code:addons/web/controllers/main.py:0
+#, python-format
+msgid "Exporting grouped data to csv is not supported."
+msgstr "Mengekspor data yang dipilih kedalam csv tidak dapat dilakukan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/controllers/main.py:0 code:addons/web/controllers/main.py:0
+#: code:addons/web/static/src/js/widgets/data_export.js:0
+#, python-format
+msgid "External ID"
+msgstr "ID Eksternal"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "External link"
+msgstr "External link"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "FILTER"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/data_export.js:36
-#, python-format
-msgid "Export To File"
-msgstr "Ekspor ke File"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1814
-#, python-format
-msgid "Export Type:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1817
-#, python-format
-msgid "Export all Data"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/views.js:852
+#: code:addons/web/static/src/js/views/control_panel/control_panel_model.js:0
 #, python-format
 msgid "Failed to evaluate search criterions"
-msgstr ""
+msgstr "Gagal mengevaluasi kriteria pencarian"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1732
+#: code:addons/web/static/src/js/fields/field_utils.js:0
+#, python-format
+msgid "False"
+msgstr "Salah"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/favorite_menu.js:0
 #, python-format
 msgid "Favorites"
-msgstr ""
+msgstr "Favorit"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:1245
-#, python-format
-msgid "Field '%s' specified in view could not be found."
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:962
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Field:"
-msgstr ""
+msgstr "Kolom:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/views.js:974
-#: code:addons/web/static/src/xml/base.xml:545
+#: code:addons/web/static/src/js/tools/debug_manager_backend.js:0
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "Fields View Get"
-msgstr ""
+msgstr "Kolom Tampilan Get"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1828
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Fields to export"
-msgstr ""
+msgstr "Kolom untuk diekspor"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5622
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "File"
+msgstr "Berkas"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
 msgid "File Upload"
-msgstr ""
+msgstr "Unggah Berkas"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5602
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
 msgid "File upload"
-msgstr ""
+msgstr "Unggah Berkas"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:260
-#, python-format
-msgid "File:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:87
-#, python-format
-msgid ""
-"Fill in this form to create an Odoo database. You can\n"
-"                    create databases for different companies or for "
-"different\n"
-"                    goals (testing, production). Once the database is "
-"created,\n"
-"                    you will be able to install your first application."
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/search.js:1148
-#, python-format
-msgid "Filter"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1610
-#, python-format
-msgid "Filter Name:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1740
-#, python-format
-msgid "Filter name"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/search.js:1886
-#, python-format
-msgid "Filter name is required."
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/search.js:1093
+#: code:addons/web/static/src/js/views/control_panel/search/search_bar_autocomplete_sources.js:0
 #, python-format
 msgid "Filter on: %s"
-msgstr ""
+msgstr "Penyaring pada: %s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:833
-#: code:addons/web/static/src/xml/base.xml:1592
+#: code:addons/web/static/src/js/views/control_panel/search/add_new_favorite_menu.js:0
+#, python-format
+msgid "Filter with same name already exists."
+msgstr "Penyaring dengan nama yang sama sudah ada."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/filter_menu.js:0
 #, python-format
 msgid "Filters"
-msgstr ""
+msgstr "Penyaring"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:439
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Follow Us..."
-msgstr ""
+msgid "Flip axis"
+msgstr "Tukar sumbu"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:422
+#: code:addons/web/static/src/xml/kanban.xml:0
 #, python-format
-msgid "For more information visit"
-msgstr ""
+msgid "Fold"
+msgstr "Lipat"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1953
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Followed by"
+msgstr "Diikuti oleh"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/pivot/pivot_controller.js:0
 #, python-format
 msgid ""
-"For use if CSV files have titles on multiple lines, skips more than a single "
-"line during import"
+"For Excel compatibility, data cannot be exported if there are more than 256 columns.\n"
+"\n"
+"Tip: try to flip axis, filter further or reduce the number of measures."
 msgstr ""
+"Untuk kompatibilitas Excel, data tidak bisa diekspor jika terdapat lebih dari 256 kolom.\n"
+"\n"
+"Tips: coba tukar sumbu, saring lebih jauh atau kurangi jumlah pengukur."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:79
-#: code:addons/web/static/src/js/view_form.js:325
+#: code:addons/web/static/src/js/views/form/form_view.js:0
 #, python-format
 msgid "Form"
 msgstr "Formulir"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:421
+#: code:addons/web/static/src/js/views/qweb/qweb_view.js:0
 #, python-format
-msgid "GNU Affero General Public License"
+msgid "Freedom View"
+msgstr "Tampilan Bebas"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/name_and_signature.xml:0
+#, python-format
+msgid "Full Name"
+msgstr "Nama lengkap"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Fushia"
+msgstr "Fushia"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Get this feature and much more with Odoo Enterprise!"
+msgstr "Dapatkan fitur ini dan lebih banyak lagi dengan Odoo Enterprise!"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#, python-format
+msgid "Global Business Error"
+msgstr "Eror Bisnis Global"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_column_quick_create.js:0
+#, python-format
+msgid "Got it"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:445
+#: code:addons/web/static/src/js/views/graph/graph_view.js:0
 #, python-format
-msgid "Group"
-msgstr "Grup"
+msgid "Graph"
+msgstr "Grafik"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1261
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/colorpicker_dialog.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Green"
+msgstr "Hijau"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/groupby_menu.js:0
+#, python-format
+msgid "Group By"
+msgstr "Dikelompokkan Menurut"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_bar_autocomplete_sources.js:0
 #, python-format
 msgid "Group by: %s"
+msgstr "Kelompokkan menurut: %s"
+
+#. module: web
+#: model:ir.model,name:web.model_ir_http
+msgid "HTTP Routing"
+msgstr "HTTP routing"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Handle"
+msgstr "Handle"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Hide in Kanban"
+msgstr "Sembunyikan dalam tampilan kanban"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Hit DOWN to navigate to the list below"
+msgstr "Tekan tombol BAWAH untuk menavigasi tampilan berikut"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Hit ENTER to"
+msgstr "Tekan ENTER untuk"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Hit ENTER to CREATE"
+msgstr "Tekan ENTER untuk MEMBUAT"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Hit ENTER to SAVE"
+msgstr "Tekan ENTER untuk MENYIMPAN"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Hit ESCAPE to DISCARD"
+msgstr "Tekan ESCAPE untuk MEMBATALKAN"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/colorpicker_dialog.xml:0
+#, python-format
+msgid "Hue"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1285
+#: code:addons/web/static/src/js/core/dialog.js:0
 #, python-format
-msgid "GroupBy"
-msgstr ""
+msgid "I am sure about this."
+msgstr "Saya yakin."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:370
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Help"
-msgstr ""
+msgid "I want to update data (import-compatible export)"
+msgstr "Saya ingin mengupdate data (Ekspor impor-kompatibel)"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1982
-#, python-format
-msgid "Here is a preview of the file we could not import:"
-msgstr "Berikut ini adalah pratinjau dari file yang tidak dapat kita impor"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2671
-#, python-format
-msgid "Hour"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:561
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "ID:"
-msgstr ""
+msgstr "ID:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5763
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#: code:addons/web/static/src/js/fields/signature.js:0
 #, python-format
 msgid "Image"
-msgstr ""
+msgstr "Gambar"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1913
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
-msgid "Import"
-msgstr ""
+msgid "Integer"
+msgstr "Bilangan Bulat"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1930
+#: code:addons/web/static/src/js/views/graph/graph_renderer.js:0
+#: code:addons/web/static/src/js/views/graph/graph_renderer.js:0
 #, python-format
-msgid "Import Options"
-msgstr ""
+msgid "Invalid data"
+msgstr "Data tidak valid"
 
 #. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1816
+#: code:addons/web/controllers/main.py:0 code:addons/web/controllers/main.py:0
 #, python-format
-msgid "Import-Compatible Export"
+msgid ""
+"Invalid database name. Only alphanumerical characters, underscore, hyphen "
+"and dot are allowed."
 msgstr ""
+"Nama database tidak sah. Hanya huruf, angka, garis bawah, tanda penghubung, "
+"dan titik yang diijinkan."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:581
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Incorrect super-administrator password"
-msgstr ""
+msgid "Invalid domain"
+msgstr "Domain tidak sah"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:952
+#: code:addons/web/static/src/js/widgets/model_field_selector.js:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Incorrect value for field %(fieldname)s: [%(value)s] is %(message)s"
-msgstr ""
+msgid "Invalid field chain"
+msgstr "Rantai kolom tidak sah"
 
 #. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/search.js:743
+#: code:addons/web/controllers/main.py:0
 #, python-format
-msgid "Invalid Search"
-msgstr ""
+msgid "Invalid inherit mode. Module %s and template name %s"
+msgstr "Inherit mode tidak sesuai. Modul %s dan nama template %s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:418
+#: code:addons/web/static/src/js/views/graph/graph_renderer.js:0
 #, python-format
-msgid "Invalid database name"
-msgstr "Nama database salah"
+msgid "Invalid mode for chart"
+msgstr "Mode untuk grafik tidak sah"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/views.js:979
-#: code:addons/web/static/src/xml/base.xml:543
+#: code:addons/web/static/src/js/tools/debug_manager_backend.js:0
+#, python-format
+msgid "JS Mobile Tests"
+msgstr "JS Tes Seluler"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/tools/debug_manager_backend.js:0
 #, python-format
 msgid "JS Tests"
-msgstr ""
+msgstr "JS Tes"
 
 #. module: web
-#: code:addons/web/controllers/main.py:812
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_view.js:0
+#, python-format
+msgid "Kanban"
+msgstr "Kanban"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/chrome/user_menu.js:0
+#, python-format
+msgid "Keyboard Shortcuts"
+msgstr "Pintasan Keyboard"
+
+#. module: web
+#: code:addons/web/controllers/main.py:0
 #, python-format
 msgid "Languages"
+msgstr "Bahasa"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Last 30 Days"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:581
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Last 365 Days"
+msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Last 5 Years"
+msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Last 7 Days"
+msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Last Month"
+msgstr "Bulan Lalu"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Last Quarter"
+msgstr "Triwulan Lalu"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Last Week"
+msgstr "Minggu Lalu"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Last Year"
+msgstr "Tahun Lalu"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "Latest Modification Date:"
 msgstr "Tanggal modifikasi terakhir:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:577
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "Latest Modification by:"
-msgstr ""
+msgstr "Modifikasi terakhir oleh:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1950
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
-msgid "Latin 1"
-msgstr ""
+msgid "Leave the Developer Tools"
+msgstr "Tinggalkan Alat Pengembang"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:421
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
 #, python-format
-msgid "Licenced under the terms of"
-msgstr ""
+msgid "Light blue"
+msgstr "Biru Cerah"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1953
+#: code:addons/web/static/src/xml/colorpicker_dialog.xml:0
 #, python-format
-msgid "Lines to skip"
+msgid "Lightness %"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:11
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Line Chart"
+msgstr "Grafik Garis"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/list/list_view.js:0
 #, python-format
 msgid "List"
-msgstr ""
+msgstr "Daftar"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:111
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/name_and_signature.xml:0
 #, python-format
-msgid "Load demonstration data:"
-msgstr ""
+msgid "Load"
+msgstr "Muat"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:360
-#: code:addons/web/static/src/js/chrome.js:394
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Load more... ("
+msgstr "Muat lebih.. ("
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/chrome/loading.js:0
 #, python-format
 msgid "Loading"
-msgstr ""
+msgstr "Memuat"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:392
+#: code:addons/web/static/src/js/chrome/loading.js:0
 #, python-format
 msgid "Loading (%d)"
-msgstr "sedang diproses (%d)"
+msgstr "Memuat (%d)"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:701
-#: code:addons/web/static/src/xml/base.xml:9
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Loading, please wait..."
+msgstr "Memuat, harap tunggu..."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/core/misc.js:0
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Loading..."
-msgstr ""
+msgstr "Memuat..."
 
 #. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/pyeval.js:916
-#, python-format
-msgid ""
-"Local evaluation failure\n"
-"%s\n"
-"\n"
-"%s"
-msgstr ""
-
-#. module: web
-#: view:website:web.login
+#: model_terms:ir.ui.view,arch_db:web.login
 msgid "Log in"
-msgstr ""
+msgstr "Log masuk"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.login
+msgid "Log in as superuser"
+msgstr "Masuk sebagai superuser"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:371
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Log out"
-msgstr ""
+msgstr "Log keluar"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.external_layout_background
+#: model_terms:ir.ui.view,arch_db:web.external_layout_boxed
+#: model_terms:ir.ui.view,arch_db:web.external_layout_clean
+#: model_terms:ir.ui.view,arch_db:web.external_layout_standard
+#: model_terms:ir.ui.view,arch_db:web.frontend_layout
+#: model_terms:ir.ui.view,arch_db:web.login_layout
+msgid "Logo"
+msgstr "Logo"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1672
+#: code:addons/web/static/src/xml/menu.xml:0
 #, python-format
-msgid "M2O search fields do not currently handle multiple default values"
-msgstr ""
+msgid "Mac"
+msgstr "Mac"
 
 #. module: web
-#: view:website:web.login_layout
-msgid "Manage Databases"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:web.external_layout_boxed
+msgid "Mail:"
+msgstr "Kirim:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:546
-#: code:addons/web/static/src/xml/base.xml:1605
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Main actions"
+msgstr "Aksi Utama"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/tools/debug_manager_backend.js:0
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "Manage Attachments"
+msgstr "Kelola Lampiran"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.login_layout
+msgid "Manage Databases"
+msgstr "Mengelola Database"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/tools/debug_manager_backend.js:0
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "Manage Filters"
-msgstr ""
+msgstr "Mengelola Filter"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:549
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
-msgid "Manage Views"
-msgstr ""
+msgid "Many2many"
+msgstr "Many2many"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:197
-#: code:addons/web/static/src/xml/base.xml:238
-#: code:addons/web/static/src/xml/base.xml:256
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
-msgid "Master Password:"
-msgstr ""
+msgid "Many2one"
+msgstr "Many2one"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:99
-#: code:addons/web/static/src/xml/base.xml:158
-#: code:addons/web/static/src/xml/base.xml:289
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Master password:"
-msgstr "Kata sandi utama"
+msgid "Match"
+msgstr "Cocokkan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:707
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Match records with"
+msgstr "Cocokkan dokumen dengan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Match records with the following rule:"
+msgstr "Cocokkan dokumen dengan aturan berikut ini:"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/core/misc.js:0
 #, python-format
 msgid "Maybe you should consider reloading the application by pressing F5..."
 msgstr ""
+"Mungkin Anda harus mempertimbangkan memuat ulang aplikasi dengan menekan F5 "
+"..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/views.js:990
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Measures"
+msgstr "Pengukuran"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Medium blue"
+msgstr "Biru Medium"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/tools/debug_manager_backend.js:0
 #, python-format
 msgid "Metadata (%s)"
-msgstr ""
+msgstr "Metadata (%s)"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1475
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Method:"
-msgstr ""
+msgstr "Metode:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2672
+#: code:addons/web/static/src/js/services/crash_manager.js:0
 #, python-format
-msgid "Minute"
-msgstr ""
+msgid "Missing Record"
+msgstr "Dokumen Hilang"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:268
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Mode:"
-msgstr ""
+msgid "Mobile support"
+msgstr "Dukungan Mobile"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/views.js:1032
-#, python-format
-msgid "Model %s fields"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:640
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Modified by :"
-msgstr ""
+msgstr "Diubah oleh:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:990
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Modifiers:"
+msgstr "Pengubah:"
+
+#. module: web
+#: code:addons/web/controllers/main.py:0
+#, python-format
+msgid ""
+"Module %s not loaded or inexistent, or templates of addon being loaded (%s) "
+"are misordered"
 msgstr ""
+"Modul %s tidak dapat memuat atau tidak tersedia, atau templat addon yang "
+"dimuat (%s) tidak terurut"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/views.js:1166
-#: code:addons/web/static/src/xml/base.xml:1289
-#: view:website:web.menu
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Monetary"
+msgstr "Kebijakan moneter"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/web_calendar.xml:0
+#, python-format
+msgid "Month"
+msgstr "Bulan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/form/form_renderer.js:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "More"
-msgstr ""
+msgstr "Selengkapnya"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:368
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Multiline Text"
+msgstr "Teks Multiline"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "My Odoo.com account"
-msgstr ""
+msgstr "Akun Odoo.com saya"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1863
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Name"
-msgstr ""
+msgid "NONE"
+msgstr "TIDAK ADA"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1999
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Name:"
-msgstr ""
+msgstr "Nama:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:330
+#: code:addons/web/static/src/js/views/basic/basic_model.js:0
 #, python-format
 msgid "New"
-msgstr ""
+msgstr "Baru"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:332
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "New Password:"
-msgstr "Kata Sandi Baru:"
+msgid "New Password"
+msgstr "Kata Sandi Baru"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:166
-#: code:addons/web/static/src/xml/base.xml:264
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "New database name:"
-msgstr ""
+msgid "New design"
+msgstr "Desain baru"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:293
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "New master password:"
-msgstr ""
+msgid "New template"
+msgstr "Template Baru"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2649
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/web_calendar.xml:0
 #, python-format
-msgid "Next>"
-msgstr ""
+msgid "Next"
+msgstr "Next"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1563
+#: code:addons/web/static/src/js/views/control_panel/search/search_bar_autocomplete_sources.js:0
 #, python-format
 msgid "No"
-msgstr ""
-
-#. module: web
-#: code:addons/web/controllers/main.py:1134
-#, python-format
-msgid "No content found for field '%s' on '%s:%s'"
-msgstr ""
+msgstr "Tidak"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:159
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
-msgid "No data provided."
-msgstr ""
+msgid "No Update:"
+msgstr "Tidak Ada Perbaruan:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3399
+#: code:addons/web/static/src/js/tools/debug_manager_backend.js:0
+#, python-format
+msgid "No attachment available"
+msgstr "Lampiran tidak tersedia"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "No color"
+msgstr "Warna tidak ada"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/graph/graph_renderer.js:0
+#, python-format
+msgid "No data"
+msgstr "Data tidak ada"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "No data to display"
+msgstr "Tidak data yang bisa ditampilkan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/data_export.js:0
+#, python-format
+msgid "No match found."
+msgstr "Tidak ada hasil cocok yang ditemukan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/tools/debug_manager_backend.js:0
+#, python-format
+msgid "No metadata available"
+msgstr "Tidak ada metadata yang tersedia"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/field_utils.js:0
+#, python-format
+msgid "No records"
+msgstr "Tidak ada dokumen"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/view_dialogs.js:0
+#, python-format
+msgid "No records found!"
+msgstr "Tidak ada rekord yang ditemukan!"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
 msgid "No results to show..."
-msgstr ""
+msgstr "Tidak ada hasil yang bisa ditampilkan..."
 
 #. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3775
+#: code:addons/web/controllers/main.py:0
 #, python-format
-msgid "No value found for the field  for value "
+msgid "No template found to inherit from. Module %s and template name %s"
 msgstr ""
+"Tidak ada template yang ditemukan untuk digunakan. Modul %s dan nama "
+"template %s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/views.js:1658
+#: code:addons/web/static/src/js/views/list/list_controller.js:0
+#: code:addons/web/static/src/js/views/list/list_controller.js:0
+#, python-format
+msgid "No valid record to save"
+msgstr "Tidak ada rekor yang valid untuk disimpan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/core/utils.js:0
 #, python-format
 msgid "Node [%s] is not a JSONified XML node"
-msgstr ""
+msgstr "Node [%s] tidak JSONified XML simpul"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2674
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Now"
-msgstr ""
+msgid "None"
+msgstr "Tidak Ada"
+
+#. module: web
+#: code:addons/web/models/models.py:0 code:addons/web/models/models.py:0
+#: code:addons/web/models/models.py:0
+#, python-format
+msgid "Not Set"
+msgstr "Tidak Ditentukan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:966
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Not active state"
+msgstr "Status tidak aktif"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Not active state, click to change it"
+msgstr "Status tidak aktif, klik untuk mengubah"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Object:"
-msgstr ""
+msgstr "Obyek:"
 
 #. module: web
-#: view:website:web.layout
-#: view:website:web.login_layout
-#: view:website:web.menu_secondary
+#. openerp-web
+#: code:addons/web/static/src/js/core/dialog.js:0
+#: model_terms:ir.ui.view,arch_db:web.brand_promotion_message
+#, python-format
 msgid "Odoo"
-msgstr ""
+msgstr "Odoo"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:386
+#: code:addons/web/static/src/js/apps.js:0
 #, python-format
-msgid "Odoo (Formerly OpenERP)"
-msgstr ""
-
-#. module: web
-#: view:website:web.qunit_suite
-msgid "Odoo Web Tests"
-msgstr ""
+msgid "Odoo Apps will be available soon"
+msgstr "Odoo Apps akan segera tersedia"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:420
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#: code:addons/web/static/src/js/services/crash_manager.js:0
 #, python-format
-msgid "Odoo is a trademark of the"
-msgstr ""
+msgid "Odoo Client Error"
+msgstr "Eror Klien Odoo"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:422
+#: code:addons/web/static/src/js/fields/upgrade_fields.js:0
 #, python-format
-msgid "Odoo.com"
-msgstr ""
+msgid "Odoo Enterprise"
+msgstr "Odoo Enterprise"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:279
-#: code:addons/web/static/src/js/chrome.js:288
-#: code:addons/web/static/src/js/chrome.js:346
-#: code:addons/web/static/src/js/chrome.js:504
-#: code:addons/web/static/src/js/chrome.js:747
-#: code:addons/web/static/src/js/view_form.js:584
-#: code:addons/web/static/src/js/view_form.js:1958
-#: code:addons/web/static/src/xml/base.xml:1897
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#, python-format
+msgid "Odoo Error"
+msgstr "Eror Odoo"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#, python-format
+msgid "Odoo Session Expired"
+msgstr "Sesi Odoo Kadaluarsa"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#, python-format
+msgid "Odoo Warning"
+msgstr "Peringatan Odoo"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/core/dialog.js:0
+#: code:addons/web/static/src/js/core/dialog.js:0
+#: code:addons/web/static/src/js/core/dialog.js:0
+#: code:addons/web/static/src/js/core/dialog.js:0
+#: code:addons/web/static/src/js/views/kanban/kanban_column.js:0
+#: code:addons/web/static/src/js/views/list/list_confirm_dialog.js:0
 #, python-format
 msgid "Ok"
 msgstr "Ok"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:327
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Old Password:"
-msgstr ""
+msgid "Old Password"
+msgstr "Kata Sandi Lama"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:998
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "On change:"
+msgstr "Ketika berubah:"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#, python-format
+msgid "One2many"
+msgstr "One2many"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Only Integer or Float Value should be valid."
 msgstr ""
 
 #. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:895
-#, python-format
-msgid "Only you"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3595
-#: code:addons/web/static/src/js/view_form.js:4352
-#: code:addons/web/static/src/js/view_form.js:4481
-#: code:addons/web/static/src/js/view_form.js:4953
-#: code:addons/web/static/src/js/view_form.js:5095
-#, python-format
-msgid "Open: "
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:425
-#, python-format
-msgid "OpenERP S.A."
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:420
-#, python-format
-msgid "OpenERP SA Company"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:162
-#, python-format
-msgid "Original database name:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:436
-#, python-format
-msgid "Our next Events"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:432
-#, python-format
-msgid "Our website"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:318
-#: view:website:web.login
-#, python-format
-msgid "Password"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:606
-#, python-format
-msgid "Password has been changed successfully"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:464
-#, python-format
-msgid "Please confirm your new password"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/data_export.js:145
-#, python-format
-msgid "Please enter save field list name"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:462
-#, python-format
-msgid "Please enter your new password"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:461
-#, python-format
-msgid "Please enter your previous password"
-msgstr "Harap masukkan kata sandi anda sebelumnya"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1857
-#, python-format
-msgid "Please note that only the selected ids will be exported."
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1854
+#: code:addons/web/controllers/main.py:0
 #, python-format
 msgid ""
-"Please pay attention that all records matching your search filter will be "
-"exported. Not only the selected ids."
+"Only employee can access this database. Please contact the administrator."
+msgstr "Hanyan karyawan yang bisa mengakses database. Silahkan hubungi admin."
+
+#. module: web
+#: code:addons/web/models/models.py:0
+#, python-format
+msgid ""
+"Only types %(supported_types)s are supported for category (found type "
+"%(field_type)s)"
+msgstr ""
+"Hanya tipe %(supported_types)syang didukung pada kategori (total "
+"sebanyak%(field_type)s yang ditemukan)"
+
+#. module: web
+#: code:addons/web/models/models.py:0
+#, python-format
+msgid ""
+"Only types %(supported_types)s are supported for filter (found type "
+"%(field_type)s)"
+msgstr ""
+"Hanya tipe %(supported_types)syang didukung untuk disaring (total "
+"sebanyak%(field_type)s yang ditemukan)"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Only you"
+msgstr "Hanya Anda"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/colorpicker_dialog.xml:0
+#, python-format
+msgid "Opacity %"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/data_export.js:394
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "Open Developer Tools"
+msgstr "Alat Pengembang Terbuka"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "Open Developer Tools#{widget.debug_mode_help}"
+msgstr "Buka Alat Developer#{widget.debug_mode_help}"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "Open View"
+msgstr "Buka Tampilan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/menu.xml:0
+#, python-format
+msgid "Open the next record"
+msgstr "Buka rekord selanjutnya"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/menu.xml:0
+#, python-format
+msgid "Open the previous record"
+msgstr "Buka rekord sebelumnya"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/menu.xml:0
+#, python-format
+msgid "Open to kanban view"
+msgstr "Buka menu kanban"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/menu.xml:0
+#, python-format
+msgid "Open to list view"
+msgstr "Buka untuk menampilkan daftar"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#: code:addons/web/static/src/js/views/calendar/calendar_controller.js:0
+#: code:addons/web/static/src/js/views/form/form_controller.js:0
+#: code:addons/web/static/src/js/views/form/form_controller.js:0
+#: code:addons/web/static/src/js/views/view_dialogs.js:0
+#, python-format
+msgid "Open: "
+msgstr "Buka : "
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/list/list_renderer.js:0
+#, python-format
+msgid "Optional columns"
+msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Orange"
+msgstr "Jingga"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_column_progressbar.js:0
+#, python-format
+msgid "Other"
+msgstr "Lainnya"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "PDF Viewer"
+msgstr "Penampil PDF"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "PDF controls"
+msgstr "Pengontrol PDF"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.external_layout_background
+msgid ""
+"Page:\n"
+"                    <span class=\"page\"/>\n"
+"                    of\n"
+"                    <span class=\"topage\"/>"
+msgstr ""
+"Halaman:\n"
+"                    <span class=\"page\"/>\n"
+"                    dari\n"
+"                    <span class=\"topage\"/>"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.external_layout_boxed
+#: model_terms:ir.ui.view,arch_db:web.external_layout_standard
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "Halaman: <span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Pager"
+msgstr "Pager"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.login
+msgid "Password"
+msgstr "Kata Sandi"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Percentage"
+msgstr "Persentase"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Percentage Pie"
+msgstr "Persentase Pie"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Phone"
+msgstr "Telepon"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.external_layout_standard
+msgid "Phone:"
+msgstr "Telepon:"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/colorpicker_dialog.js:0
+#, python-format
+msgid "Pick a color"
+msgstr "Pilih warna"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Pie Chart"
+msgstr "Grafik Pie"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/graph/graph_renderer.js:0
+#, python-format
+msgid ""
+"Pie chart cannot display all zero numbers.. Try to change your domain to "
+"display positive results"
+msgstr ""
+"Grafik Pie tidak dapat menampilkan semua angka nol.. Coba ganti domain Anda "
+"untuk hanya menampilkan hasil positif"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/graph/graph_renderer.js:0
+#, python-format
+msgid ""
+"Pie chart cannot mix positive and negative numbers. Try to change your "
+"domain to only display positive results"
+msgstr ""
+"Grafik pie tidak dapat mencampur angka positif dan negatif. Coba ganti "
+"domain Anda untuk hanya menampilkan hasil positif"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/pivot/pivot_view.js:0
+#, python-format
+msgid "Pivot"
+msgstr "Poros"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Pivot settings"
+msgstr "Pengaturan pivot"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#: code:addons/web/static/src/js/views/list/list_renderer.js:0
+#, python-format
+msgid "Please click on the \"save\" button first."
+msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/data_export.js:0
+#, python-format
+msgid "Please enter save field list name"
+msgstr "Silahkan masukkan simpanan nama daftar kolom"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/data_export.js:0
 #, python-format
 msgid "Please select fields to export..."
-msgstr ""
+msgstr "Silakan pilih kolom untuk diekspor ..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/data_export.js:381
+#: code:addons/web/static/src/js/widgets/data_export.js:0
 #, python-format
 msgid "Please select fields to save export list..."
-msgstr ""
-
-#. module: web
-#: view:website:web.login_layout
-#: view:website:web.menu_secondary
-msgid "Powered by"
-msgstr ""
+msgstr "Silakan pilih kolom untuk menyimpan daftar ekspor..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:367
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Please update translations of :"
+msgstr "Harap perbarui terjemahan dari :"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/crash_manager.xml:0
+#, python-format
+msgid ""
+"Please use the copy button to report the error to your support service."
+msgstr ""
+"Silahkan gunakan tombol salin untuk melaporkan eror ke jasa dukungan Anda."
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.brand_promotion_message
+msgid "Powered by %s%s"
+msgstr "Dipersembahkan oleh %s%s"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.login_layout
+msgid "Powered by <span>Odoo</span>"
+msgstr "Disajikan oleh <span>Odoo</span>"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Preferences"
-msgstr "preferensi"
+msgstr "Preferensi"
+
+#. module: web
+#: model:ir.actions.report,name:web.action_report_externalpreview
+msgid "Preview External Report"
+msgstr "Pratinjau Laporan Eksternal"
+
+#. module: web
+#: model:ir.actions.report,name:web.action_report_internalpreview
+msgid "Preview Internal Report"
+msgstr "Pratinjau Laporan Internal"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/views.js:1165
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/web_calendar.xml:0
+#, python-format
+msgid "Previous"
+msgstr "Sebelum"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Previous Period"
+msgstr "Periode Sebelumnya"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Previous Year"
+msgstr "Tahun sebelumnya"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/chrome/sidebar.js:0
+#: code:addons/web/static/src/xml/report.xml:0
 #, python-format
 msgid "Print"
-msgstr ""
+msgstr "Cetak"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:554
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
-msgid "Print Workflow"
-msgstr ""
+msgid "Priority"
+msgstr "Prioritas"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1002
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Progress Bar"
+msgstr "Kolom Poses"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Purple"
+msgstr "Ungu"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Q1"
+msgstr "Q1"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Q2"
+msgstr "Q2"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Q3"
+msgstr "Q3"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "Q4"
+msgstr "Q4"
+
+#. module: web
+#: model:ir.model.fields.selection,name:web.selection__ir_actions_act_window_view__view_mode__qweb
+msgid "QWeb"
+msgstr "QWeb"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Quarter"
+msgstr "Kuartal"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Quick add"
+msgstr "Tambah Dengan Cepat"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#, python-format
+msgid "Quick search: %s"
+msgstr "Pencarian Cepat: %s"
+
+#. module: web
+#: model:ir.model,name:web.model_ir_qweb_field_image
+msgid "Qweb Field Image"
+msgstr "Kolom Gambar Qweb"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#, python-format
+msgid "Radio"
+msgstr "Radio"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Range"
+msgstr "Jangkauan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/colorpicker_dialog.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Red"
+msgstr "Merah"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "Regenerate Assets Bundles"
+msgstr "Perbarui Bundle Aset"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/model_field_selector.js:0
+#, python-format
+msgid "Relation not allowed"
+msgstr "Relasi tidak dibolehkan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Relation to follow"
+msgstr "Relasi yang terkait"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Relation:"
-msgstr ""
+msgstr "Hubungan:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1843
+#: code:addons/web/static/src/js/views/view_dialogs.js:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Remove"
+msgstr "Hapus"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#, python-format
+msgid "Remove Cover Image"
+msgstr "Hapus Gambar Cover"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/data_export.js:0
+#, python-format
+msgid "Remove field"
+msgstr "Hapus Field"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Remove from Favorites"
+msgstr "Hapus dari Favorit"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Remove tag"
+msgstr "Hapus Tanda"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/web_calendar.xml:0
+#, python-format
+msgid "Remove this favorite from the list"
+msgstr "Hapus favorit ini dari daftar"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/chrome/action_manager_report.js:0
+#, python-format
+msgid "Report"
+msgstr "Laporan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#, python-format
+msgid "Request timeout"
+msgstr "Waktu Request Habis"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "Run Click Everywhere Test"
+msgstr "Jalankan tes klik-dimanapun"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "Run JS Mobile Tests"
+msgstr "Jalankan JS Tes Seluler"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "Run JS Tests"
+msgstr "Jalankan Tes JS"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "SEE RESULT"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1844
+#: code:addons/web/static/src/js/fields/signature.js:0
 #, python-format
-msgid "Remove All"
+msgid "SIGNATURE"
+msgstr "TANDA TANGAN"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Salmon pink"
+msgstr "Pink salmon"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/colorpicker_dialog.xml:0
+#, python-format
+msgid "Saturation %"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3775
-#, python-format
-msgid "Render"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2512
-#, python-format
-msgid "Resource Error"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:250
-#: code:addons/web/static/src/xml/base.xml:317
-#, python-format
-msgid "Restore"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:585
-#: code:addons/web/static/src/xml/base.xml:248
-#, python-format
-msgid "Restore Database"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:592
-#, python-format
-msgid "Restored"
-msgstr "Terpulihkan"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:795
-#: code:addons/web/static/src/xml/base.xml:840
-#: code:addons/web/static/src/xml/base.xml:1518
-#: code:addons/web/static/src/xml/base.xml:1747
+#: code:addons/web/static/src/js/views/view_dialogs.js:0
+#: code:addons/web/static/src/js/widgets/domain_selector_dialog.js:0
+#: code:addons/web/static/src/js/widgets/translation_dialog.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Save"
 msgstr "Simpan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1521
+#: code:addons/web/static/src/js/views/view_dialogs.js:0
 #, python-format
 msgid "Save & Close"
-msgstr ""
+msgstr "Simpan & Tutup"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1522
+#: code:addons/web/static/src/js/views/view_dialogs.js:0
 #, python-format
 msgid "Save & New"
-msgstr ""
+msgstr "Simpan & Buat Baru"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1352
-#: code:addons/web/static/src/xml/base.xml:1354
-#, python-format
-msgid "Save As"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5637
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
 msgid "Save As..."
-msgstr ""
+msgstr "Simpan sebagai..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1604
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Save Filter"
+msgid "Save Current Search"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1895
+#: code:addons/web/static/src/xml/menu.xml:0
 #, python-format
-msgid "Save as:"
-msgstr ""
+msgid "Save a record"
+msgstr "Simpan rekord"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1738
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Save current filter"
-msgstr ""
+msgid "Save as :"
+msgstr "Simpan sebagai :"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:1086
+#: code:addons/web/static/src/js/tools/debug_manager_backend.js:0
 #, python-format
 msgid "Save default"
-msgstr ""
+msgstr "Simpan sebagai standar"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1830
-#, python-format
-msgid "Save fields list"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1901
-#, python-format
-msgid "Saved exports:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1564
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Search"
-msgstr ""
+msgstr "Pencarian"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1592
+#: code:addons/web/static/src/js/views/control_panel/search/search_bar_autocomplete_sources.js:0
 #, python-format
 msgid "Search %(field)s at: %(value)s"
-msgstr ""
+msgstr "Cari %(field)s di: %(value)s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1429
-#: code:addons/web/static/src/js/search.js:1447
-#: code:addons/web/static/src/js/search.js:1631
+#: code:addons/web/static/src/js/views/control_panel/search/search_bar_autocomplete_sources.js:0
 #, python-format
 msgid "Search %(field)s for: %(value)s"
-msgstr ""
+msgstr "Cari %(field)s dari: %(value)s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1564
-#, python-format
-msgid "Search Again"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3365
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
 msgid "Search More..."
-msgstr ""
+msgstr "Cari Lebih..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3434
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Search..."
+msgstr "Cari ..."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
 msgid "Search: "
-msgstr ""
+msgstr "Cari:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2673
+#: code:addons/web/static/src/xml/crash_manager.xml:0
 #, python-format
-msgid "Second"
-msgstr ""
+msgid "See details"
+msgstr "Lihat rincian"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1346
-#: code:addons/web/static/src/xml/base.xml:1509
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "See examples"
+msgstr "Lihat contoh"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/js/views/view_dialogs.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Select"
 msgstr "Pilih"
 
 #. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2663
-#, python-format
-msgid "Select D, M d"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1920
-#, python-format
+#: model_terms:ir.ui.view,arch_db:web.login
 msgid ""
-"Select a .CSV file to import. If you need a sample of file to import,\n"
-"       you should use the export tool with the \"Import Compatible\" option."
+"Select <i class=\"fa fa-database\" role=\"img\" aria-label=\"Database\" "
+"title=\"Database\"/>"
 msgstr ""
+"Pilih <i class=\"fa fa-database\" role=\"img\" aria-label=\"Database\" "
+"title=\"Database\"/>"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:105
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Select a database name:"
-msgstr ""
+msgid "Select Signature Style"
+msgstr "Pilih Gaya Tanda Tangan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2665
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Select a date"
-msgstr ""
+msgid "Select a model to add a filter."
+msgstr "Pilih sebuah model untuk menambahkan penyaring."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1135
+#: code:addons/web/static/src/js/tools/debug_manager_backend.js:0
 #, python-format
-msgid "Select date"
-msgstr ""
+msgid "Select a view"
+msgstr "Pilih sebuah tampilan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1006
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Select field"
+msgstr "Pilih field"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Selected records"
+msgstr "Dokumen yang dipilih"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#, python-format
+msgid "Selection"
+msgstr "Seleksi"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Selection:"
-msgstr ""
+msgstr "Pilihan:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1940
-#, python-format
-msgid "Separator:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2662
-#, python-format
-msgid "Set DD as first week day"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:1079
+#: code:addons/web/static/src/js/tools/debug_manager_backend.js:0
 #, python-format
 msgid "Set Default"
-msgstr ""
+msgstr "Set Standar"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:541
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "Set Defaults"
-msgstr ""
+msgstr "Set Standar"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:966
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
 #, python-format
-msgid "Setting 'id' attribute on existing record %s"
-msgstr ""
+msgid "Set a Cover Image"
+msgstr "Mengatur gambar sampul"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1743
+#: code:addons/web/static/src/js/fields/special_fields.js:0
+#, python-format
+msgid "Set a timezone on your user"
+msgstr "Pilih zona waktu untuk pengguna anda"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Settings"
+msgstr "Pengaturan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Share with all users"
 msgstr "Bagikan dengan semua pengguna"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2655
+#: code:addons/web/static/src/xml/menu.xml:0
 #, python-format
-msgid "Show a different month"
-msgstr ""
+msgid "Shortcuts"
+msgstr "Jalan pintas"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2656
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "Show a different year"
-msgstr ""
+msgid "Show sub-fields"
+msgstr "Tampilkan sub-fields"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2652
+#: code:addons/web/static/src/js/apps.js:0
 #, python-format
-msgid "Show the current month"
-msgstr ""
+msgid "Showing locally available modules"
+msgstr "Tampilkan secara lokal modul yang tersedia"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2650
+#: code:addons/web/static/src/js/fields/signature.js:0
 #, python-format
-msgid "Show the next month"
-msgstr ""
+msgid "Signature"
+msgstr "Tanda Tangan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2648
-#, python-format
-msgid "Show the previous month"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:978
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Size:"
-msgstr ""
+msgstr "Ukuran:"
+
+#. module: web
+#: code:addons/web/controllers/main.py:0
+#, python-format
+msgid "Something horrible happened"
+msgstr "Sesuatu yang buruk telah terjadi"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1466
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#, python-format
+msgid "Something went wrong !"
+msgstr "Terjadi kesalahan !"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Special:"
-msgstr ""
+msgstr "Spesial:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:702
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Stacked"
+msgstr "Tertumpuk"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/core/misc.js:0
 #, python-format
 msgid "Still loading..."
-msgstr ""
+msgstr "Masih memuat ..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:703
+#: code:addons/web/static/src/js/core/misc.js:0
 #, python-format
 msgid "Still loading...<br />Please be patient."
-msgstr "Sedang proses...<br />Harap menunggu."
+msgstr "Masih proses...<br />Harap menunggu."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:706
+#: code:addons/web/static/src/xml/name_and_signature.xml:0
+#, python-format
+msgid "Style"
+msgstr "Gaya"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/name_and_signature.xml:0
+#, python-format
+msgid "Styles"
+msgstr "Style"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/calendar/calendar_quick_create.js:0
+#, python-format
+msgid "Summary"
+msgstr "Ringkasan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/web_calendar.xml:0
+#, python-format
+msgid "Summary:"
+msgstr "Ringkasan:"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Support"
+msgstr "Dukungan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Switch to this company"
+msgstr "Pindah ke perusahaan ini"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
+#, python-format
+msgid "Syntax error"
+msgstr "Eror Syntax"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#, python-format
+msgid "Tags"
+msgstr "Label"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/core/misc.js:0
 #, python-format
 msgid "Take a minute to get a coffee,<br />because it's loading..."
 msgstr ""
+"Luangkan waktu sebentar untuk meminum kopi, <br /> karena masih memuat..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/views.js:1007
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "Technical Translation"
-msgstr ""
+msgstr "Terjemahan Teknis"
 
 #. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:548
+#: model_terms:ir.ui.view,arch_db:web.external_layout_boxed
+#: model_terms:ir.ui.view,arch_db:web.external_layout_clean
+msgid "Tel:"
+msgstr "Tel:"
+
+#. module: web
+#: code:addons/web/controllers/main.py:0
 #, python-format
-msgid "Technical translation"
-msgstr ""
+msgid "Template %s already exists in module %s"
+msgstr "Template %s sudah ada di modul %s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:465
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "The confirmation does not match the password"
-msgstr ""
+msgid "Template:"
+msgstr "Template"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:545
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
-msgid "The database %s has been dropped"
-msgstr ""
+msgid "Text"
+msgstr "Teks"
 
 #. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:527
+#: code:addons/web/controllers/main.py:0
 #, python-format
-msgid "The database has been duplicated."
+msgid ""
+"The content of this cell is too long for an XLSX file (more than %s "
+"characters). Please use the CSV format for this export."
 msgstr ""
+"Konten pada kolom ini terlalu panjang untuk file XLSX (lebih dari %s "
+"karakter). Harap gunakan format CSV untuk mengekspor)."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5637
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
+#, python-format
+msgid "The domain you entered is not properly formed"
+msgstr "Domain yang Anda masukkan tidak terbentuk dengan benar"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/model_field_selector.js:0
+#, python-format
+msgid ""
+"The field chain is not valid. Did you maybe use a non-existing field name or"
+" followed a non-relational field?"
+msgstr ""
+"Rantai kolom tidak sah. Apakah Anda mungkin menggunakan kolom yang tidak ada"
+" atau mengikuti kolom yang tidak memiliki relasi?"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
 msgid "The field is empty, there's nothing to save !"
+msgstr "Kolom kosong, tidak ada yang bisa disimpan!"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/calendar/calendar_quick_create.js:0
+#, python-format
+msgid "The following field is invalid:"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:891
+#: code:addons/web/static/src/js/views/basic/basic_controller.js:0
+#: code:addons/web/static/src/js/widgets/attach_document.js:0
 #, python-format
 msgid "The following fields are invalid:"
-msgstr ""
+msgstr "Kolom berikut tidak valid:"
 
 #. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_list_editable.js:781
-#, python-format
-msgid "The form's data can not be discarded"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1980
-#, python-format
-msgid "The import failed due to:"
-msgstr ""
-
-#. module: web
-#: code:addons/web/controllers/main.py:798
+#: code:addons/web/controllers/main.py:0
 #, python-format
 msgid "The new password and its confirmation must be identical."
-msgstr ""
+msgstr "Password baru dan konfirmasinya harus identik."
 
 #. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:4501
-#, python-format
-msgid "The o2m record must be saved before an action can be used"
-msgstr ""
-
-#. module: web
-#: code:addons/web/controllers/main.py:804
+#: code:addons/web/controllers/main.py:0
 #, python-format
 msgid ""
 "The old password you provided is incorrect, your password was not changed."
 msgstr ""
+"Password lama yang Anda masukkan tidak benar, password Anda tidak berubah."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:325
+#: code:addons/web/static/src/js/services/crash_manager.js:0
 #, python-format
-msgid "The record could not be found in the database."
+msgid ""
+"The operation was interrupted. This usually means that the current operation"
+" is taking too much time."
 msgstr ""
+"Operasi terganggu. Biasanya terjadi karena terlalu lama memakan waktu."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5601
+#: code:addons/web/static/src/js/views/basic/basic_controller.js:0
+#, python-format
+msgid ""
+"The record has been modified, your changes will be discarded. Do you want to"
+" proceed?"
+msgstr ""
+"Dokumen telah dimodifikasi, perubahan Anda akan dibuang. Apakah Anda ingin "
+"melanjutkan?"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
 msgid "The selected file exceed the maximum file size of %s."
-msgstr ""
+msgstr "Berkas yang dipilih melebihi ukuran maksimum, yaitu %s."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5806
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
 msgid ""
 "The type of the field '%s' must be a many2many field with a relation to "
 "'ir.attachment' model."
 msgstr ""
+"Jenis kolom '%s' harus kolom many2many dengan hubungan ke model "
+"'ir.attachment'."
+
+#. module: web
+#: code:addons/web/controllers/main.py:0
+#, python-format
+msgid ""
+"There are too many rows (%s rows, limit: %s) to export as Excel 2007-2013 "
+"(.xlsx) format. Consider splitting the export."
+msgstr ""
+"Terlalu banyak kolom (%s baris, limit: %s) untuk mengekspor file berformat "
+"Excel 2007-2013 (.xlsx). Harap pisahkan expor."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5622
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "There is no available image to be set as cover."
+msgstr "Tidak ada gambar yang bisa digunakan sebagai sampul."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
 msgid "There was a problem while uploading your file"
-msgstr ""
+msgstr "Ada masalah saat mengunggah berkas Anda"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1796
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "This Month"
+msgstr "Bulan Ini"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "This Quarter"
+msgstr "Triwulan Ini"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "This Week"
+msgstr "Pekan Ini"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#, python-format
+msgid "This Year"
+msgstr "Tahun Ini"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/date_picker.js:0
+#, python-format
+msgid "This date is on the future. Make sure it is what you expected."
+msgstr ""
+"Tanggal ini berada dimasa yang akan datang. Pastikan tanggal ini sesuai "
+"perencanaan."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
+#, python-format
+msgid "This domain is not supported."
+msgstr "Domain tidak didukung"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/name_and_signature.xml:0
+#, python-format
+msgid "This file is invalid. Please select an image."
+msgstr "File ini invalid. Harap pilih gambar."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/favorite_menu.js:0
 #, python-format
 msgid ""
 "This filter is global and will be removed for everybody if you continue."
 msgstr ""
+"Filter ini global dan akan dihapus untuk semua orang jika Anda melanjutkan."
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.preview_externalreport
+msgid "This is a sample of an external report."
+msgstr "Ini adalah contoh laporan eksternal."
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.preview_internalreport
+msgid "This is a sample of an internal report."
+msgstr "Ini adalah contoh laporan internal."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2512
-#, python-format
-msgid "This resource is empty"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1807
-#, python-format
-msgid ""
-"This wizard will export all data that matches the current search criteria to "
-"a CSV file.\n"
-"            You can export all data or only the fields that can be "
-"reimported after modification."
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2670
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
 msgid "Time"
+msgstr "Waktu"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Time Ranges"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:1331
-#, python-format
-msgid "Timezone Mismatch"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:469
-#, python-format
-msgid "Timezone mismatch"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2651
-#, python-format
-msgid "Today"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1039
-#, python-format
-msgid "Toggle Dropdown"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:540
-#, python-format
-msgid "Toggle Form Layout Outline"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_tree.js:14
-#, python-format
-msgid "Tree"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:970
-#, python-format
-msgid "Type:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1949
-#, python-format
-msgid "UTF-8"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_list.js:1401
-#: code:addons/web/static/src/js/view_list.js:1407
-#: code:addons/web/static/src/js/view_list.js:1419
-#, python-format
-msgid "Undefined"
-msgstr "Belum terdefinisi"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:951
-#, python-format
-msgid "Unhandled widget"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3175
-#, python-format
-msgid "Unknown"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:1689
-#, python-format
-msgid "Unknown field %s in domain %s"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_list.js:1111
-#, python-format
-msgid "Unknown m2m command %s"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/pyeval.js:882
-#, python-format
-msgid "Unknown nonliteral type "
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:1681
-#, python-format
-msgid "Unknown operator %s in domain %s"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_list.js:332
-#, python-format
-msgid "Unlimited"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:1727
-#, python-format
-msgid "Unsupported operator %s in domain %s"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1308
-#: code:addons/web/static/src/xml/base.xml:1369
-#, python-format
-msgid "Uploading ..."
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5921
-#: code:addons/web/static/src/js/views.js:1310
-#, python-format
-msgid "Uploading Error"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/views.js:1341
-#, python-format
-msgid "Uploading..."
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1745
-#, python-format
-msgid "Use by default"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:459
-#, python-format
-msgid "User's timezone"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:391
-#, python-format
-msgid "Version"
-msgstr "Versi"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_list.js:2373
-#: code:addons/web/static/src/xml/base.xml:550
-#, python-format
-msgid "View"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:544
-#, python-format
-msgid "View Fields"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:539
-#, python-format
-msgid "View Metadata"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:4082
-#, python-format
-msgid "View type '%s' is not supported in One2Many."
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_list.js:736
-#: code:addons/web/static/src/js/views.js:1269
-#, python-format
-msgid "Warning"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:798
+#: code:addons/web/static/src/js/fields/special_fields.js:0
 #, python-format
 msgid ""
-"Warning, the record has been modified, your changes will be discarded.\n"
-"\n"
-"Are you sure you want to leave this page ?"
+"Timezone Mismatch : This timezone is different from that of your browser.\n"
+"Please, set the same timezone as your browser's to avoid time discrepancies in your system."
 msgstr ""
+"Zona waktu tidak cocok : Zona waktu ini berbeda dengan browser.\n"
+"Harap samakan zona waktu dengan browser agar mencegah perbedaan waktu pada sistem anda. "
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2658
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#: code:addons/web/static/src/xml/web_calendar.xml:0
+#: code:addons/web/static/src/xml/web_calendar.xml:0
 #, python-format
-msgid "Week of the year"
-msgstr ""
+msgid "Today"
+msgstr "Hari Ini"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:1249
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
-msgid "Widget type '%s' is not implemented"
+msgid "Toggle"
+msgstr "Alihkan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "Toggle Timelines"
+msgstr "Toggle Timelines"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/graph/graph_renderer.js:0
+#: code:addons/web/static/src/js/views/pivot/pivot_model.js:0
+#: code:addons/web/static/src/js/views/pivot/pivot_model.js:0
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#, python-format
+msgid "Traceback:"
+msgstr "Telusuri Kembali:"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/translation_dialog.js:0
+#, python-format
+msgid "Translate: "
+msgstr "Terjemah:"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/field_utils.js:0
+#, python-format
+msgid "True"
+msgstr "Benar"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/pivot/pivot_renderer.js:0
+#, python-format
+msgid ""
+"Try to add some records, or make sure that there is at least one measure and"
+" no active filter in the search bar."
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:974
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid ""
+"Try to add some records, or make sure that there is no\n"
+"                active filter in the search bar."
+msgstr ""
+"Cobalah untuk menambah beberapa rekord, atau pastikan tidak ada\n"
+"penyaring yang aktif pada kolom pencarian."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/chrome/abstract_web_client.js:0
+#, python-format
+msgid "Trying to reconnect..."
+msgstr "Mencoba untuk koneksi kembali..."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Type:"
+msgstr "Tipe:"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "URL"
+msgstr "URL"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/chrome/action_manager_report.js:0
+#, python-format
+msgid ""
+"Unable to find Wkhtmltopdf on this system. The report will be shown in html."
+msgstr "Tidak dapat menemukan Wkhtmltopdf pada sistem. PDF tidak bisa dibuat."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/form/form_controller.js:0
+#: code:addons/web/static/src/js/views/list/list_controller.js:0
+#, python-format
+msgid "Unarchive"
+msgstr "Batalkan Pengarsipan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Unarchive All"
+msgstr "Batalkan Pengarsipan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/controllers/main.py:0
+#: code:addons/web/static/src/js/views/calendar/calendar_model.js:0
+#: code:addons/web/static/src/js/views/graph/graph_model.js:0
+#: code:addons/web/static/src/js/views/graph/graph_renderer.js:0
+#: code:addons/web/static/src/js/views/kanban/kanban_column.js:0
+#: code:addons/web/static/src/js/views/kanban/kanban_column.js:0
+#: code:addons/web/static/src/js/views/kanban/kanban_renderer_mobile.js:0
+#: code:addons/web/static/src/js/views/list/list_renderer.js:0
+#: code:addons/web/static/src/js/views/list/list_renderer.js:0
+#: code:addons/web/static/src/js/views/pivot/pivot_model.js:0
+#, python-format
+msgid "Undefined"
+msgstr "Belum Terdefinisi"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Unfold"
+msgstr "Buka"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#, python-format
+msgid "Unknown CORS error"
+msgstr "Eror CORS yang tidak diketahui"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/core/py_utils.js:0
+#, python-format
+msgid "Unknown nonliteral type "
+msgstr "Jenis nonliteral tidak diketahui"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/list/list_editable_renderer.js:0
+#, python-format
+msgid "Unlink row "
+msgstr "Lepaskan koneksi baris"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/_deprecated/data.js:0
+#, python-format
+msgid "Unnamed"
+msgstr "Belum ada nama"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/pivot/pivot_view.js:0
+#, python-format
+msgid "Untitled"
+msgstr "Belum ada judul"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Update to:"
+msgstr "Perbarui"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/upgrade_fields.js:0
+#, python-format
+msgid "Upgrade now"
+msgstr "Perbarui sekarang"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Upgrade to enterprise"
+msgstr "Perbarui ke enterprise"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Upgrade to future versions"
+msgstr "Perbarui ke versi akan datang"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#, python-format
+msgid "Upload and Set"
+msgstr "Unggah dan tetapkan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Upload your file"
+msgstr "Unggah berkas Anda"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Uploaded"
+msgstr "Berhasil diunggah"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Uploading"
+msgstr "Mengunggah"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#, python-format
+msgid "Uploading Error"
+msgstr "Unggah Eror"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Uploading..."
+msgstr "Mengunggah..."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Use by default"
+msgstr "Gunakan bawaan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "User"
+msgstr "Pengguna"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#, python-format
+msgid "User Error"
+msgstr "Pengguna Eror!"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Users"
+msgstr "Pengguna"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#, python-format
+msgid "Validation Error"
+msgstr "Eror Validasi"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/pivot/pivot_model.js:0
+#, python-format
+msgid "Variation"
+msgstr "Variasi"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/tools/debug_manager_backend.js:0
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "View Fields"
+msgstr "Lihat Kolom"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
+msgid "View Metadata"
+msgstr "Lihat Metadata"
+
+#. module: web
+#: model:ir.model.fields,field_description:web.field_ir_actions_act_window_view__view_mode
+msgid "View Type"
+msgstr "Tipe Tampilan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "View switcher"
+msgstr "Lihat pengalih"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/chrome/action_manager.js:0
+#: code:addons/web/static/src/js/chrome/action_manager_report.js:0
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#: code:addons/web/static/src/js/services/crash_manager.js:0
+#: code:addons/web/static/src/js/views/basic/basic_controller.js:0
+#: code:addons/web/static/src/js/views/basic/basic_controller.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/favorite_menu.js:0
+#: code:addons/web/static/src/js/views/list/list_renderer.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Warning"
+msgstr "Peringatan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/attach_document.js:0
+#, python-format
+msgid "Warning : You have to save first before attaching a file."
+msgstr ""
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.benchmark_suite
+msgid "Web Benchmarks"
+msgstr "Standar Ukuran Web"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.qunit_mobile_suite
+msgid "Web Mobile Tests"
+msgstr "Tes Web Seluler"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.qunit_suite
+msgid "Web Tests"
+msgstr "Tes Web"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.external_layout_boxed
+#: model_terms:ir.ui.view,arch_db:web.external_layout_standard
+msgid "Web:"
+msgstr "Web:"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/calendar/calendar_model.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/web_calendar.xml:0
+#, python-format
+msgid "Week"
+msgstr "Pekan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/rainbow_man.js:0
+#, python-format
+msgid "Well Done!"
+msgstr "Kerja Bagus!"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Widget:"
-msgstr ""
+msgstr "Widget:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2657
+#: code:addons/web/static/src/xml/menu.xml:0
 #, python-format
-msgid "Wk"
-msgstr ""
+msgid "Windows/Linux"
+msgstr "Windows/Linux"
+
+#. module: web
+#: code:addons/web/controllers/main.py:0
+#, python-format
+msgid "Wrong login/password"
+msgstr "Kata sandi/log masuk salah"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:565
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
+#, python-format
+msgid "Wrong value entered!"
+msgstr "Nilai yang masuk salah!"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "XML ID:"
-msgstr ""
+msgstr "XML ID:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1562
-#: code:addons/web/static/src/xml/base.xml:994
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Year"
+msgstr "Tahun"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/kanban.xml:0
+#, python-format
+msgid "Yellow"
+msgstr "Kuning"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_bar_autocomplete_sources.js:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Yes"
-msgstr ""
+msgstr "Ya"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3473
+#: code:addons/web/static/src/js/views/control_panel/search/control_panel_view_parameters.js:0
 #, python-format
-msgid "You are creating a new %s, are you sure it does not exist yet?"
-msgstr ""
+msgid "Yesterday"
+msgstr "Kemarin"
 
 #. module: web
-#: code:addons/web/controllers/main.py:796
+#. openerp-web
+#: code:addons/web/static/src/js/chrome/abstract_web_client.js:0
+#, python-format
+msgid "You are back online"
+msgstr "Anda kembali online"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/fields/relational_fields.js:0
+#, python-format
+msgid "You are creating a new %s, are you sure it does not exist yet?"
+msgstr "Anda membuat%s baru, apakah Anda yakin itu belum ada?"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/model_field_selector.js:0
+#, python-format
+msgid "You cannot follow relations for this field chain construction"
+msgstr "Anda tidak dapat mengikuti relasi untuk konstruksi rantai kolom ini"
+
+#. module: web
+#: code:addons/web/controllers/main.py:0
 #, python-format
 msgid "You cannot leave any password empty."
 msgstr "Anda tidak dapat mengosongkan kata sandi"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:705
+#: code:addons/web/static/src/js/core/misc.js:0
 #, python-format
 msgid ""
 "You may not believe it,<br />but the application is actually loading..."
-msgstr ""
+msgstr "Anda mungkin tidak percaya, <br /> tetapi aplikasi masih memuat..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/views.js:1269
+#: code:addons/web/static/src/js/views/basic/basic_controller.js:0
 #, python-format
-msgid "You must choose at least one record."
+msgid ""
+"You need to save this new record before editing the translation. Do you want"
+" to proceed?"
 msgstr ""
+"Anda harus menyimpan rekord ini sebelum mengaudit translasi. Apakah anda "
+"ingin memproses?"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:736
+#: code:addons/web/static/src/js/chrome/action_manager_report.js:0
 #, python-format
-msgid "You must select at least one record."
+msgid ""
+"You need to start Odoo with at least two workers to print a pdf version of "
+"the reports."
 msgstr ""
+"Anda harus menjalankan Odoo dengan minimal dua worker untuk mencetak versi "
+"dari laporan ini."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:259
+#: code:addons/web/static/src/js/chrome/action_manager_report.js:0
+#, python-format
+msgid ""
+"You should upgrade your version of Wkhtmltopdf to at least 0.12.0 in order "
+"to get a correct display of headers and footers as well as support for "
+"table-breaking between pages."
+msgstr ""
+"Anda harus menaikkan Wkhtmltopdf setidak-tidaknya ke versi 0.12.0 untuk "
+"memperoleh tampilan header & footer yang benar, juga untuk mendapatkan fitur"
+" pemisahan tabel per halaman."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/services/crash_manager.js:0
 #, python-format
 msgid "Your Odoo session expired. Please refresh the current web page."
-msgstr ""
+msgstr "Sesi Odoo Anda berakhir. Silakan refresh halaman web saat ini."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:456
+#: code:addons/web/static/src/js/chrome/action_manager_report.js:0
 #, python-format
-msgid "Your user's preference timezone does not match your browser timezone:"
-msgstr ""
+msgid ""
+"Your installation of Wkhtmltopdf seems to be broken. The report will be "
+"shown in html."
+msgstr "Wkhtmltopdf rusak. Laporan akan ditampilkan dalam bentuk html."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:678
+#: code:addons/web/static/src/js/widgets/name_and_signature.js:0
+#: code:addons/web/static/src/xml/name_and_signature.xml:0
+#, python-format
+msgid "Your name"
+msgstr "Nama anda"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/kanban/kanban_record.js:0
+#, python-format
+msgid "[No widget %s]"
+msgstr "[Tidak ada widget %s]"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/core/translation.js:0
 #, python-format
 msgid "a day ago"
-msgstr ""
+msgstr "kemarin"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:674
+#: code:addons/web/static/src/js/core/translation.js:0
 #, python-format
 msgid "about a minute ago"
 msgstr "Sekitar satu menit yang lalu"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:680
+#: code:addons/web/static/src/js/core/translation.js:0
 #, python-format
 msgid "about a month ago"
 msgstr "Sekitar satu bulan yang lalu"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:682
+#: code:addons/web/static/src/js/core/translation.js:0
 #, python-format
 msgid "about a year ago"
-msgstr ""
+msgstr "sekitar satu tahun yang lalu"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:676
+#: code:addons/web/static/src/js/core/translation.js:0
 #, python-format
 msgid "about an hour ago"
 msgstr "Sekitar satu jam yang lalu"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2182
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "all records"
+msgstr "semua dokumen"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "are valid for this update."
+msgstr "valid untuk pembaruan ini."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
+#, python-format
+msgid "child of"
+msgstr "turunan dari"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
 #, python-format
 msgid "contains"
-msgstr ""
+msgstr "mengandung"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2183
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
+#, python-format
+msgid "does not contain"
+msgstr "tidak mengandung"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
 #, python-format
 msgid "doesn't contain"
-msgstr ""
+msgstr "tidak mengandung"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:107
-#, python-format
-msgid "e.g. mycompany"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/search.js:2200
-#: code:addons/web/static/src/js/search.js:2236
-#: code:addons/web/static/src/js/search.js:2263
-#, python-format
-msgid "greater or equal than"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/search.js:2198
-#: code:addons/web/static/src/js/search.js:2234
-#: code:addons/web/static/src/js/search.js:2261
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
 #, python-format
 msgid "greater than"
-msgstr ""
+msgstr "lebih dari"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2254
-#: code:addons/web/static/src/js/search.js:2283
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#, python-format
+msgid "greater than or equal to"
+msgstr "lebih besar atau sama dengan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
+#, python-format
+msgid "in"
+msgstr "di dalam"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "is"
-msgstr ""
+msgstr "adalah"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2184
-#: code:addons/web/static/src/js/search.js:2196
-#: code:addons/web/static/src/js/search.js:2232
-#: code:addons/web/static/src/js/search.js:2259
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#, python-format
+msgid "is after"
+msgstr "setelah"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#, python-format
+msgid "is after or equal to"
+msgstr "lebih dari atau sama dengan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#, python-format
+msgid "is before"
+msgstr "sebelum"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#, python-format
+msgid "is before or equal to"
+msgstr "kurang dari atau sama dengan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#, python-format
+msgid "is between"
+msgstr "di antara"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
 #, python-format
 msgid "is equal to"
-msgstr ""
+msgstr "adalah sama dengan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2301
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
 #, python-format
 msgid "is false"
-msgstr ""
+msgstr "adalah salah"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2284
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
 #, python-format
 msgid "is not"
-msgstr ""
+msgstr "bukan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2185
-#: code:addons/web/static/src/js/search.js:2197
-#: code:addons/web/static/src/js/search.js:2233
-#: code:addons/web/static/src/js/search.js:2260
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
+#, python-format
+msgid "is not ="
+msgstr "bukan ="
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
 #, python-format
 msgid "is not equal to"
-msgstr ""
+msgstr "tidak sama dengan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2187
-#: code:addons/web/static/src/js/search.js:2203
-#: code:addons/web/static/src/js/search.js:2239
-#: code:addons/web/static/src/js/search.js:2266
-#: code:addons/web/static/src/js/search.js:2286
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
 #, python-format
 msgid "is not set"
-msgstr ""
+msgstr "tidak diatur"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2186
-#: code:addons/web/static/src/js/search.js:2202
-#: code:addons/web/static/src/js/search.js:2238
-#: code:addons/web/static/src/js/search.js:2265
-#: code:addons/web/static/src/js/search.js:2285
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
 #, python-format
 msgid "is set"
-msgstr ""
+msgstr "diatur"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2300
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
 #, python-format
 msgid "is true"
-msgstr ""
+msgstr "adalah benar"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2201
-#: code:addons/web/static/src/js/search.js:2237
-#: code:addons/web/static/src/js/search.js:2264
+#: code:addons/web/static/src/js/core/utils.js:0
 #, python-format
-msgid "less or equal than"
-msgstr "kurang atau sama dengan"
+msgid "kMGTPE"
+msgstr "kMGTPE"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2199
-#: code:addons/web/static/src/js/search.js:2235
-#: code:addons/web/static/src/js/search.js:2262
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
 #, python-format
 msgid "less than"
-msgstr ""
+msgstr "kurang dari"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/core.js:673
+#: code:addons/web/static/src/js/core/translation.js:0
 #, python-format
 msgid "less than a minute ago"
-msgstr ""
+msgstr "kurang dari satu menit yang lalu"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1465
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_filters.js:0
+#, python-format
+msgid "less than or equal to"
+msgstr "lebih kecil atau sama dengan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "not"
+msgstr "bukan"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_bar_autocomplete_sources.js:0
 #, python-format
 msgid "not a valid integer"
-msgstr ""
+msgstr "bukan bilangan bulat yang sah"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1479
+#: code:addons/web/static/src/js/views/control_panel/search/search_bar_autocomplete_sources.js:0
 #, python-format
 msgid "not a valid number"
-msgstr "bukan nomor yang valid"
+msgstr "bukan angka yang valid"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:344
-#: code:addons/web/static/src/xml/base.xml:797
-#: code:addons/web/static/src/xml/base.xml:841
-#: code:addons/web/static/src/xml/base.xml:1512
-#: code:addons/web/static/src/xml/base.xml:1520
-#: code:addons/web/static/src/xml/base.xml:1763
-#: code:addons/web/static/src/xml/base.xml:2005
-#: code:addons/web/static/src/xml/website.tour.xml:14
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
+#, python-format
+msgid "not in"
+msgstr "tidak di dalam"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
+#, python-format
+msgid "not set (false)"
+msgstr "tidak diset (salah)"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "of the following rules:"
+msgstr "dari aturan berikut:"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "of:"
+msgstr "dari:"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/control_panel/search/search_facet.js:0
+#: code:addons/web/static/src/js/views/control_panel/search/search_facet.js:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "or"
+msgstr "atau"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
+#, python-format
+msgid "parent of"
+msgstr "induk dari"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.brand_promotion
+msgid "portal"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:233
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "pg_dump custom format (without filestore)"
-msgstr ""
+msgid "record(s)"
+msgstr "dokumen"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:743
+#: code:addons/web/static/src/xml/base.xml:0
 #, python-format
-msgid "triggered from search view"
-msgstr ""
+msgid "records ?"
+msgstr "rekord?"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:232
+#: code:addons/web/static/src/xml/kanban.xml:0
 #, python-format
-msgid "zip (includes filestore)"
-msgstr ""
+msgid "remaining)"
+msgstr "tersisa)"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "search"
+msgstr "cari"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "selected records,"
+msgstr "rekord terpilih,"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "set"
+msgstr "set"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/widgets/domain_selector.js:0
+#, python-format
+msgid "set (true)"
+msgstr "set (benar)"
