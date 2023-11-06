@@ -4,6 +4,7 @@ odoo.define('point_of_sale.models', function (require) {
 var ajax = require('web.ajax');
 var BarcodeParser = require('barcodes.BarcodeParser');
 var BarcodeReader = require('point_of_sale.BarcodeReader');
+var modelsLimits = require('point_of_sale.models_limits'); // Majd edit: Import the custom module to run test enviroment in a limited way
 var PosDB = require('point_of_sale.DB');
 var devices = require('point_of_sale.devices');
 var concurrency = require('web.concurrency');
@@ -586,6 +587,16 @@ exports.PosModel = Backbone.Model.extend({
                             params.fields = fields;
                             params.orderBy = order;
                         }
+                        // Majd edit: in test config this method will add limit to the query to avoid loading all the products, partners, etc
+                        let isTestPos = modelsLimits.is_a_test_pos(self.config_id);
+                        if(isTestPos){
+                           model =  modelsLimits.add_limits(model);
+                        }
+                        if(model.limit){
+                            console.log('This model has limit in test enviroment', model.model, model.limit);
+                            params.limit = model.limit;
+                        }
+                        // end edit
 
                         rpc.query(params).then(function (result) {
                             try { // catching exceptions in model.loaded(...)

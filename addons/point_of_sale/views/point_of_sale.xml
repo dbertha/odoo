@@ -13,6 +13,8 @@
             <script type="text/javascript" src="/point_of_sale/static/lib/sha1.js"></script>
             <script type="text/javascript" src="/point_of_sale/static/src/js/main.js"></script>
             <script type="text/javascript" src="/point_of_sale/static/src/js/db.js"></script>
+            <!-- Majd edit , include models_limits for test mode -->
+            <script type="text/javascript" src="/point_of_sale/static/src/js/models_limits.js"></script>
             <script type="text/javascript" src="/point_of_sale/static/src/js/models.js"></script>
             <script type="text/javascript" src="/point_of_sale/static/src/js/widget_base.js"></script>
             <script type="text/javascript" src="/point_of_sale/static/src/js/keyboard.js"></script>

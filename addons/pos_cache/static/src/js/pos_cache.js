@@ -35,10 +35,14 @@ models.PosModel = models.PosModel.extend({
         return posmodel_super.load_server_data.apply(this, arguments).then(function () {
                     //don't load product with 'work' in the name with the new way
           product_domain = product_domain.concat([['default_code', 'not ilike', 'work']])
+           var limit = false;
+           if (product_model.limit) {
+                limit = product_model.limit;
+            }
             var records = rpc.query({
                     model: 'pos.config',
                     method: 'get_products_from_cache',
-                    args: [self.pos_session.config_id[0], product_fields, product_domain],
+                    args: [self.pos_session.config_id[0], product_fields, product_domain,limit],
                 });
             self.chrome.loading_message(_t('Loading') + ' product.product', 1);
             return records.then(function (products) {

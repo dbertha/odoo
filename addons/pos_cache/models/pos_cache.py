@@ -17,6 +17,7 @@ class pos_cache(models.Model):
 
     config_id = fields.Many2one('pos.config', ondelete='cascade', required=True)
     compute_user_id = fields.Many2one('res.users', 'Cache compute user', required=True)
+    limit=fields.Integer('Limit',default=0)
 
     @api.model
     def refresh_all_caches(self):
@@ -25,7 +26,8 @@ class pos_cache(models.Model):
     def refresh_cache(self):
         for cache in self:
             Product = self.env['product.product'].with_user(cache.compute_user_id.id)
-            products = Product.search(cache.get_product_domain())
+
+            products = Product.search(cache.get_product_domain(),limit=cache.limit or False)
             prod_ctx = products.with_context(pricelist=cache.config_id.pricelist_id.id,
                 display_default_code=False, lang=cache.compute_user_id.lang)
             res = prod_ctx.read(cache.get_product_fields())
@@ -74,9 +76,8 @@ class pos_config(models.Model):
         else:
             return None
 
-    def get_products_from_cache(self, fields, domain):
+    def get_products_from_cache(self, fields, domain,limit=None):
         cache_for_user = self._get_cache_for_user()
-
         if cache_for_user:
             return cache_for_user.get_cache(domain, fields)
         else:
@@ -85,7 +86,8 @@ class pos_config(models.Model):
                 'config_id': self.id,
                 'product_domain': str(domain),
                 'product_fields': str(fields),
-                'compute_user_id': self.env.uid
+                'compute_user_id': self.env.uid,
+                'limit': limit and int(limit) or 0,
             })
             new_cache = self._get_cache_for_user()
             return new_cache.get_cache(domain, fields)
