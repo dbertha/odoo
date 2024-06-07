@@ -535,8 +535,8 @@ class PosOrder(models.Model):
 
             if return_picking:
                 order._force_picking_done(return_picking)
-            if order_picking:
-                order._force_picking_done(order_picking)
+            # if order_picking: #PERFORMANCE ISSUE. NOW DONE THROUGH CRON
+            #     order._force_picking_done(order_picking)
 
             # when the pos.config has no picking_type_id set only the moves will be created
             if moves and not return_picking and not order_picking:
