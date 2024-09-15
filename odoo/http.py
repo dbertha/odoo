@@ -1409,7 +1409,7 @@ class Root(object):
                 else:
                     base_domain = '.' + httprequest.host
             response.set_cookie(
-                'session_id', httprequest.session.sid, max_age=90 * 24 * 60 * 60, httponly=True, domain=base_domain)
+                'session_id', httprequest.session.sid, max_age=90 * 24 * 60 * 60, httponly=True)#, domain=base_domain)
         return response
 
 
