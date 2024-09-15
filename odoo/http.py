@@ -1401,14 +1401,15 @@ class Root(object):
         if not explicit_session and hasattr(response, 'set_cookie'):
             # Extract the base domain from the request's host
             # This assumes the host is in the format "subdomain.domain.tld" or "domain.tld"
-            host_parts = httprequest.host.split('.')
-            if len(host_parts) == 3:
-                base_domain = '.' + '.'.join(host_parts[-2:])  # Join the last two parts to share cookies between subdomains
-            else:
-                base_domain = '.' + httprequest.host
+            base_domain = httprequest.host
+            if not 'fonteynethekitchen' in httprequest.host:
+                host_parts = httprequest.host.split('.')
+                if len(host_parts) == 3:
+                    base_domain = '.' + '.'.join(host_parts[-2:])  # Join the last two parts to share cookies between subdomains
+                else:
+                    base_domain = '.' + httprequest.host
             response.set_cookie(
                 'session_id', httprequest.session.sid, max_age=90 * 24 * 60 * 60, httponly=True, domain=base_domain)
-
         return response
 
 
